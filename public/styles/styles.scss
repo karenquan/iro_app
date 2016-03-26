@@ -1,0 +1,63 @@
+@import "normalize";
+
+/* ----- TYPOGRAPHY ------------------------------------------------- */
+@font-face {
+  font-family: 'Didot';
+  src: url('fonts/DidotHTFL96LightItal.eot');
+  src: local('☺'), url('fonts/DidotHTFL96LightItal.woff') format('woff'), url('fonts/DidotHTFL96LightItal.ttf') format('truetype'), url('fonts/DidotHTFL96LightItal.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ----- VARIABLES -------------------------------------------------- */
+$black: #000;
+$white: #FFF;
+$purple: #9793A1;
+$purplehover: #7c7788;
+$purplergb: rgba(151,147,161, 0.8);
+$teal: #A8B6BF;
+$tealhover: #8a9da8;
+$tealrgb: rgba(168,182,191, 0.8);
+$blue: #92a4b9;
+$bluehover: #738ba5;
+$bluergba: rgba(146, 164, 185, 0.8);
+
+/* ----- MIXINS ----------------------------------------------------- */
+@mixin transition($duration) {
+  -webkit-transition: $duration;
+  -moz-transition: $duration;
+  transition: $duration;
+}
+
+@mixin box-sizing($box-type) {
+  -webkit-box-sizing: $box-type;
+  -moz-box-sizing: $box-type;
+  box-sizing: $box-type;
+}
+
+/* ----- TAGS ------------------------------------------------------- */
+
+body {
+  font-family: 'Playfair Display', sans-serif;
+  font-size: 13px;
+}
+
+h1, h2, h3 {
+  font-family: 'Didot', serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header, main, section, article, div, nav {
+  @include box-sizing(border-box);
+}
+
+header {
+  h1 {
+    color: $blue;
+  }
+}
+
+/* ----- CLASSES ---------------------------------------------------- */
