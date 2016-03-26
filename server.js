@@ -36,7 +36,7 @@ app.use(cookieParser('notsosecretnowareyou'));
 // Routing layers: favicon, static assets, dynamic routes, or 404…
 
 // Routes to static assets. Uncomment below if you have a favicon.
-// app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(require('node-sass-middleware')({
   src: path.join(__dirname, 'public'),
   dest: path.join(__dirname, 'public'),

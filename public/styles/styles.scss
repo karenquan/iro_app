@@ -15,12 +15,12 @@ $white: #FFF;
 $purple: #9793A1;
 $purplehover: #7c7788;
 $purplergb: rgba(151,147,161, 0.8);
-$teal: #A8B6BF;
-$tealhover: #8a9da8;
-$tealrgb: rgba(168,182,191, 0.8);
-$blue: #92a4b9;
-$bluehover: #738ba5;
-$bluergba: rgba(146, 164, 185, 0.8);
+$teal: #8a9da8;
+$tealhover: #6c8593;
+$tealrgb: rgba(138, 157, 168, 0.8);
+$blue: #8397af;
+$bluehover: #637d9c;
+$bluergba: rgba(131, 151, 175, 0.8);
 
 /* ----- MIXINS ----------------------------------------------------- */
 @mixin transition($duration) {
@@ -40,6 +40,8 @@ $bluergba: rgba(146, 164, 185, 0.8);
 body {
   font-family: 'Playfair Display', sans-serif;
   font-size: 13px;
+  margin: 0;
+  position: relative;
 }
 
 h1, h2, h3 {
@@ -57,6 +59,47 @@ header, main, section, article, div, nav {
 header {
   h1 {
     color: $blue;
+  }
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: $teal;
+
+    li {
+      display: inline-block;
+      text-align: center;
+
+      &.right {
+        float: right;
+      }
+
+      a {
+        @include box-sizing(border-box);
+        @include transition(0.5s);
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        padding: 20px 30px;
+        color: $white;
+        text-transform: uppercase;
+
+        &:hover {
+          background: $tealhover;
+        }
+
+        &.active {
+          background-color: $tealhover;
+        }
+      }
+    }
   }
 }
 

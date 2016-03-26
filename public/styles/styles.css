@@ -374,7 +374,9 @@ textarea {
 /* ----- TAGS ------------------------------------------------------- */
 body {
   font-family: 'Playfair Display', sans-serif;
-  font-size: 13px; }
+  font-size: 13px;
+  margin: 0;
+  position: relative; }
 
 h1, h2, h3 {
   font-family: 'Didot', serif; }
@@ -388,6 +390,38 @@ header, main, section, article, div, nav {
   box-sizing: border-box; }
 
 header h1 {
-  color: #92a4b9; }
+  color: #8397af; }
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0; }
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #8a9da8; }
+    nav ul li {
+      display: inline-block;
+      text-align: center; }
+      nav ul li.right {
+        float: right; }
+      nav ul li a {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        transition: 0.5s;
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        padding: 20px 30px;
+        color: #FFF;
+        text-transform: uppercase; }
+        nav ul li a:hover {
+          background: #6c8593; }
+        nav ul li a.active {
+          background-color: #6c8593; }
 
 /* ----- CLASSES ---------------------------------------------------- */

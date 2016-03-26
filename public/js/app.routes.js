@@ -20,6 +20,14 @@
       .state("palettes", {
         url: "/palettes",
         templateUrl: "/js/app/palettes/palettes.html"
+      })
+      .state("profile", {
+        url: "/profile",
+        templateUrl: "js/app/users/profile.html"
+      })
+      .state("login", {
+        url: "/login",
+        templateUrl: "/js/app/layouts/login.html"
       });
 
     $urlRouterProvider.otherwise("/");
