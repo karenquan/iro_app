@@ -375,7 +375,6 @@ textarea {
 body {
   font-family: 'Playfair Display', sans-serif;
   font-size: 13px;
-  margin: 0;
   position: relative; }
 
 h1, h2, h3 {
@@ -424,4 +423,27 @@ nav {
         nav ul li a.active {
           background-color: #6c8593; }
 
+/* END NAV */
+main {
+  margin: 57px 0 0 0; }
+  main section article h1 {
+    font-size: 40px;
+    letter-spacing: 1px;
+    text-transform: uppercase; }
+  main section article:nth-child(2) {
+    background-color: #8397af; }
+  main section article:nth-child(2n) h1 {
+    color: #FFF;
+    text-align: right; }
+  main section article:nth-child(4) {
+    background-color: #9793A1; }
+  main section article:nth-child(6) {
+    background-color: #8a9da8; }
+  main section article .content {
+    max-width: 1000px;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto; }
+
+/* END MAIN */
 /* ----- CLASSES ---------------------------------------------------- */

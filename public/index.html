@@ -11,18 +11,15 @@
   <script src="/js/vendor/ui-router.min.js"></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a ui-sref="home">iro</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
-        --><li><a ui-sref="colors" ui-sref-active="active">colors</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
-        --><li><a ui-sref="palettes" ui-sref-active="active">palettes</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
-        --><li><a ui-sref="profile" ui-sref-active="active">profile</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
-        --><li class="right"><a ui-sref="login" ui-sref-active="active">login</a></li>
-      </ul>
-    </nav>
-    <h1>Iro.</h1>
-  </header>
+  <nav>
+    <ul>
+      <li><a ui-sref="home">iro</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
+      --><li><a ui-sref="colors" ui-sref-active="active">colors</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
+      --><li><a ui-sref="palettes" ui-sref-active="active">palettes</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
+      --><li><a ui-sref="profile" ui-sref-active="active">profile</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
+      --><li class="right"><a ui-sref="login" ui-sref-active="active">login</a></li>
+    </ul>
+  </nav>
   <main ui-view></main>
   <footer></footer>
   <script src="/js/app.js"></script>
