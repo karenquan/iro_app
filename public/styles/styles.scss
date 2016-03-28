@@ -18,6 +18,7 @@ $purplergb: rgba(151,147,161, 0.8);
 $teal: #8a9da8;
 $tealhover: #6c8593;
 $tealrgb: rgba(138, 157, 168, 0.8);
+$tealLight: #e2e7e9;
 $blue: #8397af;
 $bluehover: #637d9c;
 $bluergba: rgba(131, 151, 175, 0.8);
@@ -44,6 +45,12 @@ body {
   font-family: 'Playfair Display', sans-serif;
   font-size: 13px;
   position: relative;
+  ::selection {
+    background: $tealLight; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+    background: $tealLight; /* Gecko Browsers */
+  }
 }
 
 h1, h2, h3 {
@@ -55,8 +62,14 @@ a {
   @include transition(0.5s);
 }
 
-main, section, article, div, nav, footer {
+main, section, article, div, nav, footer, ul, li {
   @include box-sizing(border-box);
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -74,9 +87,6 @@ nav {
   box-shadow: 0 0 5px 0 rgba(255,255,255,0.8);
 
   ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
     background-color: $teal;
 
     li {
@@ -167,3 +177,37 @@ footer {
 }
 
 /* ----- CLASSES ---------------------------------------------------- */
+.home {
+
+  .top-colors {
+    text-align: justify;
+    font-size: 0;
+    // white-space: nowrap;
+
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 100%;
+    }
+
+    .top-color {
+      padding: 10px;
+      width: 19%;
+      display: inline-block;
+      text-align: center;
+
+      span {
+        font-size: 13px;
+        white-space: normal;
+        display: inline-block;
+        width: 100%;
+
+        &.color {
+          height: 25px;
+          margin: 0 0 5px 0;
+        }
+      }
+    }
+  } /* END .top-colors */
+
+} /* END .home */

@@ -1,33 +1,41 @@
 <section class="home">
-  <article class="top-colors">
+  <article>
     <div class="content">
       <h1>Top Colors</h1>
-      <ul><li ng-repeat="color in vm.topColors">{{color.hex}}</li></ul>
+      <ul class="top-colors">
+        <li class="top-color" ng-repeat="color in vm.topColors">
+          <span class="color" style="background-color: #{{color.hex}}"></span><span class="hex">#{{color.hex}}</span>
+        </li>
+      </ul>
     </div>
   </article>
 
-  <article class="color-search">
+  <article>
     <div class="content">
       <h1>Search Colors</h1>
+      <div class="color-search"></div>
       <!-- add button to add color to favorites -->
     </div>
   </article>
 
-  <article class="top-palettes">
+  <article>
     <div class="content">
       <h1>Top Palettes</h1>
+      <div class="top-palettes"></div>
     </div>
   </article>
 
-  <article class="palette-search">
+  <article>
     <div class="content">
       <h1>Search Palettes</h1>
+      <div class="palette-search"></div>
     </div>
   </article>
 
-  <article class="palette-create">
+  <article>
     <div class="content">
       <h1>Create a Custom Palette</h1>
+      <div class="palette-create"></div>
     </div>
   </article>
 </section>
