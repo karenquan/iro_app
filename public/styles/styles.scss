@@ -52,9 +52,10 @@ h1, h2, h3 {
 
 a {
   text-decoration: none;
+  @include transition(0.5s);
 }
 
-header, main, section, article, div, nav {
+main, section, article, div, nav, footer {
   @include box-sizing(border-box);
 }
 
@@ -68,6 +69,9 @@ nav {
   width: 100%;
   position: fixed;
   top: 0;
+  -webkit-box-shadow: 0 0 5px 0 rgba(255,255,255,0.8);
+  -moz-box-shadow: 0 0 5px 0 rgba(255,255,255,0.8);
+  box-shadow: 0 0 5px 0 rgba(255,255,255,0.8);
 
   ul {
     list-style-type: none;
@@ -85,7 +89,6 @@ nav {
 
       a {
         @include box-sizing(border-box);
-        @include transition(0.5s);
         display: inline-block;
         height: 100%;
         width: 100%;
@@ -147,5 +150,20 @@ main {
     }
   }
 } /* END MAIN */
+
+footer {
+  font-size: 10px;
+  padding: 20px;
+  text-align: center;
+  font-style: italic;
+
+  a {
+    color: $teal;
+
+    &:hover {
+      color: $tealhover;
+    }
+  }
+}
 
 /* ----- CLASSES ---------------------------------------------------- */

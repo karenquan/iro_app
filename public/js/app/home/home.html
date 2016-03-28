@@ -2,6 +2,7 @@
   <article class="top-colors">
     <div class="content">
       <h1>Top Colors</h1>
+      <ul><li ng-repeat="color in vm.topColors">{{color.hex}}</li></ul>
     </div>
   </article>
 
@@ -30,3 +31,7 @@
     </div>
   </article>
 </section>
+
+<footer>
+  <span>colors and palettes provided by: <a href="http://colourlovers.com" target="_blank">colourlovers.com</a></span>
+</footer>
