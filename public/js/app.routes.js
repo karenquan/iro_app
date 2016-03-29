@@ -15,13 +15,13 @@
         controller: "HomeController",
         controllerAs: "vm"
       })
-      .state("colors", {
-        url: "/colors",
-        templateUrl: "/js/app/colors/colors.html"
+      .state("color", {
+        url: "/colors/{id}",
+        templateUrl: "/js/app/colors/color.html"
       })
-      .state("palettes", {
-        url: "/palettes",
-        templateUrl: "/js/app/palettes/palettes.html"
+      .state("palette", {
+        url: "/palettes/{id}",
+        templateUrl: "/js/app/palettes/palette.html"
       })
       .state("profile", {
         url: "/profile",

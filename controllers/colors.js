@@ -1,10 +1,11 @@
 var request = require('request');
 
 module.exports = {
-  getTopColors: getTopColors
+  index: index,
+  show: show
 };
 
-function getTopColors(req, res, next) {
+function index(req, res, next) {
   var uri = process.env.COLOR_URL_ENDPOINT + "colors/top" + process.env.DATA_FORMAT;
   request({
     method: "GET",
@@ -23,4 +24,8 @@ function getTopColors(req, res, next) {
       next(errorObject);
     }
   });
+}
+
+function show(req, res, next) {
+
 }

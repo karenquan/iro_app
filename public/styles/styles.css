@@ -471,16 +471,36 @@ footer {
 .home {
   /* END .top-colors */ }
   .home .top-colors .top-color {
-    padding: 10px;
-    width: 19%;
+    padding: 5px;
+    width: 24%;
     display: inline-block;
     text-align: center; }
+    .home .top-colors .top-color a {
+      color: #000; }
+      .home .top-colors .top-color a:hover {
+        color: #9793A1; }
     .home .top-colors .top-color span {
       font-size: 13px;
       display: inline-block;
       width: 100%; }
       .home .top-colors .top-color span.color {
-        height: 25px;
-        margin: 0 0 5px 0; }
+        height: 30px;
+        margin: 10px 0 0 0; }
+  .home .top-palettes .top-palette a {
+    color: #000; }
+    .home .top-palettes .top-palette a.palette-link {
+      display: block;
+      height: 32px; }
+    .home .top-palettes .top-palette a:hover {
+      color: #9793A1; }
+  .home .top-palettes .top-palette h3 {
+    font-family: 'Playfair Display', sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 15px 0 5px; }
+  .home .top-palettes .top-palette span {
+    height: 30px;
+    width: 19%;
+    display: inline-block; }
 
 /* END .home */

@@ -3,8 +3,8 @@
     <div class="content">
       <h1>Top Colors</h1>
       <div class="top-colors">
-        <div class="top-color" ng-repeat="color in vm.topColors">
-          <span class="color" ng-style="{ 'background-color': '#{{color.hex}}', 'border': ('{{color.hex}}' === 'FFFFFF') ? '1px solid #000000' : '1px solid #{{color.hex}}' }"></span><span class="hex">#{{color.hex}}</span>
+        <div class="top-color" ng-repeat="color in vm.topColors track by $index">
+          <span class="color" ng-style="{ 'background-color': '#{{color.hex}}', 'border': ('{{color.hex}}' === 'FFFFFF') ? '1px solid #CCC' : '1px solid #{{color.hex}}' }"></span><span class="hex">#{{color.hex}}</span>
         </div>
       </div>
     </div>
@@ -21,7 +21,12 @@
   <article>
     <div class="content">
       <h1>Top Palettes</h1>
-      <div class="top-palettes"></div>
+      <div class="top-palettes">
+        <div class="top-palette" ng-repeat="palette in vm.topPalettes">
+          <h3><a ui-sref="palette({ id:{{palette.id}} })">{{palette.title}}</a></h3>
+          <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span class="palette-color" ng-repeat="color in palette.colors track by $index" ng-style="{ 'background-color': '#{{color}}', 'border': ('{{color}}' === 'FFFFFF') ? '1px solid #CCC' : '1px solid #{{color}}' }"></span></a>
+        </div>
+      </div>
     </div>
   </article>
 

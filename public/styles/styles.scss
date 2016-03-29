@@ -182,10 +182,18 @@ footer {
   .top-colors {
 
     .top-color {
-      padding: 10px;
-      width: 19%;
+      padding: 5px;
+      width: 24%;
       display: inline-block;
       text-align: center;
+
+      a {
+        color: $black;
+
+        &:hover {
+          color: $purple;
+        }
+      }
 
       span {
         font-size: 13px;
@@ -193,12 +201,44 @@ footer {
         width: 100%;
 
         &.color {
-          height: 25px;
-          margin: 0 0 5px 0;
+          height: 30px;
+          margin: 10px 0 0 0;
         }
       }
     }
   } /* END .top-colors */
+
+  .top-palettes {
+
+    .top-palette {
+
+      a {
+        color: $black;
+
+        &.palette-link {
+          display: block;
+          height: 32px;
+        }
+
+        &:hover {
+          color: $purple;
+        }
+      }
+
+      h3 {
+        font-family: 'Playfair Display', sans-serif;
+        text-transform: uppercase;
+        font-size: 14px;
+        margin: 15px 0 5px;
+      }
+
+      span {
+        height: 30px;
+        width: 19%;
+        display: inline-block;
+      }
+    }
+  }
 
 } /* END .home */
 

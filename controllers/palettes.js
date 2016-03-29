@@ -1,10 +1,11 @@
 var request = require('request');
 
 module.exports = {
-  getTopPalettes: getTopPalettes
+  index: index,
+  show: show
 };
 
-function getTopPalettes(req, res, next) {
+function index(req, res, next) {
   var uri = process.env.COLOR_URL_ENDPOINT + "palettes/top" + process.env.DATA_FORMAT;
   request({
     method: "GET",
@@ -23,4 +24,9 @@ function getTopPalettes(req, res, next) {
       next(errorObject);
     }
   });
+}
+
+function show(req, res, next) {
+  var id = req.params.id;
+  console.log(id);
 }
