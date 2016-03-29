@@ -7,3 +7,4 @@ var colorsController = require('../controllers/colors');
 var palettesController = require('../controllers/palettes');
 
 router.get("/colors/top", colorsController.getTopColors);
+router.get("/palettes/top", palettesController.getTopPalettes);

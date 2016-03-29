@@ -180,15 +180,6 @@ footer {
 .home {
 
   .top-colors {
-    text-align: justify;
-    font-size: 0;
-    // white-space: nowrap;
-
-    &:after {
-      content: '';
-      display: inline-block;
-      width: 100%;
-    }
 
     .top-color {
       padding: 10px;
@@ -198,7 +189,6 @@ footer {
 
       span {
         font-size: 13px;
-        white-space: normal;
         display: inline-block;
         width: 100%;
 
@@ -212,6 +202,4 @@ footer {
 
 } /* END .home */
 
-.black-border {
-  border: 1px solid $black;
-}
+

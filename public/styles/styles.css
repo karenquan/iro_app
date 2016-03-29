@@ -470,27 +470,17 @@ footer {
 /* ----- CLASSES ---------------------------------------------------- */
 .home {
   /* END .top-colors */ }
-  .home .top-colors {
-    text-align: justify;
-    font-size: 0; }
-    .home .top-colors:after {
-      content: '';
+  .home .top-colors .top-color {
+    padding: 10px;
+    width: 19%;
+    display: inline-block;
+    text-align: center; }
+    .home .top-colors .top-color span {
+      font-size: 13px;
       display: inline-block;
       width: 100%; }
-    .home .top-colors .top-color {
-      padding: 10px;
-      width: 19%;
-      display: inline-block;
-      text-align: center; }
-      .home .top-colors .top-color span {
-        font-size: 13px;
-        white-space: normal;
-        display: inline-block;
-        width: 100%; }
-        .home .top-colors .top-color span.color {
-          height: 25px;
-          margin: 0 0 5px 0; }
+      .home .top-colors .top-color span.color {
+        height: 25px;
+        margin: 0 0 5px 0; }
 
 /* END .home */
-.black-border {
-  border: 1px solid #000; }

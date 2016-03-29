@@ -2,11 +2,11 @@
   <article>
     <div class="content">
       <h1>Top Colors</h1>
-      <ul class="top-colors">
-        <li class="top-color" ng-repeat="color in vm.topColors">
+      <div class="top-colors">
+        <div class="top-color" ng-repeat="color in vm.topColors">
           <span class="color" ng-style="{ 'background-color': '#{{color.hex}}', 'border': ('{{color.hex}}' === 'FFFFFF') ? '1px solid #000000' : '1px solid #{{color.hex}}' }"></span><span class="hex">#{{color.hex}}</span>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   </article>
 
