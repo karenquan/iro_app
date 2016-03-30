@@ -23,7 +23,6 @@
         .get("/api/colors/top")
         .then(function(res) {
           vm.topColors = res.data;
-          // $log.info(res.data);
         }, function(error) {
           $log.error(error);
         });
@@ -34,7 +33,6 @@
         .get("/api/palettes/top")
         .then(function(res) {
           vm.topPalettes = res.data;
-          $log.log(res.data);
         }, function(error) {
           $log.error(error);
         });

@@ -15,9 +15,9 @@ $white: #FFF;
 $purple: #9793A1;
 $purplehover: #7c7788;
 $purplergb: rgba(151,147,161, 0.8);
-$teal: #8a9da8;
-$tealhover: #6c8593;
-$tealrgb: rgba(138, 157, 168, 0.8);
+$green: #83af9c;
+$greenhover: #639c84;
+$greenrgb: rgba(131, 175, 156, 0.8);
 $tealLight: #e2e7e9;
 $blue: #8397af;
 $bluehover: #637d9c;
@@ -87,7 +87,7 @@ nav {
   box-shadow: 0 0 5px 0 rgba(255,255,255,0.8);
 
   ul {
-    background-color: $teal;
+    background-color: $green;
 
     li {
       display: inline-block;
@@ -107,11 +107,11 @@ nav {
         text-transform: uppercase;
 
         &:hover {
-          background: $tealhover;
+          background: $greenhover;
         }
 
         &.active {
-          background-color: $tealhover;
+          background-color: $greenhover;
         }
       }
     }
@@ -148,7 +148,7 @@ main {
       }
 
       &:nth-child(6) {
-        background-color: $teal;
+        background-color: $green;
       }
 
       .content {
@@ -168,10 +168,10 @@ footer {
   font-style: italic;
 
   a {
-    color: $teal;
+    color: $green;
 
     &:hover {
-      color: $tealhover;
+      color: $greenhover;
     }
   }
 }
@@ -180,9 +180,14 @@ footer {
 .home {
 
   .top-colors {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
 
     .top-color {
-      padding: 5px;
       width: 24%;
       display: inline-block;
       text-align: center;
@@ -196,6 +201,7 @@ footer {
       }
 
       span {
+        @include box-sizing(border-box);
         font-size: 13px;
         display: inline-block;
         width: 100%;
@@ -233,8 +239,9 @@ footer {
       }
 
       span {
+        @include box-sizing(border-box);
         height: 30px;
-        width: 19%;
+        width: 20%;
         display: inline-block;
       }
     }

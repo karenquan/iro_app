@@ -4,7 +4,7 @@
       <h1>Top Colors</h1>
       <div class="top-colors">
         <div class="top-color" ng-repeat="color in vm.topColors track by $index">
-          <span class="color" ng-style="{ 'background-color': '#{{color.hex}}', 'border': ('{{color.hex}}' === 'FFFFFF') ? '1px solid #CCC' : '1px solid #{{color.hex}}' }"></span><span class="hex">#{{color.hex}}</span>
+          <span class="color" ng-style="{ 'background-color': '#{{color.hex}}', 'border': '{{color.hex}}' === 'FFFFFF' && '1px solid #CCC' }"></span><span class="hex">#{{color.hex}}</span>
         </div>
       </div>
     </div>

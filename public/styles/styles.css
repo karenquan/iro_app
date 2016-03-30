@@ -413,7 +413,7 @@ nav {
   -moz-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.8); }
   nav ul {
-    background-color: #8a9da8; }
+    background-color: #83af9c; }
     nav ul li {
       display: inline-block;
       text-align: center; }
@@ -430,9 +430,9 @@ nav {
         color: #FFF;
         text-transform: uppercase; }
         nav ul li a:hover {
-          background: #6c8593; }
+          background: #639c84; }
         nav ul li a.active {
-          background-color: #6c8593; }
+          background-color: #639c84; }
 
 /* END NAV */
 main {
@@ -449,7 +449,7 @@ main {
   main section article:nth-child(4) {
     background-color: #9793A1; }
   main section article:nth-child(6) {
-    background-color: #8a9da8; }
+    background-color: #83af9c; }
   main section article .content {
     max-width: 1000px;
     width: 100%;
@@ -463,29 +463,38 @@ footer {
   text-align: center;
   font-style: italic; }
   footer a {
-    color: #8a9da8; }
+    color: #83af9c; }
     footer a:hover {
-      color: #6c8593; }
+      color: #639c84; }
 
 /* ----- CLASSES ---------------------------------------------------- */
 .home {
   /* END .top-colors */ }
-  .home .top-colors .top-color {
-    padding: 5px;
-    width: 24%;
-    display: inline-block;
-    text-align: center; }
-    .home .top-colors .top-color a {
-      color: #000; }
-      .home .top-colors .top-color a:hover {
-        color: #9793A1; }
-    .home .top-colors .top-color span {
-      font-size: 13px;
+  .home .top-colors {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+    .home .top-colors .top-color {
+      width: 24%;
       display: inline-block;
-      width: 100%; }
-      .home .top-colors .top-color span.color {
-        height: 30px;
-        margin: 10px 0 0 0; }
+      text-align: center; }
+      .home .top-colors .top-color a {
+        color: #000; }
+        .home .top-colors .top-color a:hover {
+          color: #9793A1; }
+      .home .top-colors .top-color span {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-size: 13px;
+        display: inline-block;
+        width: 100%; }
+        .home .top-colors .top-color span.color {
+          height: 30px;
+          margin: 10px 0 0 0; }
   .home .top-palettes .top-palette a {
     color: #000; }
     .home .top-palettes .top-palette a.palette-link {
@@ -499,8 +508,11 @@ footer {
     font-size: 14px;
     margin: 15px 0 5px; }
   .home .top-palettes .top-palette span {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
     height: 30px;
-    width: 19%;
+    width: 20%;
     display: inline-block; }
 
 /* END .home */
