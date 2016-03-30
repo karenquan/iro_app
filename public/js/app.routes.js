@@ -29,7 +29,11 @@
       })
       .state("login", {
         url: "/login",
-        templateUrl: "/js/app/layouts/login.html"
+        templateUrl: "/js/app/login/login.html"
+      })
+      .state("signup", {
+        url: "/signup",
+        templateUrl: "/js/app/signup/signup.html"
       });
 
     $urlRouterProvider.otherwise("/");

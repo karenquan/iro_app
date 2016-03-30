@@ -1,0 +1,11 @@
+<div class="login container">
+  <h1>Login</h1>
+  <form name="loginForm" novalidate>
+    <label for="email">Email</label>
+    <input type="text" id="email" required autofocus>
+    <label for="password">Password</label>
+    <input ng-model="password" type="password" id="password" required>
+    <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
+  </form>
+  <p>Don't have an account? <a ui-sref="signup">Sign up</a>.</p>
+</div>

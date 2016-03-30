@@ -437,10 +437,16 @@ nav {
 /* END NAV */
 main {
   margin: 57px 0 0 0; }
+  main .container {
+    max-width: 1000px;
+    width: 100%;
+    padding: 50px 20px;
+    margin: 0 auto; }
   main section article h1 {
     font-size: 40px;
     letter-spacing: 1px;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    margin: 0 0 25px 0; }
   main section article:nth-child(2) {
     background-color: #8397af; }
   main section article:nth-child(2n) h1 {
@@ -450,13 +456,67 @@ main {
     background-color: #9793A1; }
   main section article:nth-child(6) {
     background-color: #83af9c; }
-  main section article .content {
-    max-width: 1000px;
-    width: 100%;
-    padding: 20px;
-    margin: 0 auto; }
 
 /* END MAIN */
+form {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 14px;
+  letter-spacing: 1px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; }
+  form label {
+    display: block; }
+  form input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    width: 100%;
+    padding: 15px 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    margin: 0 0 40px 0; }
+    form input:focus {
+      border-bottom: 1px solid #83af9c; }
+  form > div {
+    display: inline-block;
+    width: 47%; }
+
+button {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s;
+  border: 1px solid #83af9c;
+  background-color: #83af9c;
+  color: #FFF;
+  text-transform: uppercase;
+  width: 50%;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 20px;
+  outline: none; }
+  button:hover {
+    border: 1px solid #639c84;
+    background-color: #639c84; }
+  button:disabled {
+    background-color: #CCC;
+    border: 1px solid #CCC; }
+
 footer {
   font-size: 10px;
   padding: 20px;
@@ -516,3 +576,16 @@ footer {
     display: inline-block; }
 
 /* END .home */
+.login, .sign-up {
+  text-transform: uppercase; }
+  .login h1, .sign-up h1 {
+    text-align: center;
+    margin: 0 0 50px 0; }
+  .login p, .sign-up p {
+    text-align: center;
+    margin: 30px 0; }
+  .login a, .sign-up a {
+    color: #83af9c;
+    text-decoration: underline; }
+    .login a:hover, .sign-up a:hover {
+      color: #639c84; }

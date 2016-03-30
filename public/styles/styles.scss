@@ -25,6 +25,7 @@ $bluergba: rgba(131, 151, 175, 0.8);
 $pink: #d590ae;
 $pinkhover: #c76b93;
 $pinkrgba: rgba(213, 144, 174, 0.8);
+$gray: #CCC;
 
 /* ----- MIXINS ----------------------------------------------------- */
 @mixin transition($duration) {
@@ -121,6 +122,13 @@ nav {
 main {
   margin: 57px 0 0 0;
 
+  .container {
+      max-width: 1000px;
+      width: 100%;
+      padding: 50px 20px;
+      margin: 0 auto;
+    }
+
   section {
 
     article {
@@ -129,6 +137,7 @@ main {
         font-size: 40px;
         letter-spacing: 1px;
         text-transform: uppercase;
+        margin: 0 0 25px 0;
       }
 
       &:nth-child(2) {
@@ -150,16 +159,75 @@ main {
       &:nth-child(6) {
         background-color: $green;
       }
-
-      .content {
-        max-width: 1000px;
-        width: 100%;
-        padding: 20px;
-        margin: 0 auto;
-      }
     }
   }
 } /* END MAIN */
+
+form {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 14px;
+  letter-spacing: 1px;
+  @include box-sizing(border-box);
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+
+  label {
+    display: block;
+  }
+
+  input {
+    @include box-sizing(border-box);
+    @include transition(0.5s);
+    width: 100%;
+    padding: 15px 0;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $black;
+    margin: 0 0 40px 0;
+
+    &:focus {
+      border-bottom: 1px solid $green;
+      // -webkit-box-shadow: 0 0 10px $greenrgb;
+      // -moz-box-shadow: 0 0 10px $greenrgb;
+      // box-shadow: 0 0 10px $greenrgb;
+    }
+  }
+
+  > div {
+    display: inline-block;
+    width: 47%;
+  }
+}
+
+button {
+  @include box-sizing(border-box);
+  @include transition(0.5s);
+  border: 1px solid $green;
+  background-color: $green;
+  color: $white;
+  text-transform: uppercase;
+  width: 50%;
+  display: inline-block;
+  margin: 0 auto;
+  padding: 20px;
+  outline: none;
+
+  &:hover {
+    border: 1px solid $greenhover;
+    background-color: $greenhover;
+  }
+
+  &:disabled {
+    background-color: $gray;
+    border: 1px solid $gray;
+  }
+}
 
 footer {
   font-size: 10px;
@@ -248,5 +316,28 @@ footer {
   }
 
 } /* END .home */
+
+.login, .sign-up {
+  text-transform: uppercase;
+
+  h1 {
+    text-align: center;
+    margin: 0 0 50px 0;
+  }
+
+  p {
+    text-align: center;
+    margin: 30px 0;
+  }
+
+  a {
+    color: $green;
+    text-decoration: underline;
+
+    &:hover {
+      color: $greenhover;
+    }
+  }
+}
 
 
