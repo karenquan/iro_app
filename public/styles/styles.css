@@ -486,7 +486,7 @@ form {
     padding: 15px 0;
     outline: none;
     border: none;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #CCC;
     margin: 0 0 40px 0; }
     form input:focus {
       border-bottom: 1px solid #83af9c; }

@@ -188,14 +188,11 @@ form {
     padding: 15px 0;
     outline: none;
     border: none;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid $gray;
     margin: 0 0 40px 0;
 
     &:focus {
       border-bottom: 1px solid $green;
-      // -webkit-box-shadow: 0 0 10px $greenrgb;
-      // -moz-box-shadow: 0 0 10px $greenrgb;
-      // box-shadow: 0 0 10px $greenrgb;
     }
   }
 
