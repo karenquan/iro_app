@@ -2,23 +2,24 @@
   <h1>Sign Up</h1>
   <form name="signUpForm" novalidate>
     <div>
-      <label for="firstName">First Name</label>
+      <label for="firstName">First Name*</label>
       <input ng-model="firstName" type="text" id="firstName" required autofocus>
     </div>
     <div>
-      <label for="lastName">Last Name</label>
+      <label for="lastName">Last Name*</label>
       <input ng-model="lastName" type="text" id="lastName" required>
     </div>
-    <label for="email">Email</label>
+    <label for="email">Email*</label>
     <input type="text" id="email" required>
     <div>
-      <label for="password">Password</label>
+      <label for="password">Password*</label>
       <input ng-model="password" type="password" id="password" required>
     </div>
     <div>
-      <label for="confirmPassword">Confirm Password</label>
+      <label for="confirmPassword">Confirm Password*</label>
       <input ng-model="confirmPassword" type="password" id="confirmPassword" required>
     </div>
+    <span>* Required fields</span>
     <button type="submit" ng-disabled="signUpForm.$invalid">Sign Up</button>
   </form>
   <p>Already a member? <a ui-sref="login">Log in</a>.</p>

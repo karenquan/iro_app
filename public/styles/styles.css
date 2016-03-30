@@ -589,3 +589,7 @@ footer {
     text-decoration: underline; }
     .login a:hover, .sign-up a:hover {
       color: #639c84; }
+  .login span, .sign-up span {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px 0; }
