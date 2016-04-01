@@ -192,7 +192,7 @@ form {
     margin: 0 0 40px 0;
 
     &:focus {
-      border-bottom: 1px solid $green;
+      border-bottom: 1px solid $black;
     }
   }
 
@@ -314,6 +314,14 @@ footer {
 
 } /* END .home */
 
+.color-search  {
+
+} /* END .color-search */
+
+.palette-search {
+
+} /* END .palette-search */
+
 .login, .sign-up {
   text-transform: uppercase;
 
@@ -342,5 +350,92 @@ footer {
     margin: 0 0 20px 0;
   }
 }
+
+.search {
+
+  span {
+    font-size: 20px;
+    color: $white;
+  }
+
+  h1, form{
+    width: 49%;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  h1 {
+    margin: 0;
+  }
+
+  form {
+    margin: none;
+  }
+
+  input::-webkit-input-placeholder {
+    color: $white !important;
+    font-style: italic;
+  }
+
+  input:-moz-placeholder { /* Firefox 18- */
+    color: $white !important;
+    font-style: italic;
+  }
+
+  input::-moz-placeholder {  /* Firefox 19+ */
+    color: $white !important;
+    font-style: italic;
+  }
+
+  input:-ms-input-placeholder {
+    color: $white !important;
+  }
+
+  input {
+    font-size: 20px;
+    border: none;
+    margin: 0;
+    border-bottom: 1px solid $white;
+    color: $white;
+    width: 60%;
+
+
+    &:focus {
+      border-bottom: 1px solid $white;
+    }
+  }
+
+  &.color-search {
+    input, button {
+      background-color: $blue;
+    }
+
+    button:hover {
+      color: $blue;
+    }
+  }
+
+  &.palette-search {
+    input, button {
+      background-color: $purple;
+    }
+
+    button:hover {
+      color: $purple;
+    }
+  }
+
+  button {
+    vertical-align: bottom;
+    border: 1px solid $white;
+    color: $white;
+    width: 30%;
+    padding: 15px;
+
+    &:hover {
+      background-color: $white;
+    }
+  }
+} /* END .search */
 
 

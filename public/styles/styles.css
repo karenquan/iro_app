@@ -489,7 +489,7 @@ form {
     border-bottom: 1px solid #CCC;
     margin: 0 0 40px 0; }
     form input:focus {
-      border-bottom: 1px solid #83af9c; }
+      border-bottom: 1px solid #000; }
   form > div {
     display: inline-block;
     width: 47%; }
@@ -576,6 +576,8 @@ footer {
     display: inline-block; }
 
 /* END .home */
+/* END .color-search */
+/* END .palette-search */
 .login, .sign-up {
   text-transform: uppercase; }
   .login h1, .sign-up h1 {
@@ -593,3 +595,68 @@ footer {
     display: block;
     width: 100%;
     margin: 0 0 20px 0; }
+
+.search span {
+  font-size: 20px;
+  color: #FFF; }
+
+.search h1, .search form {
+  width: 49%;
+  display: inline-block;
+  vertical-align: middle; }
+
+.search h1 {
+  margin: 0; }
+
+.search form {
+  margin: none; }
+
+.search input::-webkit-input-placeholder {
+  color: #FFF !important;
+  font-style: italic; }
+
+.search input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #FFF !important;
+  font-style: italic; }
+
+.search input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #FFF !important;
+  font-style: italic; }
+
+.search input:-ms-input-placeholder {
+  color: #FFF !important; }
+
+.search input {
+  font-size: 20px;
+  border: none;
+  margin: 0;
+  border-bottom: 1px solid #FFF;
+  color: #FFF;
+  width: 60%; }
+  .search input:focus {
+    border-bottom: 1px solid #FFF; }
+
+.search.color-search input, .search.color-search button {
+  background-color: #8397af; }
+
+.search.color-search button:hover {
+  color: #8397af; }
+
+.search.palette-search input, .search.palette-search button {
+  background-color: #9793A1; }
+
+.search.palette-search button:hover {
+  color: #9793A1; }
+
+.search button {
+  vertical-align: bottom;
+  border: 1px solid #FFF;
+  color: #FFF;
+  width: 30%;
+  padding: 15px; }
+  .search button:hover {
+    background-color: #FFF; }
+
+/* END .search */
