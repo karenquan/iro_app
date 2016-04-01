@@ -17,13 +17,14 @@
 
     function getColor() {
       var hex = $stateParams.hex;
-      var color = {};
+
       $http({
         method: "GET",
         url: "/api/colors/" + hex
       })
       .then(function(res){
-        return res.data[0]; // color object
+        $log.info(res.data[0]);
+        return res.data[0]; //color object
       }, function(error) {
         $log.error(error);
       });

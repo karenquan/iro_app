@@ -19,7 +19,7 @@
     vm.topPalettes;
 
     // HELPERS
-    function getTopColors() {
+    function getTopColors() { // STICK IN COLORS SERVICE
       $http
         .get("/api/colors/top")
         .then(function(res) {
@@ -29,7 +29,7 @@
         });
     }
 
-    function getTopPalettes() {
+    function getTopPalettes() { // STICK IN PALETTES SERVICE
       $http
         .get("/api/palettes/top")
         .then(function(res) {
