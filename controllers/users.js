@@ -1,6 +1,11 @@
 // Require resource's model(s).
 var User = require("../models/user");
 
+module.exports = {
+  index: index,
+  show:  show
+};
+
 var index = function(req, res, next){
   User.find({}, function(err, users) {
     if (err) {
@@ -21,9 +26,4 @@ var show = function(req, res, next){
       res.render('users/show', {user: user});
     }
   });
-};
-
-module.exports = {
-  index: index,
-  show:  show
 };
