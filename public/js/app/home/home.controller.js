@@ -14,6 +14,7 @@
     getTopPalettes();
 
     // BINDINGS
+    vm.colorSearchInput;
     vm.topColors;
     vm.topPalettes;
 

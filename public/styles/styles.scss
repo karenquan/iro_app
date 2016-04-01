@@ -259,6 +259,9 @@ footer {
 
       a {
         color: $black;
+        display: inline-block;
+        width: 100%;
+        height: 30px;
 
         &:hover {
           color: $purple;
@@ -267,13 +270,17 @@ footer {
 
       span {
         @include box-sizing(border-box);
+        @include transition(0.5s);
         font-size: 13px;
         display: inline-block;
         width: 100%;
 
         &.color {
-          height: 30px;
-          margin: 10px 0 0 0;
+          height: 100%;
+
+          &:hover {
+            box-shadow: 0 0 5px $black;
+          }
         }
       }
     }
@@ -394,10 +401,10 @@ footer {
   input {
     font-size: 20px;
     border: none;
-    margin: 0;
+    margin: 0 20px 0 0;
     border-bottom: 1px solid $white;
     color: $white;
-    width: 60%;
+    width: 50%;
 
 
     &:focus {

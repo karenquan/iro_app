@@ -16,8 +16,10 @@
         controllerAs: "vm"
       })
       .state("color", {
-        url: "/colors/{id}",
-        templateUrl: "/js/app/colors/color.html"
+        url: "/colors/{hex}",
+        templateUrl: "/js/app/colors/color.html",
+        controller: 'ColorsController',
+        controllerAs: 'vm'
       })
       .state("palette", {
         url: "/palettes/{id}",
