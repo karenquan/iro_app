@@ -10,31 +10,33 @@
   function routes($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state("home", {
-        url: "/",
-        templateUrl: "/js/app/home/home.html",
-        controller: "HomeController",
+        url:          "/",
+        templateUrl:  "/js/app/home/home.html",
+        controller:   "HomeController",
         controllerAs: "vm"
       })
       .state("color", {
-        url: "/colors/{hex}",
-        templateUrl: "/js/app/colors/color.html",
-        controller: 'ColorsController',
-        controllerAs: 'vm'
+        url:          "/colors/{hex}",
+        templateUrl:  "/js/app/colors/color.html",
+        controller:   "ColorsController",
+        controllerAs: "vm"
       })
       .state("palette", {
-        url: "/palettes/{id}",
-        templateUrl: "/js/app/palettes/palette.html"
+        url:          "/palettes/{id}",
+        templateUrl:  "/js/app/palettes/palette.html",
+        controller:   "PalettesController",
+        controllerAs: "vm"
       })
       .state("profile", {
-        url: "/profile",
+        url:         "/profile",
         templateUrl: "js/app/users/profile.html"
       })
       .state("login", {
-        url: "/login",
+        url:         "/login",
         templateUrl: "/js/app/login/login.html"
       })
       .state("signup", {
-        url: "/signup",
+        url:         "/signup",
         templateUrl: "/js/app/signup/signup.html"
       });
 

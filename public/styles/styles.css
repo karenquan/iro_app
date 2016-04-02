@@ -412,10 +412,7 @@ header h1 {
 nav {
   width: 100%;
   position: fixed;
-  top: 0;
-  -webkit-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.8);
-  -moz-box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.8);
-  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.8); }
+  top: 0; }
   nav ul {
     background-color: #83af9c; }
     nav ul li {
@@ -434,9 +431,7 @@ nav {
         color: #FFF;
         text-transform: uppercase; }
         nav ul li a:hover {
-          background: #639c84; }
-        nav ul li a.active {
-          background-color: #639c84; }
+          color: #000; }
 
 /* END NAV */
 main {
@@ -547,7 +542,10 @@ footer {
     text-align: center; }
   .intro p {
     font-size: 30px;
-    text-align: center; }
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid;
+    margin: 15px 0; }
     .intro p span {
       font-family: 'Didot', 'Playfair Display', serif;
       font-size: 40px; }
@@ -593,7 +591,9 @@ footer {
     color: #000; }
     .home .top-palettes .top-palette a.palette-link {
       display: block;
-      height: 32px; }
+      height: 30px; }
+      .home .top-palettes .top-palette a.palette-link:hover {
+        box-shadow: 0 0 5px #000; }
     .home .top-palettes .top-palette a:hover {
       color: #9793A1; }
   .home .top-palettes .top-palette h3 {
@@ -785,3 +785,6 @@ footer {
 
 .white-bg {
   background-color: white; }
+
+.offset {
+  margin: 57px auto 0; }

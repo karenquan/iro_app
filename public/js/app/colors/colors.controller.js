@@ -14,8 +14,10 @@
     getColor();
 
     function getColor() {
-      colorService.getColor().then(function(response){
-        $log.info(response);
+      colorService
+        .getColor()
+        .then(function(response){
+        // $log.info(response);
         vm.color = response; //color object
         }, function(error) {
           $log.error(error);

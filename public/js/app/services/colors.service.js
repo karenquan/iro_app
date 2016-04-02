@@ -30,6 +30,7 @@
       return color;
     }
 
+    // NEED TO WRITE THIS FUNCTION
     function getTopColors() {
 
     }

@@ -1,1 +1,6 @@
-<h1>Palette</h1>
+<div class="container offset">
+  <h1>{{vm.palette.title}}</h1>
+  <div class="palette-colors">
+    <span ng-repeat="color in vm.palette.colors track by $index">{{color}}</span>
+  </div>
+</div>
