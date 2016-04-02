@@ -40,12 +40,24 @@ $gray: #CCC;
   box-sizing: $box-type;
 }
 
+@mixin transform-style($style) {
+  -webkit-transform-style: $style;
+  -o-transform-style: $style;
+  -ms-transform-style: $style;
+  transform-style: $style;
+}
+
 /* ----- TAGS ------------------------------------------------------- */
+html, body {
+  height: 100%;
+  width: 100%;
+}
 
 body {
   font-family: 'Playfair Display', sans-serif;
   font-size: 13px;
   position: relative;
+
   ::selection {
     background: $tealLight; /* WebKit/Blink Browsers */
   }
@@ -120,14 +132,9 @@ nav {
 } /* END NAV */
 
 main {
-  margin: 57px 0 0 0;
-
-  .container {
-      max-width: 1000px;
-      width: 100%;
-      padding: 50px 20px;
-      margin: 0 auto;
-    }
+  // margin: 57px 0 0 0;
+  height: 100%;
+  width: 100%;
 
   section {
 
@@ -219,6 +226,65 @@ footer {
 }
 
 /* ----- CLASSES ---------------------------------------------------- */
+
+.container {
+  max-width: 1000px;
+  width: 100%;
+  padding: 50px 20px;
+  margin: 0 auto;
+}
+
+.intro {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: $green;
+  color: $white;
+  text-align: center;
+
+  a {
+    color: white;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  div {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    @include transform-style(preserve-3d);
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+
+  h1 {
+    font-family: 'Didot', 'Playfair Display', serif;
+    font-size: 50px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  p {
+    font-size: 30px;
+    text-align: center;
+
+    span {
+      font-family: 'Didot', 'Playfair Display', serif;
+      font-size: 40px;
+    }
+  }
+
+  .bar {
+    display: inline-block;
+    margin: 0 10px;
+  }
+}
+
 .home {
 
   .top-colors {

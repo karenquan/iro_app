@@ -372,6 +372,10 @@ textarea {
 /* ----- VARIABLES -------------------------------------------------- */
 /* ----- MIXINS ----------------------------------------------------- */
 /* ----- TAGS ------------------------------------------------------- */
+html, body {
+  height: 100%;
+  width: 100%; }
+
 body {
   font-family: 'Playfair Display', sans-serif;
   font-size: 13px;
@@ -436,12 +440,8 @@ nav {
 
 /* END NAV */
 main {
-  margin: 57px 0 0 0; }
-  main .container {
-    max-width: 1000px;
-    width: 100%;
-    padding: 50px 20px;
-    margin: 0 auto; }
+  height: 100%;
+  width: 100%; }
   main section article h1 {
     font-size: 40px;
     letter-spacing: 1px;
@@ -509,6 +509,52 @@ footer {
       color: #639c84; }
 
 /* ----- CLASSES ---------------------------------------------------- */
+.container {
+  max-width: 1000px;
+  width: 100%;
+  padding: 50px 20px;
+  margin: 0 auto; }
+
+.intro {
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: #83af9c;
+  color: #FFF;
+  text-align: center; }
+  .intro a {
+    color: white;
+    text-transform: uppercase; }
+    .intro a:hover {
+      color: #000; }
+  .intro div {
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); }
+  .intro h1 {
+    font-family: 'Didot', 'Playfair Display', serif;
+    font-size: 50px;
+    margin: 0 auto;
+    text-align: center; }
+  .intro p {
+    font-size: 30px;
+    text-align: center; }
+    .intro p span {
+      font-family: 'Didot', 'Playfair Display', serif;
+      font-size: 40px; }
+  .intro .bar {
+    display: inline-block;
+    margin: 0 10px; }
+
 .home {
   /* END .top-colors */ }
   .home .top-colors {
