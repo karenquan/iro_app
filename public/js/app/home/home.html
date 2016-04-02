@@ -14,9 +14,9 @@
     <div class="container search color-search">
       <form>
         <span>#</span>
-        <input style="background-color: #{{colorSearchInput}}" ng-model="colorSearchInput" type="text" placeholder="FFFFFF" maxlength="6">
-        <!-- add button to add color to favorites -->
-        <button style="background-color: #{{colorSearchInput}}">search</button>
+        <input ng-model="colorSearchInput" type="text" placeholder="FFFFFF" maxlength="6">
+        <span class="color-box white-bg" style="background-color: #{{colorSearchInput}}"></span>
+        <button>search</button>
         </form>
 
         <h1>Search Colors</h1>
@@ -49,7 +49,25 @@
   <article>
     <div class="container">
       <h1>Create a Custom Palette</h1>
-      <div class="palette-create"></div>
+      <div class="create-palette">
+        <form name="createPalette">
+          <div class="create-palette-colors">
+            <span style="background-color: #{{hexOne}}"></span>
+            <span style="background-color: #{{hexTwo}}"></span>
+            <span style="background-color: #{{hexThree}}"></span>
+            <span style="background-color: #{{hexFour}}"></span>
+            <span style="background-color: #{{hexFive}}"></span>
+          </div>
+          <div class="create-palette-hex">
+            <div><span>#</span> <input type="text" ng-model="hexOne" placeholder="FFFFFF" maxlength="6"></div>
+            <div><span>#</span> <input type="text" ng-model="hexTwo" placeholder="FFFFFF" maxlength="6"></div>
+            <div><span>#</span> <input type="text" ng-model="hexThree" placeholder="FFFFFF" maxlength="6"></div>
+            <div><span>#</span> <input type="text" ng-model="hexFour" placeholder="FFFFFF" maxlength="6"></div>
+            <div><span>#</span> <input type="text" ng-model="hexFive" placeholder="FFFFFF" maxlength="6"></div>
+          </div>
+          <button>Create</button>
+        </form>
+      </div>
     </div>
   </article>
 </section>

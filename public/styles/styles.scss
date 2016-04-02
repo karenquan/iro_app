@@ -163,45 +163,6 @@ main {
   }
 } /* END MAIN */
 
-form {
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto;
-  font-size: 14px;
-  letter-spacing: 1px;
-  @include box-sizing(border-box);
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-
-  label {
-    display: block;
-  }
-
-  input {
-    @include box-sizing(border-box);
-    @include transition(0.5s);
-    width: 100%;
-    padding: 15px 0;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid $gray;
-    margin: 0 0 40px 0;
-
-    &:focus {
-      border-bottom: 1px solid $black;
-    }
-  }
-
-  > div {
-    display: inline-block;
-    width: 47%;
-  }
-}
-
 button {
   @include box-sizing(border-box);
   @include transition(0.5s);
@@ -223,6 +184,22 @@ button {
   &:disabled {
     background-color: $gray;
     border: 1px solid $gray;
+  }
+}
+
+form {
+  @include box-sizing(border-box);
+
+  input {
+    @include box-sizing(border-box);
+    @include transition(0.5s);
+    outline: none;
+    border: none;
+    border-bottom: 1px solid $gray;
+
+    &:focus {
+      border-bottom: 1px solid $black;
+    }
   }
 }
 
@@ -323,9 +300,27 @@ footer {
 
 .color-search  {
 
+  input {
+    width: 30%;
+    margin: 0 20px 0 0;
+  }
+
+  .color-box {
+    display: inline-block;
+    height: 51px;
+    width: 20%;
+    vertical-align: bottom;
+    margin: 0 20px 0 0;
+  }
+
 } /* END .color-search */
 
 .palette-search {
+
+  input {
+    width: 50%;
+    margin: 0 20px 0 0;
+  }
 
 } /* END .palette-search */
 
@@ -356,7 +351,37 @@ footer {
     width: 100%;
     margin: 0 0 20px 0;
   }
-}
+
+  form {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+
+    label {
+      display: block;
+    }
+
+    input {
+      width: 100%;
+      padding: 15px 0;
+      margin: 0 0 40px 0;
+    }
+
+    > div {
+      display: inline-block;
+      width: 47%;
+    }
+  }
+
+} /* END .login/.sign-up */
 
 .search {
 
@@ -401,10 +426,8 @@ footer {
   input {
     font-size: 20px;
     border: none;
-    margin: 0 20px 0 0;
     border-bottom: 1px solid $white;
     color: $white;
-    width: 50%;
 
 
     &:focus {
@@ -445,4 +468,65 @@ footer {
   }
 } /* END .search */
 
+.create-palette {
 
+  button {
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    background-color: $pink;
+    border: 1px solid $pink;
+
+    &:hover {
+      background-color: $pinkhover;
+      border: 1px solid $pinkhover;
+    }
+  }
+
+  .create-palette-colors {
+    span {
+      @include box-sizing(border-box);
+      width: 19%;
+      height: 30px;
+      border: 1px solid $gray;
+      display: inline-block;
+
+    }
+  }
+
+  .create-palette-hex {
+    > div {
+      width: 19%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+    }
+
+    span {
+      width: 10%;
+      font-size: 16px;
+      padding: 10px 0;
+    }
+
+    input {
+      width: 90%;
+      padding: 10px 0;
+    }
+  }
+
+  .create-palette-colors, .create-palette-hex {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+}
+
+.white-bg {
+  background-color: white;
+}

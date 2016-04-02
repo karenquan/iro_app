@@ -458,42 +458,6 @@ main {
     background-color: #83af9c; }
 
 /* END MAIN */
-form {
-  max-width: 600px;
-  width: 100%;
-  margin: 0 auto;
-  font-size: 14px;
-  letter-spacing: 1px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-  justify-content: space-between; }
-  form label {
-    display: block; }
-  form input {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    transition: 0.5s;
-    width: 100%;
-    padding: 15px 0;
-    outline: none;
-    border: none;
-    border-bottom: 1px solid #CCC;
-    margin: 0 0 40px 0; }
-    form input:focus {
-      border-bottom: 1px solid #000; }
-  form > div {
-    display: inline-block;
-    width: 47%; }
-
 button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -516,6 +480,23 @@ button {
   button:disabled {
     background-color: #CCC;
     border: 1px solid #CCC; }
+
+form {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+  form input {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #CCC; }
+    form input:focus {
+      border-bottom: 1px solid #000; }
 
 footer {
   font-size: 10px;
@@ -583,7 +564,22 @@ footer {
     display: inline-block; }
 
 /* END .home */
+.color-search input {
+  width: 30%;
+  margin: 0 20px 0 0; }
+
+.color-search .color-box {
+  display: inline-block;
+  height: 51px;
+  width: 20%;
+  vertical-align: bottom;
+  margin: 0 20px 0 0; }
+
 /* END .color-search */
+.palette-search input {
+  width: 50%;
+  margin: 0 20px 0 0; }
+
 /* END .palette-search */
 .login, .sign-up {
   text-transform: uppercase; }
@@ -602,7 +598,29 @@ footer {
     display: block;
     width: 100%;
     margin: 0 0 20px 0; }
+  .login form, .sign-up form {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+    .login form label, .sign-up form label {
+      display: block; }
+    .login form input, .sign-up form input {
+      width: 100%;
+      padding: 15px 0;
+      margin: 0 0 40px 0; }
+    .login form > div, .sign-up form > div {
+      display: inline-block;
+      width: 47%; }
 
+/* END .login/.sign-up */
 .search span {
   font-size: 20px;
   color: #FFF; }
@@ -638,10 +656,8 @@ footer {
 .search input {
   font-size: 20px;
   border: none;
-  margin: 0 20px 0 0;
   border-bottom: 1px solid #FFF;
-  color: #FFF;
-  width: 50%; }
+  color: #FFF; }
   .search input:focus {
     border-bottom: 1px solid #FFF; }
 
@@ -667,3 +683,50 @@ footer {
     background-color: #FFF; }
 
 /* END .search */
+.create-palette button {
+  font-size: 16px;
+  display: block;
+  margin: 20px auto;
+  background-color: #d590ae;
+  border: 1px solid #d590ae; }
+  .create-palette button:hover {
+    background-color: #c76b93;
+    border: 1px solid #c76b93; }
+
+.create-palette .create-palette-colors span {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 19%;
+  height: 30px;
+  border: 1px solid #CCC;
+  display: inline-block; }
+
+.create-palette .create-palette-hex > div {
+  width: 19%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; }
+
+.create-palette .create-palette-hex span {
+  width: 10%;
+  font-size: 16px;
+  padding: 10px 0; }
+
+.create-palette .create-palette-hex input {
+  width: 90%;
+  padding: 10px 0; }
+
+.create-palette .create-palette-colors, .create-palette .create-palette-hex {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; }
+
+.white-bg {
+  background-color: white; }
