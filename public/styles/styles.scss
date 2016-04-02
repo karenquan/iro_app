@@ -307,7 +307,7 @@ footer {
 
   .color-box {
     display: inline-block;
-    height: 51px;
+    height: 54px;
     width: 20%;
     vertical-align: bottom;
     margin: 0 20px 0 0;
@@ -401,7 +401,6 @@ footer {
   }
 
   form {
-    margin: none;
   }
 
   input::-webkit-input-placeholder {
@@ -425,6 +424,7 @@ footer {
 
   input {
     font-size: 20px;
+    padding: 10px 0;
     border: none;
     border-bottom: 1px solid $white;
     color: $white;
@@ -433,6 +433,10 @@ footer {
     &:focus {
       border-bottom: 1px solid $white;
     }
+  }
+
+  button {
+    font-size: 16px;
   }
 
   &.color-search {
@@ -456,6 +460,7 @@ footer {
   }
 
   button {
+    font-family: 'Didot', serif;
     vertical-align: bottom;
     border: 1px solid $white;
     color: $white;
@@ -469,11 +474,13 @@ footer {
 } /* END .search */
 
 .create-palette {
+  margin: 30px 0 0 0;
 
   button {
+    font-family: 'Didot', serif;
     font-size: 16px;
     display: block;
-    margin: 20px auto;
+    margin: 40px auto 20px;
     background-color: $pink;
     border: 1px solid $pink;
 
@@ -495,6 +502,7 @@ footer {
   }
 
   .create-palette-hex {
+
     > div {
       width: 19%;
       display: -webkit-flex;
@@ -514,6 +522,19 @@ footer {
     input {
       width: 90%;
       padding: 10px 0;
+      font-size: 16px;
+    }
+
+    input::-webkit-input-placeholder {
+      font-style: italic;
+    }
+
+    input:-moz-placeholder { /* Firefox 18- */
+      font-style: italic;
+    }
+
+    input::-moz-placeholder {  /* Firefox 19+ */
+      font-style: italic;
     }
   }
 

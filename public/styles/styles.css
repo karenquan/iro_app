@@ -570,7 +570,7 @@ footer {
 
 .color-search .color-box {
   display: inline-block;
-  height: 51px;
+  height: 54px;
   width: 20%;
   vertical-align: bottom;
   margin: 0 20px 0 0; }
@@ -633,9 +633,6 @@ footer {
 .search h1 {
   margin: 0; }
 
-.search form {
-  margin: none; }
-
 .search input::-webkit-input-placeholder {
   color: #FFF !important;
   font-style: italic; }
@@ -655,11 +652,15 @@ footer {
 
 .search input {
   font-size: 20px;
+  padding: 10px 0;
   border: none;
   border-bottom: 1px solid #FFF;
   color: #FFF; }
   .search input:focus {
     border-bottom: 1px solid #FFF; }
+
+.search button {
+  font-size: 16px; }
 
 .search.color-search input, .search.color-search button {
   background-color: #8397af; }
@@ -674,6 +675,7 @@ footer {
   color: #9793A1; }
 
 .search button {
+  font-family: 'Didot', serif;
   vertical-align: bottom;
   border: 1px solid #FFF;
   color: #FFF;
@@ -683,50 +685,57 @@ footer {
     background-color: #FFF; }
 
 /* END .search */
-.create-palette button {
-  font-size: 16px;
-  display: block;
-  margin: 20px auto;
-  background-color: #d590ae;
-  border: 1px solid #d590ae; }
-  .create-palette button:hover {
-    background-color: #c76b93;
-    border: 1px solid #c76b93; }
-
-.create-palette .create-palette-colors span {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  width: 19%;
-  height: 30px;
-  border: 1px solid #CCC;
-  display: inline-block; }
-
-.create-palette .create-palette-hex > div {
-  width: 19%;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-  justify-content: space-between; }
-
-.create-palette .create-palette-hex span {
-  width: 10%;
-  font-size: 16px;
-  padding: 10px 0; }
-
-.create-palette .create-palette-hex input {
-  width: 90%;
-  padding: 10px 0; }
-
-.create-palette .create-palette-colors, .create-palette .create-palette-hex {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-justify-content: space-between;
-  justify-content: space-between; }
+.create-palette {
+  margin: 30px 0 0 0; }
+  .create-palette button {
+    font-family: 'Didot', serif;
+    font-size: 16px;
+    display: block;
+    margin: 40px auto 20px;
+    background-color: #d590ae;
+    border: 1px solid #d590ae; }
+    .create-palette button:hover {
+      background-color: #c76b93;
+      border: 1px solid #c76b93; }
+  .create-palette .create-palette-colors span {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 19%;
+    height: 30px;
+    border: 1px solid #CCC;
+    display: inline-block; }
+  .create-palette .create-palette-hex > div {
+    width: 19%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+  .create-palette .create-palette-hex span {
+    width: 10%;
+    font-size: 16px;
+    padding: 10px 0; }
+  .create-palette .create-palette-hex input {
+    width: 90%;
+    padding: 10px 0;
+    font-size: 16px; }
+  .create-palette .create-palette-hex input::-webkit-input-placeholder {
+    font-style: italic; }
+  .create-palette .create-palette-hex input:-moz-placeholder {
+    /* Firefox 18- */
+    font-style: italic; }
+  .create-palette .create-palette-hex input::-moz-placeholder {
+    /* Firefox 19+ */
+    font-style: italic; }
+  .create-palette .create-palette-colors, .create-palette .create-palette-hex {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
 
 .white-bg {
   background-color: white; }
