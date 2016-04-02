@@ -783,6 +783,45 @@ footer {
     -webkit-justify-content: space-between;
     justify-content: space-between; }
 
+/* END .create-palette */
+.individual-palette h1 {
+  text-align: center; }
+
+.individual-palette .individual-palette-colors {
+  text-align: center; }
+  .individual-palette .individual-palette-colors > div {
+    display: inline-block;
+    width: 20%;
+    height: 250px; }
+    .individual-palette .individual-palette-colors > div span {
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
+      transition: 0.5s;
+      display: inline-block;
+      height: 90%;
+      width: 100%; }
+      .individual-palette .individual-palette-colors > div span:hover {
+        box-shadow: 0 0 5px #000; }
+    .individual-palette .individual-palette-colors > div a {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      font-size: 16px; }
+      .individual-palette .individual-palette-colors > div a.hex {
+        color: #000;
+        height: 10%; }
+        .individual-palette .individual-palette-colors > div a.hex:hover {
+          color: #9793A1; }
+
+/* END .individual-palette */
+.individual-color .individual-color-block {
+  height: 250px;
+  width: 100%; }
+
+/* END .individual-color */
 .white-bg {
   background-color: white; }
 

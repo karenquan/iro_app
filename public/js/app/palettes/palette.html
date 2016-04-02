@@ -1,6 +1,9 @@
-<div class="container offset">
+<section class="container offset individual-palette">
   <h1>{{vm.palette.title}}</h1>
-  <div class="palette-colors">
-    <span ng-repeat="color in vm.palette.colors track by $index">{{color}}</span>
+  <div class="individual-palette-colors">
+    <div ng-repeat="color in vm.palette.colors track by $index">
+      <span ng-style="{ 'background-color': '#{{color}}' }"><a ui-sref="color({ hex: '{{color}}' })"></a></span>
+      <a class="hex" ui-sref="color({ hex: '{{color}}' })">#{{color}}</a>
+    </div>
   </div>
-</div>
+</section>
