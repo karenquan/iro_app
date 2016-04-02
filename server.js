@@ -21,6 +21,12 @@ app.set('safe-title', env.SAFE_TITLE);
 // Create local variables for use thoughout the application.
 app.locals.title = app.get('title');
 
+// CORS allows a separate client, like Postman, to send requests
+// (in development only…)
+if (app.get('env') === 'development') {
+  app.use(allowCors); // See helper at bottom.
+}
+
 // Logging layer.
 app.use(logger('dev'));
 
@@ -44,6 +50,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Useful for debugging the state of requests.
 app.use(debugReq);
+
+//Validate content-type
+// Validate content-type.
+app.use(validateContentType);
 
 // Defines all of our "dynamic" routes.
 app.use('/api', routes);
@@ -71,6 +81,33 @@ function debugReq(req, res, next) {
   debug('query:',  req.query);
   debug('body:',   req.body);
   next();
+}
+
+function validateContentType(req, res, next) {
+  var methods = ['PUT', 'PATCH', 'POST'];
+  if (                                    // If the request is
+    methods.indexOf(req.method) !== -1 && // one of PUT, PATCH or POST, and
+    Object.keys(req.body).length !== 0 && // has a body that is not empty, and
+    !req.is('json')                       // does not have an application/json
+  ) {                                     // Content-Type header, then …
+    var message = 'Content-Type header must be application/json.';
+    res.status(400).json(message);
+  } else {
+    next();
+  }
+}
+
+function allowCors(req, res, next) {
+  res.header('Access-Control-Allow-Origin',  '*');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+
+  // Handle "preflight" requests.
+  if ('OPTIONS' == req.method) {
+    res.send(200);
+  } else {
+    next();
+  }
 }
 
 module.exports = app;

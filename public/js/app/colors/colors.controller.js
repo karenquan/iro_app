@@ -10,9 +10,17 @@
   function ColorsController($log, colorService) {
     var vm = this;
 
-    vm.color = colorService.getColor();
+    vm.color;
+    getColor();
 
-    // NEED TO FIX -- MAKE SURE COLOR IS GETTING RETURNED FROM SERVICE
-    $log.info('COLOR', vm.color);
+    function getColor() {
+      colorService.getColor().then(function(response){
+        $log.info(response);
+        vm.color = response; //color object
+        }, function(error) {
+          $log.error(error);
+        }
+      );
+    }
   }
 })();

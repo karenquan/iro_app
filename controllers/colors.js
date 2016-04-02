@@ -36,7 +36,7 @@ function show(req, res, next) {
     uri: uri
   }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
-      res.send(JSON.parse(response.body));
+      res.send(JSON.parse(response.body)); // color object
     } else if (error) {
       next(error);
     } else {
