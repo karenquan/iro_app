@@ -3,13 +3,11 @@ var mongoose = require('./database');
 var User = require('../models/user');
 
 var users = [
-  { // 0
-    handle: "DunkLord",
-    name:   "Bob Neverdunk"
-  },
-  { // 1
-    handle: "MoneyMarge",
-    name:   "Margaret Kalanchoe"
+  {
+    firstName:   "Bob",
+    lastName: "White",
+    email: "hi@hi.com",
+    password: "hi"
   }
 ];
 

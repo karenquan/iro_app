@@ -26,6 +26,8 @@ $pink: #d590ae;
 $pinkhover: #c76b93;
 $pinkrgba: rgba(213, 144, 174, 0.8);
 $gray: #CCC;
+$error: #B0171F;
+$success: #008B45;
 
 /* ----- MIXINS ----------------------------------------------------- */
 @mixin transition($duration) {
@@ -192,6 +194,7 @@ button {
   &:disabled {
     background-color: $gray;
     border: 1px solid $gray;
+    cursor: not-allowed;
   }
 }
 
@@ -201,6 +204,7 @@ form {
   input {
     @include box-sizing(border-box);
     @include transition(0.5s);
+    appearance: none;
     outline: none;
     border: none;
     border-bottom: 1px solid $gray;
@@ -208,6 +212,10 @@ form {
     &:focus {
       border-bottom: 1px solid $black;
     }
+  }
+
+  input::-moz-focus-inner {
+    border: 0;
   }
 }
 
@@ -429,6 +437,17 @@ footer {
     display: block;
     width: 100%;
     margin: 0 0 20px 0;
+
+    &.info {
+      margin: 20px 0;
+    }
+
+    &.error {
+      color: $error;
+      margin: 5px 0 0 0;
+      font-family: 'Didot', serif;
+      text-transform: none;
+    }
   }
 
   form {
@@ -446,12 +465,24 @@ footer {
 
     label {
       display: block;
+      margin: 40px 0 0 0;
     }
 
     input {
       width: 100%;
       padding: 15px 0;
-      margin: 0 0 40px 0;
+
+      &.first-name.ng-touched.ng-invalid, &.last-name.ng-touched.ng-invalid,
+      &.email.ng-touched.ng-invalid, &.email.ng-touched.ng-invalid-email,
+      &.password.ng-touched.ng-invalid  {
+        border-bottom: 1px solid $error;
+      }
+
+      &.first-name.ng-touched.ng-valid, &.last-name.ng-touched.ng-valid,
+      &.email.ng-touched.ng-valid, &.email.ng-touched.ng-valid-email.ng-valid,
+      &.password.ng-touched.ng-valid {
+        border-bottom: 1px solid $success;
+      }
     }
 
     > div {
@@ -482,25 +513,6 @@ footer {
   form {
   }
 
-  input::-webkit-input-placeholder {
-    color: $white !important;
-    font-style: italic;
-  }
-
-  input:-moz-placeholder { /* Firefox 18- */
-    color: $white !important;
-    font-style: italic;
-  }
-
-  input::-moz-placeholder {  /* Firefox 19+ */
-    color: $white !important;
-    font-style: italic;
-  }
-
-  input:-ms-input-placeholder {
-    color: $white !important;
-  }
-
   input {
     font-size: 20px;
     padding: 10px 0;
@@ -512,10 +524,25 @@ footer {
     &:focus {
       border-bottom: 1px solid $white;
     }
-  }
 
-  button {
-    font-size: 16px;
+    &::-webkit-input-placeholder {
+      color: $white !important;
+      font-style: italic;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      color: $white !important;
+      font-style: italic;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      color: $white !important;
+      font-style: italic;
+    }
+
+    &:-ms-input-placeholder {
+      color: $white !important;
+    }
   }
 
   &.color-search {
@@ -539,7 +566,8 @@ footer {
   }
 
   button {
-    font-family: 'Didot', serif;
+    font-size: 16px;
+    font-style: italic;
     vertical-align: bottom;
     border: 1px solid $white;
     color: $white;
@@ -646,9 +674,11 @@ footer {
         display: inline-block;
         height: 90%;
         width: 100%;
+        z-index: 1;
 
         &:hover {
           box-shadow: 0 0 5px $black;
+          z-index: 2;
         }
       }
 

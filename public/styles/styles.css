@@ -474,7 +474,8 @@ button {
     background-color: #639c84; }
   button:disabled {
     background-color: #CCC;
-    border: 1px solid #CCC; }
+    border: 1px solid #CCC;
+    cursor: not-allowed; }
 
 form {
   -webkit-box-sizing: border-box;
@@ -487,11 +488,14 @@ form {
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     transition: 0.5s;
+    appearance: none;
     outline: none;
     border: none;
     border-bottom: 1px solid #CCC; }
     form input:focus {
       border-bottom: 1px solid #000; }
+  form input::-moz-focus-inner {
+    border: 0; }
 
 footer {
   font-size: 10px;
@@ -644,6 +648,13 @@ footer {
     display: block;
     width: 100%;
     margin: 0 0 20px 0; }
+    .login span.info, .sign-up span.info {
+      margin: 20px 0; }
+    .login span.error, .sign-up span.error {
+      color: #B0171F;
+      margin: 5px 0 0 0;
+      font-family: 'Didot', serif;
+      text-transform: none; }
   .login form, .sign-up form {
     max-width: 600px;
     width: 100%;
@@ -657,11 +668,15 @@ footer {
     -webkit-justify-content: space-between;
     justify-content: space-between; }
     .login form label, .sign-up form label {
-      display: block; }
+      display: block;
+      margin: 40px 0 0 0; }
     .login form input, .sign-up form input {
       width: 100%;
-      padding: 15px 0;
-      margin: 0 0 40px 0; }
+      padding: 15px 0; }
+      .login form input.first-name.ng-touched.ng-invalid, .login form input.last-name.ng-touched.ng-invalid, .login form input.email.ng-touched.ng-invalid, .login form input.email.ng-touched.ng-invalid-email, .login form input.password.ng-touched.ng-invalid, .sign-up form input.first-name.ng-touched.ng-invalid, .sign-up form input.last-name.ng-touched.ng-invalid, .sign-up form input.email.ng-touched.ng-invalid, .sign-up form input.email.ng-touched.ng-invalid-email, .sign-up form input.password.ng-touched.ng-invalid {
+        border-bottom: 1px solid #B0171F; }
+      .login form input.first-name.ng-touched.ng-valid, .login form input.last-name.ng-touched.ng-valid, .login form input.email.ng-touched.ng-valid, .login form input.email.ng-touched.ng-valid-email.ng-valid, .login form input.password.ng-touched.ng-valid, .sign-up form input.first-name.ng-touched.ng-valid, .sign-up form input.last-name.ng-touched.ng-valid, .sign-up form input.email.ng-touched.ng-valid, .sign-up form input.email.ng-touched.ng-valid-email.ng-valid, .sign-up form input.password.ng-touched.ng-valid {
+        border-bottom: 1px solid #008B45; }
     .login form > div, .sign-up form > div {
       display: inline-block;
       width: 47%; }
@@ -679,23 +694,6 @@ footer {
 .search h1 {
   margin: 0; }
 
-.search input::-webkit-input-placeholder {
-  color: #FFF !important;
-  font-style: italic; }
-
-.search input:-moz-placeholder {
-  /* Firefox 18- */
-  color: #FFF !important;
-  font-style: italic; }
-
-.search input::-moz-placeholder {
-  /* Firefox 19+ */
-  color: #FFF !important;
-  font-style: italic; }
-
-.search input:-ms-input-placeholder {
-  color: #FFF !important; }
-
 .search input {
   font-size: 20px;
   padding: 10px 0;
@@ -704,9 +702,19 @@ footer {
   color: #FFF; }
   .search input:focus {
     border-bottom: 1px solid #FFF; }
-
-.search button {
-  font-size: 16px; }
+  .search input::-webkit-input-placeholder {
+    color: #FFF !important;
+    font-style: italic; }
+  .search input:-moz-placeholder {
+    /* Firefox 18- */
+    color: #FFF !important;
+    font-style: italic; }
+  .search input::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #FFF !important;
+    font-style: italic; }
+  .search input:-ms-input-placeholder {
+    color: #FFF !important; }
 
 .search.color-search input, .search.color-search button {
   background-color: #8397af; }
@@ -721,7 +729,8 @@ footer {
   color: #9793A1; }
 
 .search button {
-  font-family: 'Didot', serif;
+  font-size: 16px;
+  font-style: italic;
   vertical-align: bottom;
   border: 1px solid #FFF;
   color: #FFF;
@@ -799,9 +808,11 @@ footer {
       transition: 0.5s;
       display: inline-block;
       height: 90%;
-      width: 100%; }
+      width: 100%;
+      z-index: 1; }
       .individual-palette .individual-palette-colors > div span:hover {
-        box-shadow: 0 0 5px #000; }
+        box-shadow: 0 0 5px #000;
+        z-index: 2; }
     .individual-palette .individual-palette-colors > div a {
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;

@@ -20,14 +20,13 @@
 
   <article>
     <div class="container search color-search">
-      <form>
-        <span>#</span>
-        <input ng-model="colorSearchInput" type="text" placeholder="FFFFFF" maxlength="6">
+      <form name="colorSearch" novalidate>
         <span class="color-box white-bg" style="background-color: #{{colorSearchInput}}"></span>
-        <button>search</button>
-        </form>
-
-        <h1>Search Colors</h1>
+        <span>#</span>
+        <input ng-model="colorSearchInput" type="text" placeholder="FFFFFF" maxlength="6" required>
+        <button ng-disabled="colorSearch.$invalid">search</button>
+      </form>
+      <h1>Search Colors</h1>
     </div>
   </article>
 
@@ -45,10 +44,10 @@
 
   <article>
     <div class="container search palette-search">
-      <form>
+      <form name="paletteSearch" novalidate>
         <span>#</span>
-        <input type="text" placeholder="FFFFFF" maxlength="6">
-        <button>search</button>
+        <input type="text" ng-model="paletteSearchInput" placeholder="FFFFFF" maxlength="6" required>
+        <button ng-disabled="paletteSearch.$invalid">search</button>
       </form>
       <h1>Search Palettes</h1>
     </div>

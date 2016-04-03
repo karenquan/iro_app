@@ -3,23 +3,26 @@
   <form name="signUpForm" novalidate>
     <div>
       <label for="firstName">First Name*</label>
-      <input ng-model="firstName" type="text" id="firstName" required autofocus>
+      <input ng-model="firstName" type="text" id="firstName" class="first-name" required autofocus>
+      <span class="error">This field is required*</span>
     </div>
     <div>
       <label for="lastName">Last Name*</label>
-      <input ng-model="lastName" type="text" id="lastName" required>
+      <input ng-model="lastName" type="text" id="lastName" class="last-name" required>
+      <span class="error">This field is required*</span>
     </div>
-    <label for="email">Email*</label>
-    <input type="text" id="email" required>
+    <div>
+      <label for="email">Email*</label>
+      <input ng-model="email" type="email" id="email" class="email" required email>
+      <span class="error">This field is required*</span>
+      <span class="error ng-invalid-email">Invalid email</span>
+    </div>
     <div>
       <label for="password">Password*</label>
-      <input ng-model="password" type="password" id="password" required>
+      <input ng-model="password" type="password" id="password" class="password" required>
+      <span class="error">This field is required*</span>
     </div>
-    <div>
-      <label for="confirmPassword">Confirm Password*</label>
-      <input ng-model="confirmPassword" type="password" id="confirmPassword" required>
-    </div>
-    <span>* Required fields</span>
+    <span class="info">* Required fields</span>
     <button type="submit" ng-disabled="signUpForm.$invalid">Sign Up</button>
   </form>
   <p>Already a member? <a ui-sref="login">Log in</a>.</p>
