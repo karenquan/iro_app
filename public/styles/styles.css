@@ -412,7 +412,8 @@ header h1 {
 nav {
   width: 100%;
   position: fixed;
-  top: 0; }
+  top: 0;
+  z-index: 1000; }
   nav ul {
     background-color: #83af9c; }
     nav ul li {

@@ -34,8 +34,7 @@
       }).then(function(res) {
         $log.info("auth service // login // token:", res.data.token);
         token.store(res.data.token);
-        // return token.decode();
-        return res.data.token;
+        return token.decode();
       });
 
       return promise;

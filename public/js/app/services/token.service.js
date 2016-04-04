@@ -32,7 +32,7 @@
       var token = retrieve();
 
       if (token) {
-        return $window.jwt_decode(retrieve());
+        return $window.jwt_decode(token);
       } else {
         return null;
       }

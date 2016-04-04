@@ -28,8 +28,11 @@
         controllerAs: "vm"
       })
       .state("profile", {
-        url:         "/profile",
-        templateUrl: "js/app/users/profile.html"
+        url:          "/profile",
+        templateUrl:  "js/app/users/profile.html",
+        controller:   "UsersController",
+        controllerAs: "vm",
+        authorized:   true
       })
       .state("login", {
         url:          "/login",
@@ -45,5 +48,20 @@
       });
 
     $urlRouterProvider.otherwise("/");
+  }
+
+  angular
+    .module("app")
+    .run(authorizeRoutes);
+
+  authorizeRoutes.$inject = ["$state", "authService", "$rootScope"];
+
+  function authorizeRoutes($state, authService, $rootScope) {
+    $rootScope.$on("$stateChangeStart", function(event, destination) {
+      if(destination.authorized && !authService.isLoggedIn()) {
+        $state.go("login");
+        event.preventDefault();
+      }
+    });
   }
 })();
