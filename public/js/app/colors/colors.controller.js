@@ -5,13 +5,35 @@
     .module("app")
     .controller("ColorsController", ColorsController);
 
-  ColorsController.$inject = ["$log", "colorService"];
+  ColorsController.$inject = ["$log", "colorService", "authService", "$http", "tokenService"];
 
-  function ColorsController($log, colorService) {
+  function ColorsController($log, colorService, authService, $http, token) {
     var vm = this;
 
     vm.color;
+    vm.currentUserColors;
+
     getColor();
+    getCurrentUserColors();
+
+    function getCurrentUserColors() {
+      var currentUserTokenData = authService.currentUser();
+      $log.info("current user for colors:", currentUserTokenData);
+      $http({
+        method: "GET",
+        url: "/api/users/me",
+        headers: {
+          "authorization": "bearer " + token.retrieve()
+        }
+      })
+      .then(function(response) {
+        $log.info(response.data);
+        var user = response.data;
+        vm.currentUserColors = user.colorLists;
+      }, function(error) {
+
+      });
+    }
 
     function getColor() {
       colorService

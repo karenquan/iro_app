@@ -23,7 +23,7 @@
         .login(vm.user)
         .then(function(decodedToken) {
           $log.info("logged in", decodedToken);
-          $state.go("home");
+          $state.go("profile");
         }, function(error) {
             $log.error("login error:", error)
         });
