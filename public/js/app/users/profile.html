@@ -1,7 +1,17 @@
 <article class="profile">
   <div class="container">
     <h1 class="name">{{vm.currentUser.firstName}} {{vm.currentUser.lastName}}</h1>
-    <div class="create-palette">
+    <section class="profile-color-lists">
+      <h1>Color Lists</h1>
+      <form name="colorListForm" ng-submit="vm.createColorList();" novalidate>
+        <input type="text" ng-model="vm.customListName" required>
+        <button ng-disabled="colorListForm.$invalid">Create List</button>
+      </form>
+      <div class="profile-color-lists">
+        <div class="profile-color-list" ng-repeat="colorList in vm.currentUser.colorLists track by $index">{{colorList.name}}</div>
+      </div>
+    </section>
+    <section class="create-palette">
       <h1>Create a Custom Palette</h1>
       <form name="createPalette">
         <div class="create-palette-colors">
@@ -20,6 +30,6 @@
         </div>
         <button>Create Palette</button>
       </form>
-    </div>
+    </section>
   </div>
 </article>

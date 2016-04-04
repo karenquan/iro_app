@@ -7,7 +7,9 @@ var usersController = require('../controllers/users');
 var token = require('../config/token.auth');
 
 router.post("/users/", usersController.create);
+// router.put("/users/me", usersController.update);
+router.get("/users/me", token.authenticate, usersController.me);
+router.post("/users/me/createColorList", token.authenticate, usersController.createColorList);
+router.post("/users/me/token", token.authenticate, token.refresh);
 
 router.post("/token", token.create);
-router.get("/users/me", token.authenticate, usersController.me);
-// router.put("/users/me", usersController.update);

@@ -3,6 +3,7 @@ var User = require("../models/user");
 
 module.exports = {
   create: create,
+  createColorList: createColorList,
   me:  me
 };
 
@@ -34,6 +35,24 @@ function create(req, res, next) {
         next(error);
       });;
 };
+
+function createColorList(req, res, next) {
+  console.log("attempting to create a color list");
+  // console.log(req.body);
+
+  User
+    .findOne().exec()
+    .then(function(user) {
+      console.log("found user for creating color list");
+      user.colorLists.push(req.body); //adding color list
+      user.save();
+      res.send(user);
+    })
+    .catch(function(error) {
+      console.log("error trying to create a color list");
+      next(error);
+    });
+}
 
 function me(req, res, next) {
   console.log("attempting to find user in database");

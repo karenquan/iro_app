@@ -12,12 +12,34 @@
 
     // BINDINGS
     vm.authService = authService;
+    vm.createColorList = createColorList;
     vm.currentUser;
 
-    currentUser();
+    getCurrentUser();
 
     // FUNCTIONS
-    function currentUser() {
+    function createColorList() {
+      var data = {
+        name: vm.customListName
+      };
+
+      $http({
+        method: "POST",
+        url: "/api/users/me/createColorList",
+        data: data,
+        headers: {
+          "authorization": "bearer " + token.retrieve()
+        }
+      })
+      .then(function(res) {
+        $log.info("successful user retrieval in createColorList (profile controller)", res);
+        getCurrentUser();
+      }, function(error) {
+        $log.error(error);
+      });
+    }
+
+    function getCurrentUser() {
       $http({
         method: "GET",
         url: "/api/users/me",
@@ -26,7 +48,7 @@
         }
       })
       .then(function(res) {
-        $log.info("successful user retrieval?", res.data);
+        $log.info("successful user retrieval", res.data);
         vm.currentUser = res.data;
       }, function(error) {
         $log.info("error in user retrieval");
