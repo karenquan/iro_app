@@ -30,7 +30,7 @@
       .state("profile", {
         url:          "/profile",
         templateUrl:  "js/app/users/profile.html",
-        controller:   "UsersController",
+        controller:   "ProfileController",
         controllerAs: "vm",
         authorized:   true
       })

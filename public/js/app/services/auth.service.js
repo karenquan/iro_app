@@ -10,12 +10,21 @@
   function authService($log, $http, token, $state) {
     $log.info("auth service loaded");
     var service = {
-      login: login,
+      currentUser: currentUser,
       isLoggedIn: isLoggedIn,
-      logout: logout
+      login: login,
+      logout: logout,
     };
 
     return service;
+
+    function currentUser() {
+      var tokenData = token.decode();
+
+      $log.info("current user retrieved:", tokenData);
+
+      return tokenData;
+    }
 
     function isLoggedIn() {
       return token.retrieve() != null;

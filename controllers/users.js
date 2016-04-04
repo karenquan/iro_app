@@ -14,7 +14,7 @@ function create(req, res, next) {
       console.log(user);
       res.send({
         success: true,
-        message: 'Successfully created user!',
+        message: "Successfully created user!",
         data: {
           firstName: user.firstName,
           lastName:  user.lastName,
@@ -24,7 +24,7 @@ function create(req, res, next) {
       });
 
     }).catch(function(error) {
-      console.log('error :(');
+      console.log("error :(");
         if (error.message.match(/E11000/)) {
           error.status = 409;
         } else {
@@ -36,13 +36,16 @@ function create(req, res, next) {
 };
 
 function show(req, res, next) {
-  User.findById(req.params.id, function(err, user) {
-    if (err) {
-      res.json({message: 'Could not find user because ' + err});
-    } else if (!user) {
-      res.json({message: 'No user with this id.'});
-    } else {
-      res.render('users/show', {user: user});
-    }
-  });
+  User
+    .findOne({email: req.decoded.email}).exec()
+    .then(function(user) {
+      res.json({
+        success: true,
+        message: "Successfully retrieved user",
+        data: data
+      });
+    })
+    .catch(function(error) {
+      next(error);
+    });
 };

@@ -1,7 +1,8 @@
-<article>
+<article class="profile">
   <div class="container">
-    <h1>Create a Custom Palette</h1>
+    <h1 class="name">{{vm.authService.currentUser().firstName}}</h1>
     <div class="create-palette">
+      <h1>Create a Custom Palette</h1>
       <form name="createPalette">
         <div class="create-palette-colors">
           <span style="background-color: #{{hexOne}}"></span>
