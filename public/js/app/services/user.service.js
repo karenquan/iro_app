@@ -10,8 +10,7 @@
     function userService($log, $http) {
       $log.info("user service loaded");
       var service = {
-        signUp: signUp,
-        login: login
+        signUp: signUp
       };
 
       return service;
