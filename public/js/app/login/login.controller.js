@@ -17,6 +17,7 @@
       password: ""
     };
 
+    // FUNCTIONS
     function submitLogin() {
       authService
         .login(vm.user)

@@ -395,6 +395,8 @@ a {
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
   transition: 0.5s; }
+  a:hover {
+    cursor: pointer; }
 
 main, section, article, div, nav, footer, ul, li {
   -webkit-box-sizing: border-box;

@@ -75,6 +75,10 @@ h1, h2, h3 {
 a {
   text-decoration: none;
   @include transition(0.5s);
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 main, section, article, div, nav, footer, ul, li {

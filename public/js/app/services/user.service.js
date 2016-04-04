@@ -10,7 +10,8 @@
     function userService($log, $http) {
       $log.info("user service loaded");
       var service = {
-        signUp: signUp
+        signUp: signUp,
+        login: login
       };
 
       return service;
@@ -26,7 +27,6 @@
         })
         .then(function(res) {
           $log.info("Success:", res);
-          // authService.login(data);
         });
 
         return promise;

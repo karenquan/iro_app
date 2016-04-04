@@ -12,10 +12,11 @@
   <script src="/js/vendor/jwt-decode.2.0.1.js"></script>
 </head>
 <body>
-  <nav>
+  <nav ng-controller="NavBarController as vm">
     <ul>
       <li><a ui-sref="home">iro</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
-      --><li class="right"><a ui-sref="login">login</a></li>
+      --><li class="right" ng-hide="vm.authService.isLoggedIn();"><a ui-sref="login">login</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
+      --><li class="right" ng-show="vm.authService.isLoggedIn();"><a ng-click="vm.authService.logout();">logout</a></li>
     </ul>
   </nav>
   <main ui-view></main>
@@ -24,13 +25,14 @@
   <script src="/js/app/services/auth.service.js"></script>
   <script src="/js/app/services/colors.service.js"></script>
   <script src="/js/app/services/palettes.service.js"></script>
-  <script src="/js/app/services/user.service.js"></script>
   <script src="/js/app/services/token.service.js"></script>
+  <script src="/js/app/services/user.service.js"></script>
+  <script src="/js/app/colors/colors.controller.js"></script>
   <script src="/js/app/home/home.controller.js"></script>
   <script src="/js/app/login/login.controller.js"></script>
-  <script src="/js/app/signup/signup.controller.js"></script>
-  <script src="/js/app/colors/colors.controller.js"></script>
+  <script src="/js/app/shared/navbar.controller.js"></script>
   <script src="/js/app/palettes/palettes.controller.js"></script>
+  <script src="/js/app/signup/signup.controller.js"></script>
   <script src="/js/app/users/users.controller.js"></script>
 </body>
 </html>

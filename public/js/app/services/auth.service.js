@@ -5,9 +5,9 @@
     .module("app")
     .factory("authService", authService);
 
-  authService.$inject = ["$log", "$http", "tokenService"];
+  authService.$inject = ["$log", "$http", "tokenService", "$state"];
 
-  function authService($log, $http, token) {
+  function authService($log, $http, token, $state) {
     $log.info("auth service loaded");
     var service = {
       login: login,

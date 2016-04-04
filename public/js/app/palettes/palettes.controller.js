@@ -10,9 +10,11 @@
   function PalettesController($log, $http, palettesService) {
     var vm = this;
 
+    // BINDINGS
     vm.palette;
     getPalette();
 
+    // FUNCTIONS
     function getPalette() {
       palettesService
         .getPalette()
