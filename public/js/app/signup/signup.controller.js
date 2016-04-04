@@ -5,16 +5,33 @@
     .module("app")
     .controller('SignUpController', SignUpController);
 
-  SignUpController.$inject = ["$log"];
+  SignUpController.$inject = ["$log", "$http", "$state", "authService", "userService"];
 
-  function SignUpController ($log) {
+  function SignUpController ($log, $http, $state, authService, userService) {
     var vm = this;
 
-    vm.signUp = {
-      name: "",
-      username: "",
-      password: "",
-      confirmPassword: ""
+    vm.user = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: ""
     };
+
+    vm.submitSignUp = submitSignUp;
+
+    function submitSignUp() {
+      userService.signUp(vm.user)
+        .then(function() {
+          authService
+            .login(vm.user)
+            .then(function(decodedToken) {
+              $log.info("Logged in:", decodedToken);
+              $state.go("home");
+            },
+            function(error) {
+              $log.error("Login Error:", error);
+            });
+        });
+    }
   }
 })();

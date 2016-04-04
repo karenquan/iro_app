@@ -10,20 +10,26 @@ module.exports = {
 // This function will create a JWT and return it to the user in the
 // response. It acts as Express middleware.
 function create(req, res, next) {
+  console.log("start token creation");
+
   if (!req.body.email || !req.body.password) {
     return res.status(422).send('Missing required fields');
   }
   User
     .findOne({email: req.body.email}).exec()
     .then(function(user) {
-      if (!user || !user.verifyPasswordSync(req.body.password)) {
+      console.log('found user');
+      console.log(user);
+      // if (!user || !user.verifyPasswordSync(req.body.password)) {
+       if (!user) {
         res.sendStatus(403);
       } else {
         var token = generate({
             email: user.email,
-            name:  user.name,
+            firstName:  user.firstName,
             use:   'public_api'
         });
+        console.log("got token:", token);
         res.json({
           message: 'Successfully generated token',
           token:   token

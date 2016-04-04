@@ -32,12 +32,16 @@
         templateUrl: "js/app/users/profile.html"
       })
       .state("login", {
-        url:         "/login",
-        templateUrl: "/js/app/login/login.html"
+        url:          "/login",
+        templateUrl:  "/js/app/login/login.html",
+        controller:   "LoginController",
+        controllerAs: "vm"
       })
       .state("signup", {
-        url:         "/signup",
-        templateUrl: "/js/app/signup/signup.html"
+        url:          "/signup",
+        templateUrl:  "/js/app/signup/signup.html",
+        controller:   "SignUpController",
+        controllerAs: "vm"
       });
 
     $urlRouterProvider.otherwise("/");

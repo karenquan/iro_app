@@ -631,6 +631,9 @@ footer {
   margin: 0 20px 0 0; }
 
 /* END .palette-search */
+.login form button {
+  margin: 40px auto 0; }
+
 .login, .sign-up {
   text-transform: uppercase; }
   .login h1, .sign-up h1 {

@@ -1,26 +1,26 @@
 <div class="sign-up container offset">
   <h1>Sign Up</h1>
-  <form name="signUpForm" novalidate>
+  <form name="signUpForm" ng-submit="vm.submitSignUp();" novalidate>
     <div>
       <label for="firstName">First Name*</label>
-      <input ng-model="firstName" type="text" id="firstName" class="first-name" required autofocus>
-      <span class="error">This field is required*</span>
+      <input ng-model="vm.user.firstName" type="text" id="firstName" class="first-name" required autofocus>
+      <span class="error" ng-hide="true">This field is required*</span>
     </div>
     <div>
       <label for="lastName">Last Name*</label>
-      <input ng-model="lastName" type="text" id="lastName" class="last-name" required>
-      <span class="error">This field is required*</span>
+      <input ng-model="vm.user.lastName" type="text" id="lastName" class="last-name" required>
+      <span class="error"ng-hide="true">This field is required*</span>
     </div>
     <div>
       <label for="email">Email*</label>
-      <input ng-model="email" type="email" id="email" class="email" required email>
-      <span class="error">This field is required*</span>
-      <span class="error ng-invalid-email">Invalid email</span>
+      <input ng-model="vm.user.email" type="email" id="email" class="email" required email>
+      <span class="error" ng-hide="true">This field is required*</span>
+      <span class="error ng-invalid-email"ng-hide="true">Invalid email</span>
     </div>
     <div>
       <label for="password">Password*</label>
-      <input ng-model="password" type="password" id="password" class="password" required>
-      <span class="error">This field is required*</span>
+      <input ng-model="vm.user.password" type="password" id="password" class="password" required>
+      <span class="error"ng-hide="true">This field is required*</span>
     </div>
     <span class="info">* Required fields</span>
     <button type="submit" ng-disabled="signUpForm.$invalid">Sign Up</button>
