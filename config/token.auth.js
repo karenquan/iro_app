@@ -59,9 +59,10 @@ function create(req, res, next) {
         var message = 'User not found or password incorrect.';
         return res.status(403).json(message);
       }
-
+      console.log(user);
       var token = generateJwt(user);
 
+      console.log('made new token');
       res.json({
         message: 'Successfully generated token',
         token:   token

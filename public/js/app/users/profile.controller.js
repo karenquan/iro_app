@@ -5,38 +5,29 @@
     .module("app")
     .controller("ProfileController", ProfileController);
 
-  ProfileController.$inject = ["$log", "authService", "$http", "tokenService"];
+  ProfileController.$inject = ["$log", "authService", "$http", "tokenService", "userService"];
 
-  function ProfileController($log, authService, $http, token) {
+  function ProfileController($log, authService, $http, token, userService) {
     var vm = this;
 
     // BINDINGS
     vm.authService = authService;
     vm.createColorList = createColorList;
     vm.currentUser;
+    vm.userService = userService;
 
     getCurrentUser();
 
     // FUNCTIONS
     function createColorList() {
-      var data = {
-        name: vm.customListName
-      };
-
-      $http({
-        method: "POST",
-        url: "/api/users/me/createColorList",
-        data: data,
-        headers: {
-          "authorization": "bearer " + token.retrieve()
-        }
-      })
-      .then(function(res) {
-        $log.info("successful user retrieval in createColorList (profile controller)", res);
-        getCurrentUser();
-      }, function(error) {
-        $log.error(error);
-      });
+      vm.userService
+        .createColorList(vm.currentUser, vm.customListName)
+        .then(function(res) {
+          $log.info("profile controller create color list creation");
+          getCurrentUser();
+        }, function(error) {
+          $log.error(error);
+        });
     }
 
     function getCurrentUser() {

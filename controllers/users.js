@@ -8,7 +8,6 @@ module.exports = {
 };
 
 function create(req, res, next) {
-  console.log("herro");
   User
     .create(req.body)
     .then(function(user) {
@@ -41,7 +40,7 @@ function createColorList(req, res, next) {
   // console.log(req.body);
 
   User
-    .findOne().exec()
+    .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
       console.log("found user for creating color list");
       user.colorLists.push(req.body); //adding color list
@@ -56,7 +55,6 @@ function createColorList(req, res, next) {
 
 function me(req, res, next) {
   console.log("attempting to find user in database");
-  console.log(req.body);
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {

@@ -33,7 +33,6 @@
 
     function login(data) {
       $log.info("auth service // login");
-      $log.info(data);
       var promise = $http({
         method: "POST",
         url: "/api/token",
