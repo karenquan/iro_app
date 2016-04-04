@@ -309,6 +309,10 @@ footer {
 
 .home {
 
+  .container {
+    padding: 50px 0;
+  }
+
   .top-colors {
     display: -webkit-flex;
     display: flex;
@@ -390,7 +394,7 @@ footer {
 
 } /* END .home */
 
-.color-search  {
+.color-search, .palette-search  {
 
   input {
     width: 30%;
@@ -407,14 +411,7 @@ footer {
 
 } /* END .color-search */
 
-.palette-search {
 
-  input {
-    width: 50%;
-    margin: 0 20px 0 0;
-  }
-
-} /* END .palette-search */
 
 .login {
   form {

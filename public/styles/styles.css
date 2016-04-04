@@ -562,6 +562,8 @@ footer {
 
 .home {
   /* END .top-colors */ }
+  .home .container {
+    padding: 50px 0; }
   .home .top-colors {
     display: -webkit-flex;
     display: flex;
@@ -617,11 +619,11 @@ footer {
     display: inline-block; }
 
 /* END .home */
-.color-search input {
+.color-search input, .palette-search input {
   width: 30%;
   margin: 0 20px 0 0; }
 
-.color-search .color-box {
+.color-search .color-box, .palette-search .color-box {
   display: inline-block;
   height: 54px;
   width: 20%;
@@ -629,11 +631,6 @@ footer {
   margin: 0 20px 0 0; }
 
 /* END .color-search */
-.palette-search input {
-  width: 50%;
-  margin: 0 20px 0 0; }
-
-/* END .palette-search */
 .login form button {
   margin: 40px auto 0; }
 

@@ -12,7 +12,8 @@
       <h1>Top Colors</h1>
       <div class="top-colors">
         <div class="top-color" ng-repeat="color in vm.topColors track by $index">
-          <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" ng-style="{ 'background-color': '#{{color.hex}}', 'border': '{{color.hex}}' === 'FFFFFF' && '1px solid #CCC' }"></span></a><a ui-sref="color({ hex: '{{color.hex}}' })"><span class="hex">#{{color.hex}}</span></a>
+          <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" ng-style="{ 'background-color': '#{{color.hex}}', 'border': '{{color.hex}}' === 'FFFFFF' && '1px solid #CCC' }"></span></a>
+          <span class="hex">#{{color.hex}}</span>
         </div>
       </div>
     </div>
@@ -45,6 +46,7 @@
   <article>
     <div class="container search palette-search">
       <form name="paletteSearch" novalidate>
+        <span class="color-box white-bg" style="background-color: #{{paletteSearchInput}}"></span>
         <span>#</span>
         <input type="text" ng-model="paletteSearchInput" placeholder="FFFFFF" maxlength="6" required>
         <button ng-disabled="paletteSearch.$invalid">search</button>
@@ -53,32 +55,8 @@
     </div>
   </article>
 
-  <article>
-    <div class="container">
-      <h1>Create a Custom Palette</h1>
-      <div class="create-palette">
-        <form name="createPalette">
-          <div class="create-palette-colors">
-            <span style="background-color: #{{hexOne}}"></span>
-            <span style="background-color: #{{hexTwo}}"></span>
-            <span style="background-color: #{{hexThree}}"></span>
-            <span style="background-color: #{{hexFour}}"></span>
-            <span style="background-color: #{{hexFive}}"></span>
-          </div>
-          <div class="create-palette-hex">
-            <div><span>#</span> <input type="text" ng-model="hexOne" placeholder="FFFFFF" maxlength="6"></div>
-            <div><span>#</span> <input type="text" ng-model="hexTwo" placeholder="FFFFFF" maxlength="6"></div>
-            <div><span>#</span> <input type="text" ng-model="hexThree" placeholder="FFFFFF" maxlength="6"></div>
-            <div><span>#</span> <input type="text" ng-model="hexFour" placeholder="FFFFFF" maxlength="6"></div>
-            <div><span>#</span> <input type="text" ng-model="hexFive" placeholder="FFFFFF" maxlength="6"></div>
-          </div>
-          <button>Create Palette</button>
-        </form>
-      </div>
-    </div>
-  </article>
-</section>
+  <footer class="container">
+    <span>colors and palettes provided by: <a href="http://colourlovers.com" target="_blank">colourlovers.com</a></span>
+  </footer>
 
-<footer>
-  <span>colors and palettes provided by: <a href="http://colourlovers.com" target="_blank">colourlovers.com</a></span>
-</footer>
+</section>

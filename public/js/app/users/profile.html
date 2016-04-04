@@ -1,1 +1,24 @@
-<h1>Profile</h1>
+<article>
+  <div class="container">
+    <h1>Create a Custom Palette</h1>
+    <div class="create-palette">
+      <form name="createPalette">
+        <div class="create-palette-colors">
+          <span style="background-color: #{{hexOne}}"></span>
+          <span style="background-color: #{{hexTwo}}"></span>
+          <span style="background-color: #{{hexThree}}"></span>
+          <span style="background-color: #{{hexFour}}"></span>
+          <span style="background-color: #{{hexFive}}"></span>
+        </div>
+        <div class="create-palette-hex">
+          <div><span>#</span> <input type="text" ng-model="hexOne" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="hexTwo" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="hexThree" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="hexFour" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="hexFive" placeholder="FFFFFF" maxlength="6"></div>
+        </div>
+        <button>Create Palette</button>
+      </form>
+    </div>
+  </div>
+</article>
