@@ -3,7 +3,7 @@ var User = require("../models/user");
 
 module.exports = {
   create: create,
-  show:  show
+  me:  me
 };
 
 function create(req, res, next) {
@@ -35,17 +35,22 @@ function create(req, res, next) {
       });;
 };
 
-function show(req, res, next) {
+function me(req, res, next) {
+  console.log("attempting to find user in database");
+  console.log(req.body);
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
-      res.json({
-        success: true,
-        message: "Successfully retrieved user",
-        data: data
-      });
+      console.log("found user:", user);
+      res.send(user);
+      // res.json({
+      //   success: true,
+      //   message: "Successfully retrieved user",
+      //   data: data
+      // });
     })
     .catch(function(error) {
+      console.log("error trying to find user :(");
       next(error);
     });
 };

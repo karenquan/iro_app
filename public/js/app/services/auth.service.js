@@ -14,6 +14,7 @@
       isLoggedIn: isLoggedIn,
       login: login,
       logout: logout,
+      refreshToken: refreshToken
     };
 
     return service;
@@ -50,10 +51,12 @@
     }
 
     function logout() {
-      $log.info('logout, yo');
       token.destroy();
-      $log.info("token:", token.retrieve());
       $state.go("home");
+    }
+
+    function refreshToken() {
+
     }
   }
 })();

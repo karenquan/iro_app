@@ -65,15 +65,22 @@ app.use(function(req, res, next) {
   res.redirect("/404.html");
 });
 
-// Error-handling layer.
+// Error-handling layer(s).
+app.use(addFailedAuthHeader);
 app.use(function(err, req, res, next) {
-  // In development, the error handler will print stacktrace.
-  err = (app.get('env') === 'development') ? err : {};
-  res.status(err.status || 500);
-  res.json('error', {
-    message: err.message,
-    error: err
-  });
+  var message = err.message,
+      status  = err.status || 500;
+
+  res.status(status);
+
+  if (app.get('env') === 'development' && status === 500) {
+    res.json({
+      message: message,
+      error: err
+    });
+  } else {
+    res.json(message);
+  }
 });
 
 function debugReq(req, res, next) {
@@ -108,6 +115,18 @@ function allowCors(req, res, next) {
   } else {
     next();
   }
+}
+
+// When there is a 401 Unauthorized, the repsonse shall include a header
+// WWW-Authenticate that tells the client how they must authenticate
+// their requests.
+function addFailedAuthHeader(err, req, res, next) {
+  var header = {'WWW-Authenticate': 'Bearer'};
+  if (err.status === 401) {
+    if (err.realm) header['WWW-Authenticate'] += ` realm="${err.realm}"`;
+    res.set(header);
+  }
+  next(err);
 }
 
 module.exports = app;
