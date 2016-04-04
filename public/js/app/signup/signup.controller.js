@@ -21,13 +21,13 @@
 
     // FUNCTIONS
     function submitSignUp() {
-      userService.signUp(vm.user)
+      userService.create(vm.user)
         .then(function(res) {
           return authService.login(vm.user);
         })
         .then(function(decodedToken) {
           $log.info("Logged in:", decodedToken);
-          $state.go("home");
+          $state.go("profile");
         },
         function(error) {
           $log.error("Login Error:", error);

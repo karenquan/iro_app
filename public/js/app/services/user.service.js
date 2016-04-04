@@ -10,12 +10,12 @@
     function userService($log, $http) {
       $log.info("user service loaded");
       var service = {
-        signUp: signUp
+        create: create
       };
 
       return service;
 
-      function signUp(data) {
+      function create(data) {
         var promise = $http({
           method: "POST",
           url: "/api/users",
