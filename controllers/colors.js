@@ -28,7 +28,6 @@ function index(req, res, next) {
 
 function show(req, res, next) {
   var hex = req.params.hex;
-
   var uri = process.env.COLOR_URL_ENDPOINT + "color/" + hex + process.env.DATA_FORMAT;
 
   request({

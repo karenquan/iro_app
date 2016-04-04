@@ -20,7 +20,7 @@
 
       var color = $http({
         method: "GET",
-        url: "/api/colors/" + hex
+        url: "/colors/" + hex
       })
       .then(function(res){
         // $log.info(res.data[0]);
@@ -32,7 +32,16 @@
 
     // NEED TO WRITE THIS FUNCTION
     function getTopColors() {
+      var topColors = $http({
+        method: "GET",
+        url: "/colors/top"
+      })
+      .then(function(res) {
+        // $log.info(res.data);
+        return res.data; //top colors object
+      });
 
+      return topColors;
     }
 
     return service;

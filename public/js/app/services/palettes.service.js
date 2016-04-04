@@ -14,7 +14,14 @@
     };
 
     function getTopPalettes() {
+      var topPalettes = $http({
+        method: "GET",
+        url: "/palettes/top"
+      }).then(function(response) {
+        return response.data;
+      });
 
+      return topPalettes;
     }
 
     function getPalette() {
@@ -22,10 +29,9 @@
 
       var palette = $http({
         method: "GET",
-        url: "/api/palettes/" + id
+        url: "/palettes/" + id
       })
       .then(function(response) {
-        // $log.info(response.data[0]);
         return response.data[0]; // palette object
       });
 

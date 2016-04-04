@@ -7,9 +7,10 @@ var debug        = require('debug')('app:http');
 var cookieParser = require('cookie-parser');
 
 // Load local libraries.
-var env      = require('./config/environment'),
-    mongoose = require('./config/database'),
-    routes   = require('./config/routes');
+var env       = require('./config/environment'),
+    mongoose  = require('./config/database'),
+    routes    = require('./config/routes'),
+    apiRoutes = require('./config/api.routes');
 
 // Instantiate a server application.
 var app = express();
@@ -56,7 +57,9 @@ app.use(debugReq);
 app.use(validateContentType);
 
 // Defines all of our "dynamic" routes.
-app.use('/api', routes);
+// app.use('/api', routes);
+app.use('/', routes);
+app.use('/api', apiRoutes);
 
 // Catches all 404 routes.
 app.use(function(req, res, next) {
