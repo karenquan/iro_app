@@ -344,6 +344,10 @@ footer {
         display: inline-block;
         width: 100%;
 
+        &.hex {
+          margin: 0 0 15px 0;
+        }
+
         &.color {
           height: 100%;
 
@@ -358,6 +362,7 @@ footer {
   .top-palettes {
 
     .top-palette {
+      margin: 20px 0 0 0;
 
       a {
         color: $black;
