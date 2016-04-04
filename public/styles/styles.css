@@ -511,7 +511,7 @@ footer {
 .container {
   max-width: 1000px;
   width: 100%;
-  padding: 50px 20px;
+  padding: 107px 20px 50px;
   margin: 0 auto; }
 
 .intro {
@@ -838,6 +838,3 @@ footer {
 /* END .individual-color */
 .white-bg {
   background-color: white; }
-
-.offset {
-  margin: 57px auto 0; }
