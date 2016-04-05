@@ -840,9 +840,56 @@ footer {
   width: 100%; }
 
 /* END .individual-color */
-.profile .name {
-  text-align: center;
-  text-transform: uppercase; }
+.profile {
+  /* END .profile-color-lists & .profile-palette-lists */
+  /* END .profile-color-lists */
+  /* END .profile-palette-lists */ }
+  .profile .name {
+    text-align: center;
+    text-transform: uppercase; }
+  .profile .profile-color-lists h1, .profile .profile-palette-lists h1 {
+    padding: 10px;
+    color: #FFF;
+    font-weight: normal; }
+  .profile .profile-color-lists h2, .profile .profile-color-lists h3, .profile .profile-palette-lists h2, .profile .profile-palette-lists h3 {
+    text-transform: uppercase;
+    font-weight: normal; }
+  .profile .profile-color-lists form, .profile .profile-palette-lists form {
+    text-align: center; }
+  .profile .profile-color-lists input, .profile .profile-palette-lists input {
+    vertical-align: bottom;
+    padding: 20px 20px 20px 0;
+    width: 30%; }
+  .profile .profile-color-lists button, .profile .profile-palette-lists button {
+    width: 30%; }
+    .profile .profile-color-lists button:disabled, .profile .profile-palette-lists button:disabled {
+      background-color: #CCC;
+      border: 1px solid #CCC;
+      cursor: not-allowed; }
+  .profile .profile-color-lists h1 {
+    background-color: #8397af; }
+  .profile .profile-color-lists h2 {
+    color: #8397af;
+    border-bottom: 1px solid #8397af; }
+  .profile .profile-color-lists button {
+    background-color: #8397af;
+    border: 1px solid #8397af; }
+    .profile .profile-color-lists button:hover {
+      background-color: #637d9c;
+      border: 1px solid #637d9c; }
+  .profile .profile-palette-lists h1 {
+    background-color: #9793A1; }
+  .profile .profile-palette-lists h2 {
+    color: #9793A1;
+    border-bottom: 1px solid #9793A1; }
+  .profile .profile-palette-lists h3 {
+    margin: 0 0 5px 0; }
+  .profile .profile-palette-lists button {
+    background-color: #9793A1;
+    border: 1px solid #9793A1; }
+    .profile .profile-palette-lists button:hover {
+      background-color: #7c7788;
+      border: 1px solid #7c7788; }
 
 /* END .profile */
 .white-bg {

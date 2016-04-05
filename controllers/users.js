@@ -49,6 +49,7 @@ function addPaletteToList(req, res, next) {
         return list._id == data.listId;
       });
       var palette = {
+        name:   data.palette.title,
         colors: data.palette.colors
       };
       selectedList[0].palettes.push(palette);

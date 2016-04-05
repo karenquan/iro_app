@@ -26,6 +26,7 @@
         .then(function(res) {
           $log.info("profile controller // create color list creation");
           getCurrentUser();
+          vm.customColorListName = '';
         }, function(error) {
           $log.error(error);
         });

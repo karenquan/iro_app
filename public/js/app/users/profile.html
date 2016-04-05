@@ -3,10 +3,6 @@
     <h1 class="name">{{vm.currentUser.firstName}} {{vm.currentUser.lastName}}</h1>
     <section class="profile-color-lists">
       <h1>Color Lists</h1>
-      <form name="colorListForm" ng-submit="vm.createColorList();" novalidate>
-        <input type="text" ng-model="vm.customColorListName" required>
-        <button ng-disabled="colorListForm.$invalid">Create List</button>
-      </form>
       <div class="profile-color-lists">
         <div class="profile-color-list" ng-repeat="colorList in vm.currentUser.colorLists track by $index">
           <h2>{{colorList.name}}</h2>
@@ -16,23 +12,27 @@
             <span>rgb({{color.rgb.red}}, {{color.rgb.green}}, {{color.rgb.blue}})</span>
           </div>
         </div>
+      <form name="colorListForm" ng-submit="vm.createColorList();" novalidate>
+        <input type="text" ng-model="vm.customColorListName" required>
+        <button ng-disabled="colorListForm.$invalid">Create List</button>
+      </form>
       </div>
     </section>
 
     <section class="profile-palette-lists">
       <h1>Palette Lists</h1>
-      <form name="paletteListForm" ng-submit="vm.createPaletteList();">
-        <input type="text" ng-model="vm.customPaletteListName" required>
-        <button ng-disabled="paletteListForm.$invalid">Create Palette List</button>
-      </form>
       <div class="profile-palette-lists">
         <div class="profile-palette-list" ng-repeat="paletteList in vm.currentUser.paletteLists track by $index">
           <h2>{{paletteList.name}}</h2>
           <div ng-repeat="palette in paletteList.palettes track by $index">
-
+            <h3>{{palette.name}}</h3>
             <span ng-repeat="color in palette.colors track by $index">#{{color}}</span>
           </div>
         </div>
+        <form name="paletteListForm" ng-submit="vm.createPaletteList();">
+          <input type="text" ng-model="vm.customPaletteListName" required>
+          <button ng-disabled="paletteListForm.$invalid">Create Palette List</button>
+        </form>
       </div>
     </section>
 

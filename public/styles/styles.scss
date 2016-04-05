@@ -733,6 +733,85 @@ footer {
     text-transform: uppercase;
   }
 
+  .profile-color-lists, .profile-palette-lists {
+    h1 {
+      padding: 10px;
+      color: $white;
+      font-weight: normal;
+    }
+
+    h2, h3 {
+      text-transform: uppercase;
+      font-weight: normal;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    input {
+      vertical-align: bottom;
+      padding: 20px 20px 20px 0;
+      width: 30%;
+    }
+
+    button {
+      width: 30%;
+
+      &:disabled {
+        background-color: $gray;
+        border: 1px solid $gray;
+        cursor: not-allowed;
+      }
+    }
+  } /* END .profile-color-lists & .profile-palette-lists */
+
+  .profile-color-lists {
+    h1 {
+      background-color: $blue;
+    }
+
+    h2 {
+      color: $blue;
+      border-bottom: 1px solid $blue;
+    }
+
+    button {
+      background-color: $blue;
+      border: 1px solid $blue;
+
+      &:hover {
+        background-color: $bluehover;
+        border: 1px solid $bluehover;
+      }
+    }
+  } /* END .profile-color-lists */
+
+  .profile-palette-lists {
+    h1 {
+      background-color: $purple;
+    }
+
+    h2 {
+      color: $purple;
+      border-bottom: 1px solid $purple;
+    }
+
+    h3 {
+      margin: 0 0 5px 0;
+    }
+
+    button {
+      background-color: $purple;
+      border: 1px solid $purple;
+
+      &:hover {
+        background-color: $purplehover;
+        border: 1px solid $purplehover;
+      }
+    }
+  } /* END .profile-palette-lists */
+
 } /* END .profile */
 
 .white-bg {
