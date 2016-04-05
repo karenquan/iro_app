@@ -2,11 +2,11 @@ var mongoose = require('mongoose'),
     debug    = require('debug')('app:models');
 
 var colorSchema = new mongoose.Schema({
-  hex: String,
+  hex:     String,
   rgb: {
-    red: String,
+    red:   String,
     green: String,
-    blue: String
+    blue:  String
   }
 });
 
@@ -16,22 +16,23 @@ var colorListSchema = mongoose.Schema({
 });
 
 var paletteSchema = new mongoose.Schema({
-  name: String,
+  id:     Number,
+  name:   { type: String, required: true },
   colors: Array
 });
 
 var paletteListSchema = mongoose.Schema({
-  name: { type: String, required: true },
+  name:     { type: String, required: true },
   palettes: [paletteSchema]
 });
 
 var userSchema = new mongoose.Schema({
-  firstName: { type: String, required: true },
-  lastName:  { type: String, required: true },
-  email:     { type: String, required: true, unique: true },
-  password:  { type: String, required: true },
-  colorLists: [colorListSchema],
-  paletteLists: [paletteListSchema],
+  firstName:      { type: String, required: true },
+  lastName:       { type: String, required: true },
+  email:          { type: String, required: true, unique: true },
+  password:       { type: String, required: true },
+  colorLists:     [colorListSchema],
+  paletteLists:   [paletteListSchema],
   customPalettes: [paletteListSchema]
 });
 

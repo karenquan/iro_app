@@ -847,6 +847,13 @@ footer {
   .profile .name {
     text-align: center;
     text-transform: uppercase; }
+  .profile .profile-color-lists a, .profile .profile-palette-lists a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    font-size: 0; }
+    .profile .profile-color-lists a:hover, .profile .profile-palette-lists a:hover {
+      box-shadow: 0 0 5px #000; }
   .profile .profile-color-lists h1, .profile .profile-palette-lists h1 {
     padding: 10px;
     color: #FFF;
@@ -855,7 +862,8 @@ footer {
     text-transform: uppercase;
     font-weight: normal; }
   .profile .profile-color-lists form, .profile .profile-palette-lists form {
-    text-align: center; }
+    text-align: center;
+    margin: 40px 0 0 0; }
   .profile .profile-color-lists input, .profile .profile-palette-lists input {
     vertical-align: bottom;
     padding: 20px 20px 20px 0;
@@ -866,6 +874,23 @@ footer {
       background-color: #CCC;
       border: 1px solid #CCC;
       cursor: not-allowed; }
+  .profile .profile-color-lists .list-container, .profile .profile-palette-lists .list-container {
+    max-height: 150px;
+    overflow: scroll;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-justify-content: space-between;
+    justify-content: space-between; }
+  .profile .profile-color-lists .delete, .profile .profile-palette-lists .delete {
+    color: #B0171F;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s; }
+    .profile .profile-color-lists .delete:hover, .profile .profile-palette-lists .delete:hover {
+      font-weight: bold;
+      cursor: pointer; }
   .profile .profile-color-lists h1 {
     background-color: #8397af; }
   .profile .profile-color-lists h2 {
@@ -877,6 +902,15 @@ footer {
     .profile .profile-color-lists button:hover {
       background-color: #637d9c;
       border: 1px solid #637d9c; }
+  .profile .profile-color-lists .profile-color-list .individual-color {
+    display: inline-block;
+    width: 24%;
+    text-align: center;
+    margin: 0 0 10px 0; }
+    .profile .profile-color-lists .profile-color-list .individual-color .color-block {
+      display: inline-block;
+      width: 100%;
+      height: 30px; }
   .profile .profile-palette-lists h1 {
     background-color: #9793A1; }
   .profile .profile-palette-lists h2 {
@@ -890,6 +924,15 @@ footer {
     .profile .profile-palette-lists button:hover {
       background-color: #7c7788;
       border: 1px solid #7c7788; }
+  .profile .profile-palette-lists .profile-palette-list {
+    margin: 0 0 10px 0;
+    width: 100%; }
+  .profile .profile-palette-lists .individual-palette {
+    width: 100%; }
+    .profile .profile-palette-lists .individual-palette span {
+      display: inline-block;
+      height: 30px;
+      width: 20%; }
 
 /* END .profile */
 .white-bg {

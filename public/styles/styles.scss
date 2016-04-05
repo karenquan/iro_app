@@ -734,6 +734,17 @@ footer {
   }
 
   .profile-color-lists, .profile-palette-lists {
+    a {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      font-size: 0;
+
+      &:hover {
+        box-shadow: 0 0 5px $black;
+      }
+    }
+
     h1 {
       padding: 10px;
       color: $white;
@@ -747,6 +758,7 @@ footer {
 
     form {
       text-align: center;
+      margin: 40px 0 0 0;
     }
 
     input {
@@ -764,9 +776,31 @@ footer {
         cursor: not-allowed;
       }
     }
+
+    .list-container {
+      max-height: 150px;
+      overflow: scroll;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+    }
+
+    .delete {
+      color: $error;
+      @include transition(0.5s);
+
+      &:hover {
+        font-weight: bold;
+        cursor: pointer;
+      }
+    }
   } /* END .profile-color-lists & .profile-palette-lists */
 
   .profile-color-lists {
+
     h1 {
       background-color: $blue;
     }
@@ -783,6 +817,22 @@ footer {
       &:hover {
         background-color: $bluehover;
         border: 1px solid $bluehover;
+      }
+    }
+
+    .profile-color-list {
+
+      .individual-color {
+        display: inline-block;
+        width: 24%;
+        text-align: center;
+        margin: 0 0 10px 0;
+
+        .color-block {
+          display: inline-block;
+          width: 100%;
+          height: 30px;
+        }
       }
     }
   } /* END .profile-color-lists */
@@ -810,11 +860,24 @@ footer {
         border: 1px solid $purplehover;
       }
     }
-  } /* END .profile-palette-lists */
 
+    .profile-palette-list {
+      margin: 0 0 10px 0;
+      width: 100%;
+    }
+
+    .individual-palette {
+      width: 100%;
+
+      span {
+        display: inline-block;
+        height: 30px;
+        width: 20%;
+      }
+    }
+  } /* END .profile-palette-lists */
 } /* END .profile */
 
 .white-bg {
   background-color: white;
 }
-

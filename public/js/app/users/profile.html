@@ -6,12 +6,15 @@
       <div class="profile-color-lists">
         <div class="profile-color-list" ng-repeat="colorList in vm.currentUser.colorLists track by $index">
           <h2>{{colorList.name}}</h2>
-          <div ng-repeat="color in colorList.colors">
-            <span style="background-color: #{{color.hex}}"></span>
-            <span>#{{color.hex}}</span>
-            <span>rgb({{color.rgb.red}}, {{color.rgb.green}}, {{color.rgb.blue}})</span>
-          </div>
-        </div>
+          <div class="list-container">
+            <div class="individual-color" ng-repeat="color in colorList.colors">
+              <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color-block" style="background-color: #{{color.hex}}"></span></a>
+              <span>#{{color.hex}}</span> |
+              <span>rgb({{color.rgb.red}}, {{color.rgb.green}}, {{color.rgb.blue}})</span> |
+              <span class="delete">[ x ]</span>
+            </div>
+          </div> <!-- end list-container -->
+        </div> <!-- end profile-color-list -->
       <form name="colorListForm" ng-submit="vm.createColorList();" novalidate>
         <input type="text" ng-model="vm.customColorListName" required>
         <button ng-disabled="colorListForm.$invalid">Create List</button>
@@ -24,9 +27,11 @@
       <div class="profile-palette-lists">
         <div class="profile-palette-list" ng-repeat="paletteList in vm.currentUser.paletteLists track by $index">
           <h2>{{paletteList.name}}</h2>
-          <div ng-repeat="palette in paletteList.palettes track by $index">
-            <h3>{{palette.name}}</h3>
-            <span ng-repeat="color in palette.colors track by $index">#{{color}}</span>
+          <div class="list-container">
+            <div class="individual-palette" ng-repeat="palette in paletteList.palettes track by $index">
+              <h3>{{palette.name}}</h3>
+              <a ui-sref="palette({ id:{{palette.id}} })"><span class="individual-palette" ng-repeat="color in palette.colors track by $index" style="background-color: #{{color}}"></span></a>
+            </div>
           </div>
         </div>
         <form name="paletteListForm" ng-submit="vm.createPaletteList();">
