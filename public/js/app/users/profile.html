@@ -12,7 +12,7 @@
           <h2>{{colorList.name}}</h2>
           <div ng-repeat="color in colorList.colors">
             <span style="background-color: #{{color.hex}}"></span>
-            <span>{{color.hex}}</span>
+            <span>#{{color.hex}}</span>
             <span>rgb({{color.rgb.red}}, {{color.rgb.green}}, {{color.rgb.blue}})</span>
           </div>
         </div>
@@ -28,6 +28,10 @@
       <div class="profile-palette-lists">
         <div class="profile-palette-list" ng-repeat="paletteList in vm.currentUser.paletteLists track by $index">
           <h2>{{paletteList.name}}</h2>
+          <div ng-repeat="palette in paletteList.palettes track by $index">
+
+            <span ng-repeat="color in palette.colors track by $index">#{{color}}</span>
+          </div>
         </div>
       </div>
     </section>
