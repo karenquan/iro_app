@@ -185,11 +185,11 @@ button {
   background-color: $green;
   color: $white;
   text-transform: uppercase;
-  width: 50%;
   display: inline-block;
   margin: 0 auto;
   padding: 20px;
   outline: none;
+  width: 30%;
 
   &:hover {
     border: 1px solid $greenhover;
@@ -599,10 +599,6 @@ footer {
   margin: 30px 0 0 0;
 
   button {
-    font-family: 'Didot', serif;
-    font-size: 16px;
-    display: block;
-    margin: 40px auto 20px;
     background-color: $green;
     border: 1px solid $green;
 
@@ -610,6 +606,22 @@ footer {
       background-color: $greenhover;
       border: 1px solid $greenhover;
     }
+
+    &:disabled {
+      background-color: $gray;
+      border: 1px solid $gray;
+      cursor: not-allowed;
+
+      &:hover {
+        background-color: $gray;
+        border: 1px solid $gray;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .custom-palette-name {
+    margin: 40px 0 0 0;
   }
 
   .create-palette-colors {
@@ -693,10 +705,6 @@ footer {
   .user-options {
     text-align: center;
     margin: 20px 0;
-
-    button {
-      width: 30%;
-    }
   }
 }
 
@@ -757,6 +765,17 @@ footer {
     margin: 0 0 50px 0;
   }
 
+  form {
+    text-align: center;
+    margin: 40px 0 0 0;
+  }
+
+  input {
+    vertical-align: bottom;
+    padding: 20px 20px 20px 0;
+    width: 30%;
+  }
+
   .name {
     text-align: center;
     text-transform: uppercase;
@@ -793,27 +812,6 @@ footer {
         float: right;
         font-size: 12px;
         vertical-align: middle;
-      }
-    }
-
-    form {
-      text-align: center;
-      margin: 40px 0 0 0;
-    }
-
-    input {
-      vertical-align: bottom;
-      padding: 20px 20px 20px 0;
-      width: 30%;
-    }
-
-    button {
-      width: 30%;
-
-      &:disabled {
-        background-color: $gray;
-        border: 1px solid $gray;
-        cursor: not-allowed;
       }
     }
 
@@ -857,6 +855,18 @@ footer {
       &:hover {
         background-color: $bluehover;
         border: 1px solid $bluehover;
+      }
+
+      &:disabled {
+        background-color: $gray;
+        border: 1px solid $gray;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: $gray;
+          border: 1px solid $gray;
+          cursor: not-allowed;
+        }
       }
     }
 
@@ -903,6 +913,18 @@ footer {
       &:hover {
         background-color: $purplehover;
         border: 1px solid $purplehover;
+      }
+
+      &:disabled {
+        background-color: $gray;
+        border: 1px solid $gray;
+        cursor: not-allowed;
+
+        &:hover {
+          background-color: $gray;
+          border: 1px solid $gray;
+          cursor: not-allowed;
+        }
       }
     }
 

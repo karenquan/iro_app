@@ -15,6 +15,7 @@
     vm.createColorList     = createColorList;
     vm.createCustomPalette = createCustomPalette;
     vm.createPaletteList   = createPaletteList;
+    vm.customPaletteName;
     vm.currentUser;
     vm.removeColor         = removeColor;
     vm.removeColorList     = removeColorList;
@@ -39,7 +40,34 @@
 
     function createCustomPalette(colors) {
       $log.info('make custom palette');
-      var palette = [];
+      var palette = {};
+      var colors = [];
+
+      var customHexOne   = vm.customHexOne,
+          customHexTwo   = vm.customHexTwo,
+          customHexThree = vm.customHexThree,
+          customHexFour  = vm.customHexFour,
+          customHexFive  = vm.customHexFive;
+
+      if (customHexOne !== undefined && ( customHexOne.length == 3) || customHexOne.length == 6) {
+        colors.push(customHexOne);
+      }
+      if (customHexTwo !== undefined && ( customHex.length == 3) || customHexTwo.length == 6) {
+        colors.push(customHexTwo);
+      }
+      if (vm.customHexThree !== undefined && ( customHex.length == 3) || customHexThree.length == 6) {
+        colors.push(customHexThree);
+      }
+      if (vm.customHexFour !== undefined && ( customHex.length == 3) || customHexFour.length == 6) {
+        colors.push(customHexFour);
+      }
+      if (customHexFive !== undefined && ( customHex.length == 3) || customHexFive.length == 6) {
+        colors.push(customHexFive);
+      }
+      $log.info(colors);
+
+      palette.colors = colors;
+      palette.name = vm.customPaletteName;
 
       vm.userService
         .createCustomPalette(palette)

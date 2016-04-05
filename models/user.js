@@ -26,6 +26,11 @@ var paletteListSchema = mongoose.Schema({
   palettes: [paletteSchema]
 });
 
+var customPaletteListSchema = mongoose.Schema({
+  name:   { type: String, required: true },
+  colors: Array
+});
+
 var userSchema = new mongoose.Schema({
   firstName:      { type: String, required: true },
   lastName:       { type: String, required: true },
@@ -33,7 +38,7 @@ var userSchema = new mongoose.Schema({
   password:       { type: String, required: true },
   colorLists:     [colorListSchema],
   paletteLists:   [paletteListSchema],
-  customPalettes: [paletteListSchema]
+  customPalettes: [customPaletteListSchema]
 });
 
 userSchema.plugin(require('mongoose-bcrypt'));

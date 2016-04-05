@@ -10,16 +10,16 @@
     function userService($log, $http, authService, token) {
       $log.info("user service loaded");
       var service = {
-        addColorToList: addColorToList,
-        addPaletteToList: addPaletteToList,
-        create:            create,
-        createColorList:   createColorList,
+        addColorToList:      addColorToList,
+        addPaletteToList:    addPaletteToList,
+        create:              create,
+        createColorList:     createColorList,
         createCustomPalette: createCustomPalette,
-        createPaletteList: createPaletteList,
-        removeColor:       removeColor,
-        removeColorList:   removeColorList,
-        removePalette:     removePalette,
-        removePaletteList: removePaletteList
+        createPaletteList:   createPaletteList,
+        removeColor:         removeColor,
+        removeColorList:     removeColorList,
+        removePalette:       removePalette,
+        removePaletteList:   removePaletteList
       };
 
       return service;
@@ -101,8 +101,27 @@
         return promise;
       }
 
-      function createCustomPalette() {
+      function createCustomPalette(name, colors) {
+        var data = {
+          name: name,
+          colors: colors
+        };
 
+        var promise = $http({
+          method: "POST",
+          url: "/api/users/me/createCustomPalette",
+          data: data,
+          headers: {
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(res) {
+          $log.info("successful custom palette creation");
+        }, function(error) {
+          $log.error(error);
+        });
+
+        return promise;
       }
 
       function createPaletteList(listName) {
@@ -119,7 +138,7 @@
           }
         })
         .then(function(res){
-          $log.info("successful palette list creation:", res);
+          $log.info("successful palette list creation");
         });
 
         return promise;

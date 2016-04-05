@@ -34,7 +34,7 @@
             </div>
           </div>
         </div>
-        <form name="paletteListForm" ng-submit="vm.createPaletteList();">
+        <form name="paletteListForm" ng-submit="vm.createPaletteList();" novalidate>
           <input type="text" ng-model="vm.customPaletteListName" required>
           <button ng-disabled="paletteListForm.$invalid">Create Palette List</button>
         </form>
@@ -46,22 +46,23 @@
     </section>
 
     <section class="create-palette">
-      <form name="createPalette">
+      <form name="customPaletteForm" ng-submit="vm.createCustomPalette();" novalidate>
         <div class="create-palette-colors">
-          <span style="background-color: #{{hexOne}}"></span>
-          <span style="background-color: #{{hexTwo}}"></span>
-          <span style="background-color: #{{hexThree}}"></span>
-          <span style="background-color: #{{hexFour}}"></span>
-          <span style="background-color: #{{hexFive}}"></span>
+          <span style="background-color: #{{vm.customHexOne}}"></span>
+          <span style="background-color: #{{vm.customHexTwo}}"></span>
+          <span style="background-color: #{{vm.customHexThree}}"></span>
+          <span style="background-color: #{{vm.customHexFour}}"></span>
+          <span style="background-color: #{{vm.customHexFive}}"></span>
         </div>
         <div class="create-palette-hex">
-          <div><span>#</span> <input type="text" ng-model="hexOne" placeholder="FFFFFF" maxlength="6"></div>
-          <div><span>#</span> <input type="text" ng-model="hexTwo" placeholder="FFFFFF" maxlength="6"></div>
-          <div><span>#</span> <input type="text" ng-model="hexThree" placeholder="FFFFFF" maxlength="6"></div>
-          <div><span>#</span> <input type="text" ng-model="hexFour" placeholder="FFFFFF" maxlength="6"></div>
-          <div><span>#</span> <input type="text" ng-model="hexFive" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexOne" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexTwo" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexThree" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexFour" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexFive" placeholder="FFFFFF" maxlength="6"></div>
         </div>
-        <button ng-click="vm.createCustomPalette();">Create Custom Palette</button>
+        <input type="text" ng-model="vm.customPaletteName" class="custom-palette-name" required>
+        <button ng-disabled="customPaletteForm.$invalid">Create Custom Palette</button>
       </form>
     </section>
   </div>

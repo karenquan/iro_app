@@ -467,11 +467,11 @@ button {
   background-color: #83af9c;
   color: #FFF;
   text-transform: uppercase;
-  width: 50%;
   display: inline-block;
   margin: 0 auto;
   padding: 20px;
-  outline: none; }
+  outline: none;
+  width: 30%; }
   button:hover {
     border: 1px solid #639c84;
     background-color: #639c84; }
@@ -750,15 +750,21 @@ footer {
 .create-palette {
   margin: 30px 0 0 0; }
   .create-palette button {
-    font-family: 'Didot', serif;
-    font-size: 16px;
-    display: block;
-    margin: 40px auto 20px;
     background-color: #83af9c;
     border: 1px solid #83af9c; }
     .create-palette button:hover {
       background-color: #639c84;
       border: 1px solid #639c84; }
+    .create-palette button:disabled {
+      background-color: #CCC;
+      border: 1px solid #CCC;
+      cursor: not-allowed; }
+      .create-palette button:disabled:hover {
+        background-color: #CCC;
+        border: 1px solid #CCC;
+        cursor: not-allowed; }
+  .create-palette .custom-palette-name {
+    margin: 40px 0 0 0; }
   .create-palette .create-palette-colors span {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -816,8 +822,6 @@ footer {
   .individual-palette .user-options, .individual-color .user-options {
     text-align: center;
     margin: 20px 0; }
-    .individual-palette .user-options button, .individual-color .user-options button {
-      width: 30%; }
 
 .individual-palette .individual-palette-colors {
   text-align: center; }
@@ -863,6 +867,13 @@ footer {
   /* END .profile-custom-palette-lists */ }
   .profile section {
     margin: 0 0 50px 0; }
+  .profile form {
+    text-align: center;
+    margin: 40px 0 0 0; }
+  .profile input {
+    vertical-align: bottom;
+    padding: 20px 20px 20px 0;
+    width: 30%; }
   .profile .name {
     text-align: center;
     text-transform: uppercase; }
@@ -885,19 +896,6 @@ footer {
     float: right;
     font-size: 12px;
     vertical-align: middle; }
-  .profile .profile-color-lists form, .profile .profile-palette-lists form {
-    text-align: center;
-    margin: 40px 0 0 0; }
-  .profile .profile-color-lists input, .profile .profile-palette-lists input {
-    vertical-align: bottom;
-    padding: 20px 20px 20px 0;
-    width: 30%; }
-  .profile .profile-color-lists button, .profile .profile-palette-lists button {
-    width: 30%; }
-    .profile .profile-color-lists button:disabled, .profile .profile-palette-lists button:disabled {
-      background-color: #CCC;
-      border: 1px solid #CCC;
-      cursor: not-allowed; }
   .profile .profile-color-lists .list-container, .profile .profile-palette-lists .list-container {
     max-height: 150px;
     overflow: scroll;
@@ -926,6 +924,14 @@ footer {
     .profile .profile-color-lists button:hover {
       background-color: #637d9c;
       border: 1px solid #637d9c; }
+    .profile .profile-color-lists button:disabled {
+      background-color: #CCC;
+      border: 1px solid #CCC;
+      cursor: not-allowed; }
+      .profile .profile-color-lists button:disabled:hover {
+        background-color: #CCC;
+        border: 1px solid #CCC;
+        cursor: not-allowed; }
   .profile .profile-color-lists .profile-color-list .individual-color {
     display: inline-block;
     width: 24%;
@@ -951,6 +957,14 @@ footer {
     .profile .profile-palette-lists button:hover {
       background-color: #7c7788;
       border: 1px solid #7c7788; }
+    .profile .profile-palette-lists button:disabled {
+      background-color: #CCC;
+      border: 1px solid #CCC;
+      cursor: not-allowed; }
+      .profile .profile-palette-lists button:disabled:hover {
+        background-color: #CCC;
+        border: 1px solid #CCC;
+        cursor: not-allowed; }
   .profile .profile-palette-lists .profile-palette-list {
     margin: 0 0 10px 0;
     width: 100%; }

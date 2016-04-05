@@ -2,16 +2,17 @@
 var User = require("../models/user");
 
 module.exports = {
-  addColorToList:    addColorToList,
-  addPaletteToList:  addPaletteToList,
-  create:            create,
-  createColorList:   createColorList,
-  createPaletteList: createPaletteList,
-  me:                me,
-  removeColor:       removeColor,
-  removeColorList:   removeColorList,
-  removePalette:     removePalette,
-  removePaletteList: removePaletteList
+  addColorToList:      addColorToList,
+  addPaletteToList:    addPaletteToList,
+  create:              create,
+  createColorList:     createColorList,
+  createCustomPalette: createCustomPalette,
+  createPaletteList:   createPaletteList,
+  me:                  me,
+  removeColor:         removeColor,
+  removeColorList:     removeColorList,
+  removePalette:       removePalette,
+  removePaletteList:   removePaletteList
 };
 
 function addColorToList(req, res, next) {
@@ -130,8 +131,29 @@ function createPaletteList(req, res, next) {
     });
 }
 
+function createCustomPalette(req, res, next) {
+  var data = req.body;
+  User
+    .findOne({ email: req.decoded.email }).exec()
+    .then(function(user) {
+      console.log(user);
+      user.customPalettes.push(data);
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+
+        console.log(user);
+        res.send(user);
+      });
+    })
+    .catch(function(error) {
+      console.log("error trying to create custom palette");
+      res.send(error);
+    });
+}
+
 function me(req, res, next) {
-  // console.log("attempting to find user in database");
   User
     .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
