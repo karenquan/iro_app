@@ -5,9 +5,9 @@
     .module("app")
     .controller("ColorsController", ColorsController);
 
-  ColorsController.$inject = ["$log", "colorService", "$http", "tokenService"];
+  ColorsController.$inject = ["$log", "colorService", "$http", "tokenService", "authService"];
 
-  function ColorsController($log, colorService, $http, token) {
+  function ColorsController($log, colorService, $http, token, authService) {
     var vm = this;
 
     // BINDINGS
@@ -43,16 +43,9 @@
     }
 
     function getCurrentUserColorLists() {
-      $http({
-        method: "GET",
-        url: "/api/users/me",
-        headers: {
-          "authorization": "bearer " + token.retrieve()
-        }
-      })
+      authService.currentUser()
       .then(function(response) {
-        // $log.info(response.data);
-        var user = response.data;
+        var user = response;
         vm.currentUserColorLists = user.colorLists;
       }, function(error) {
         $log.error(error);

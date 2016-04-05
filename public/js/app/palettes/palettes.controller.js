@@ -5,16 +5,22 @@
     .module("app")
     .controller("PalettesController", PalettesController);
 
-  PalettesController.$inject = ["$log", "$http", "palettesService"];
+  PalettesController.$inject = ["$log", "$http", "palettesService", "tokenService"];
 
-  function PalettesController($log, $http, palettesService) {
+  function PalettesController($log, $http, palettesService, token) {
     var vm = this;
 
     // BINDINGS
+    vm.getCurrentUserPaletteLists;
     vm.palette;
+
     getPalette();
 
     // FUNCTIONS
+    function getCurrentUserPaletteLists() {
+
+    }
+
     function getPalette() {
       palettesService
         .getPalette()

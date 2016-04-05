@@ -11,6 +11,7 @@
     $log.info("auth service loaded");
     var service = {
       currentUser: currentUser,
+      currentUserTokenData: currentUserTokenData,
       isLoggedIn: isLoggedIn,
       login: login,
       logout: logout,
@@ -20,6 +21,23 @@
     return service;
 
     function currentUser() {
+
+      var user = $http({
+        method: "GET",
+        url: "/api/users/me",
+        headers: {
+          "authorization": "bearer " + token.retrieve()
+        }
+      })
+      .then(function(response) {
+        $log.info(response.data);
+        return response.data; // current user
+      });
+
+      return user;
+    }
+
+    function currentUserTokenData() {
       var tokenData = token.decode();
 
       $log.info("current user retrieved:", tokenData);
