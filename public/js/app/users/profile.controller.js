@@ -49,25 +49,25 @@
           customHexFour  = vm.customHexFour,
           customHexFive  = vm.customHexFive;
 
-      if (customHexOne !== undefined && ( customHexOne.length == 3) || customHexOne.length == 6) {
+      if (customHexOne !== undefined && (customHexOne.length == 3 || customHexOne.length == 6)) {
         colors.push(customHexOne);
       }
-      if (customHexTwo !== undefined && ( customHex.length == 3) || customHexTwo.length == 6) {
+      if (customHexTwo !== undefined && (customHexTwo.length == 3 || customHexTwo.length == 6)) {
         colors.push(customHexTwo);
       }
-      if (vm.customHexThree !== undefined && ( customHex.length == 3) || customHexThree.length == 6) {
+      if (customHexThree !== undefined && (customHexThree.length == 3 || customHexThree.length == 6)) {
         colors.push(customHexThree);
       }
-      if (vm.customHexFour !== undefined && ( customHex.length == 3) || customHexFour.length == 6) {
+      if (customHexFour !== undefined && (customHexFour.length == 3 || customHexFour.length == 6)) {
         colors.push(customHexFour);
       }
-      if (customHexFive !== undefined && ( customHex.length == 3) || customHexFive.length == 6) {
-        colors.push(customHexFive);
+      if (customHexFive !== undefined && (customHexFive.length == 3 || customHexFive.length == 6))  {
+        colors.push(vm.customHexFive);
       }
-      $log.info(colors);
 
       palette.colors = colors;
       palette.name = vm.customPaletteName;
+      $log.info(palette);
 
       vm.userService
         .createCustomPalette(palette)

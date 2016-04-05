@@ -133,10 +133,10 @@ function createPaletteList(req, res, next) {
 
 function createCustomPalette(req, res, next) {
   var data = req.body;
+  console.log(data);
   User
     .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
-      console.log(user);
       user.customPalettes.push(data);
       user.save(function(error, user) {
         if (error) {

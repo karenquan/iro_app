@@ -880,7 +880,8 @@ footer {
   .profile .profile-color-lists h1, .profile .profile-palette-lists h1, .profile .profile-custom-palette-lists h1 {
     padding: 10px;
     color: #FFF;
-    font-weight: normal; }
+    font-weight: normal;
+    margin: 30px 0; }
   .profile .profile-color-lists a, .profile .profile-palette-lists a {
     display: inline-block;
     height: 100%;

@@ -101,16 +101,16 @@
         return promise;
       }
 
-      function createCustomPalette(name, colors) {
-        var data = {
-          name: name,
-          colors: colors
-        };
+      function createCustomPalette(palette) {
+        // var data = {
+        //   name: name,
+        //   colors: colors
+        // };
 
         var promise = $http({
           method: "POST",
           url: "/api/users/me/createCustomPalette",
-          data: data,
+          data: palette,
           headers: {
             "authorization": "bearer " + token.retrieve()
           }
