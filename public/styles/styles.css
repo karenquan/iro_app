@@ -877,6 +877,11 @@ footer {
   .profile .profile-color-lists h2, .profile .profile-color-lists h3, .profile .profile-palette-lists h2, .profile .profile-palette-lists h3 {
     text-transform: uppercase;
     font-weight: normal; }
+  .profile .profile-color-lists h2 span, .profile .profile-palette-lists h2 span {
+    font-family: 'Playfair Display', serif;
+    float: right;
+    font-size: 12px;
+    vertical-align: middle; }
   .profile .profile-color-lists form, .profile .profile-palette-lists form {
     text-align: center;
     margin: 40px 0 0 0; }

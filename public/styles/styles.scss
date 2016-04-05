@@ -782,6 +782,15 @@ footer {
       font-weight: normal;
     }
 
+    h2 {
+      span {
+        font-family: 'Playfair Display', serif;
+        float: right;
+        font-size: 12px;
+        vertical-align: middle;
+      }
+    }
+
     form {
       text-align: center;
       margin: 40px 0 0 0;

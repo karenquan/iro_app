@@ -6,6 +6,9 @@
       <a class="hex" ui-sref="color({ hex: '{{color}}' })">#{{color}}</a>
     </div>
   </div>
+  <p>Number of Views: {{vm.palette.numViews}}</p>
+  <p>Number of Votes: {{vm.palette.numVotes}}</p>
+  <p>Rank: {{vm.palette.rank}}</p>
   <div class="user-options" ng-show="vm.currentUserPaletteLists.length > 0">
     <select ng-model="vm.selectedListId">
     <option value="{{paletteList._id}}" ng-repeat="paletteList in vm.currentUserPaletteLists track by $index">{{paletteList.name}}</option>

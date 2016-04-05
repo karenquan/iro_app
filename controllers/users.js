@@ -8,7 +8,8 @@ module.exports = {
   createColorList: createColorList,
   createPaletteList: createPaletteList,
   me:  me,
-  removeColorFromList: removeColorFromList
+  removeColorFromList: removeColorFromList,
+  removeColorList: removeColorList
 };
 
 function addColorToList(req, res, next) {
@@ -145,14 +146,29 @@ function removeColorFromList(req, res, next) {
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
-      // console.log("found user to remove a color from a list", user);
-      // var listWithColorToRemove = user.colorLists.filter(function(list) {
-      //   list._id ==
-      // });
+
+
       res.send(user);
     })
     .catch(function(error) {
       console.log("error trying to remove a color");
+      next(error);
+    });
+}
+
+function removeColorList(req, res, next) {
+  console.log("MADE IT INTO COLOR LIST REMOVAL");
+  console.log(req.body);
+  User
+    .findOne({email: req.decoded.email}).exec()
+    .then(function(user) {
+      console.log(user);
+      user.colorLists.id(req.body.listId).remove();
+      user.save();
+      res.send(user);
+    })
+    .catch(function(error) {
+      console.log("error trying to remove a color list");
       next(error);
     });
 }

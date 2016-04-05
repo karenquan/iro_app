@@ -3,9 +3,10 @@
     <h1 class="name">{{vm.currentUser.firstName}} {{vm.currentUser.lastName}}</h1>
     <section class="profile-color-lists">
       <h1>Color Lists</h1>
+
       <div class="profile-color-lists">
         <div class="profile-color-list" ng-repeat="colorList in vm.currentUser.colorLists track by $index">
-          <h2>{{colorList.name}}</h2>
+          <h2>{{colorList.name}} <span class="delete" ng-click="vm.removeColorList(colorList._id);">delete list</span></h2>
           <div class="list-container">
             <div class="individual-color" ng-repeat="color in colorList.colors track by $index">
               <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color-block" style="background-color: #{{color.hex}}"></span></a>

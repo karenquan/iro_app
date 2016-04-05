@@ -16,6 +16,7 @@
     vm.createPaletteList = createPaletteList;
     vm.currentUser;
     vm.removeColor = removeColor;
+    vm.removeColorList = removeColorList;
     vm.userService = userService;
 
     getCurrentUser();
@@ -67,6 +68,18 @@
         .removeColorFromList(colorListId, colorId)
         .then(function(res) {
           $log.info("profile controller // removed color");
+          getCurrentUser();
+        }, function(error) {
+          $log.error(error);
+        });
+    }
+
+    function removeColorList(listId) {
+      $log.info(listId);
+      vm.userService
+        .removeColorList(listId)
+        .then(function(res) {
+          $log.info("profile controller // removed color list");
           getCurrentUser();
         }, function(error) {
           $log.error(error);
