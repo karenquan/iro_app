@@ -11,6 +11,7 @@ module.exports = {
   me:                  me,
   removeColor:         removeColor,
   removeColorList:     removeColorList,
+  removeCustomPalette: removeCustomPalette,
   removePalette:       removePalette,
   removePaletteList:   removePaletteList
 };
@@ -209,6 +210,25 @@ function removeColorList(req, res, next) {
     .catch(function(error) {
       console.log("error trying to remove a color list");
       next(error);
+    });
+}
+
+function removeCustomPalette(req, res, next) {
+  console.log("MADE IT INTO CUSTOM PALETTE REMOVAL");
+  var data = req.body;
+  User
+    .findOne({ email: req.decoded.email }).exec()
+    .then(function(user) {
+      user.customPalettes.id(data.paletteId).remove();
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
+    })
+    .catch(function(error) {
+      res.send(error);
     });
 }
 

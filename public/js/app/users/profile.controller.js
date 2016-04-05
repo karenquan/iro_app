@@ -19,6 +19,7 @@
     vm.currentUser;
     vm.removeColor         = removeColor;
     vm.removeColorList     = removeColorList;
+    vm.removeCustomPalette = removeCustomPalette;
     vm.removePalette       = removePalette;
     vm.removePaletteList   = removePaletteList;
     vm.userService         = userService;
@@ -125,6 +126,18 @@
         .removeColorList(listId)
         .then(function(res) {
           $log.info("profile controller // removed color list");
+          getCurrentUser();
+        }, function(error) {
+          $log.error(error);
+        });
+    }
+
+    function removeCustomPalette(paletteId) {
+      $log.info("cusom palette id to remove:", paletteId);
+      vm.userService
+        .removeCustomPalette(paletteId)
+        .then(function(res) {
+          $log.info("profile controller // removed custom palette");
           getCurrentUser();
         }, function(error) {
           $log.error(error);

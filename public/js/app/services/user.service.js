@@ -18,6 +18,7 @@
         createPaletteList:   createPaletteList,
         removeColor:         removeColor,
         removeColorList:     removeColorList,
+        removeCustomPalette: removeCustomPalette,
         removePalette:       removePalette,
         removePaletteList:   removePaletteList
       };
@@ -102,11 +103,6 @@
       }
 
       function createCustomPalette(palette) {
-        // var data = {
-        //   name: name,
-        //   colors: colors
-        // };
-
         var promise = $http({
           method: "POST",
           url: "/api/users/me/createCustomPalette",
@@ -184,6 +180,27 @@
         })
         .then(function(res) {
           $log.info("successful color list removal");
+        });
+
+        return promise;
+      }
+
+      function removeCustomPalette(paletteId) {
+        var data = {
+          paletteId: paletteId
+        };
+
+        var promise = $http({
+          method: "DELETE",
+          url: "/api/users/me/removeCustomPalette",
+          data: data,
+          headers: {
+            "Content-Type": "application/json",
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(res) {
+          $log.info("successful custom palette removal");
         });
 
         return promise;

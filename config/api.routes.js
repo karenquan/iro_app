@@ -15,6 +15,7 @@ router.post("/users/me/createPaletteList", token.authenticate, usersController.c
 router.post("/users/me/addColorToList", token.authenticate, usersController.addColorToList);
 router.delete("/users/me/removeColor", token.authenticate, usersController.removeColor);
 router.delete("/users/me/removeColorList", token.authenticate, usersController.removeColorList);
+router.delete("/users/me/removeCustomPalette", token.authenticate, usersController.removeCustomPalette);
 router.post("/users/me/addPaletteToList", token.authenticate, usersController.addPaletteToList);
 router.delete("/users/me/removePalette", token.authenticate, usersController.removePalette);
 router.delete("/users/me/removePaletteList", token.authenticate, usersController.removePaletteList);
