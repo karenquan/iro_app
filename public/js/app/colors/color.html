@@ -1,8 +1,9 @@
 <section class="container offset individual-color">
   <h1>{{vm.color.title}}</h1>
   <div class="individual-color-block" style="background-color: #{{vm.color.hex}}"></div>
-  <select>
-    <option ng-repeat="color in vm.currentUserColors track by $index">{{color.name}}</option>
+  <select ng-model="vm.selectedListId">
+    <option value="{{color._id}}" ng-repeat="color in vm.currentUserColorLists track by $index">{{color.name}}</option>
   </select>
-
+  <p>{{vm.selectedListId}}</p>
+  <button ng-click="vm.addColorToList();">Add color</button>
 </section>

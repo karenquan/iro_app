@@ -2,10 +2,38 @@
 var User = require("../models/user");
 
 module.exports = {
+  addColorToList: addColorToList,
   create: create,
   createColorList: createColorList,
   me:  me
 };
+
+function addColorToList(req, res, next) {
+  var data = req.body;
+  console.log("list to add color to:", data.listId);
+  console.log("color to add:", data.color);
+  User
+    .findOne({email: req.decoded.email}).exec()
+    .then(function(user) {
+      console.log("found user to add color to list");
+      var selectedList = user.colorLists.filter(function(list) {
+        return list._id == data.listId;
+      });
+      var color = {
+        hex: data.color.hex,
+        rgb: data.color.rgb
+      };
+      console.log(color);
+      selectedList[0].colors.push(color);
+      console.log(selectedList);
+      user.save();
+      res.send(user);
+    })
+    .catch(function(error) {
+      console.log("error trying to add a color to a list");
+      next(error);
+    });
+}
 
 function create(req, res, next) {
   User
@@ -36,9 +64,6 @@ function create(req, res, next) {
 };
 
 function createColorList(req, res, next) {
-  console.log("attempting to create a color list");
-  // console.log(req.body);
-
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
