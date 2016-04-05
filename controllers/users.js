@@ -21,19 +21,13 @@ function addColorToList(req, res, next) {
   User
     .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
-      console.log("found user to add color to list");
-      var selectedList = user.colorLists.filter(function(list) {
-        return list._id == data.listId;
-      });
       var color = {
         hex: data.color.hex,
         rgb: data.color.rgb
       };
-      console.log(color);
-      selectedList[0].colors.push(color);
-      console.log(selectedList);
+      user.colorLists.id(data.listId).colors.push(color);
       user.save(function(error, user) {
-        if (err) {
+        if (error) {
           res.send(err);
         }
         res.send(user);
