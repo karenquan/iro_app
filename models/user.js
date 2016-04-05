@@ -3,7 +3,11 @@ var mongoose = require('mongoose'),
 
 var colorSchema = new mongoose.Schema({
   hex: String,
-  rgb: Array
+  rgb: {
+    red: String,
+    green: String,
+    blue: String
+  }
 });
 
 var colorListSchema = mongoose.Schema({

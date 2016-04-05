@@ -14,6 +14,7 @@
     vm.authService = authService;
     vm.createColorList = createColorList;
     vm.currentUser;
+    vm.createPaletteList = createPaletteList;
     vm.userService = userService;
 
     getCurrentUser();
@@ -21,12 +22,23 @@
     // FUNCTIONS
     function createColorList() {
       vm.userService
-        .createColorList(vm.currentUser, vm.customListName)
+        .createColorList(vm.currentUser, vm.customColorListName)
         .then(function(res) {
-          $log.info("profile controller create color list creation");
+          $log.info("profile controller // create color list creation");
           getCurrentUser();
         }, function(error) {
           $log.error(error);
+        });
+    }
+
+    function createPaletteList() {
+      vm.userService
+        .createPaletteList(vm.customPaletteListName)
+        .then(function(res) {
+          $log.info("profile controller // create palette list creation ");
+          getCurrentUser();
+        }, function(error) {
+
         });
     }
 
@@ -41,6 +53,7 @@
       .then(function(res) {
         $log.info("successful user retrieval", res.data);
         vm.currentUser = res.data;
+        $log.info(vm.currentUser.colorLists);
       }, function(error) {
         $log.info("error in user retrieval");
       });

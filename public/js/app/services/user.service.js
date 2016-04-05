@@ -11,7 +11,8 @@
       $log.info("user service loaded");
       var service = {
         create: create,
-        createColorList: createColorList
+        createColorList: createColorList,
+        createPaletteList: createPaletteList
       };
 
       return service;
@@ -48,6 +49,28 @@
         .then(function(res) {
           $log.info("successful color list creation", res);
 
+        });
+
+        return promise;
+      }
+
+      function createPaletteList(listName) {
+        var data = {
+          name: listName
+        };
+
+        var promise = $http({
+          method: "POST",
+          url: "/api/users/me/createPaletteList",
+          data: data,
+          headers: {
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(res){
+          $log.info("successful palette list creation:", res);
+        }, function(error) {
+          $log.error(error);
         });
 
         return promise;

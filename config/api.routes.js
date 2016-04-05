@@ -10,6 +10,7 @@ router.post("/users/", usersController.create);
 // router.put("/users/me", usersController.update);
 router.get("/users/me", token.authenticate, usersController.me);
 router.post("/users/me/createColorList", token.authenticate, usersController.createColorList);
+router.post("/users/me/createPaletteList", token.authenticate, usersController.createPaletteList);
 router.post("/users/me/addColorToList", token.authenticate, usersController.addColorToList);
 router.post("/users/me/token", token.authenticate, token.refresh);
 

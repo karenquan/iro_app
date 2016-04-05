@@ -5,6 +5,7 @@ module.exports = {
   addColorToList: addColorToList,
   create: create,
   createColorList: createColorList,
+  createPaletteList: createPaletteList,
   me:  me
 };
 
@@ -68,12 +69,27 @@ function createColorList(req, res, next) {
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
       console.log("found user for creating color list");
-      user.colorLists.push(req.body); //adding color list
+      user.colorLists.push(req.body); //adding color list name
       user.save();
       res.send(user);
     })
     .catch(function(error) {
       console.log("error trying to create a color list");
+      next(error);
+    });
+}
+
+function createPaletteList(req, res, next) {
+  User
+    .findOne({email: req.decoded.email}).exec()
+    .then(function(user) {
+      console.log("found user for creating a palette list");
+      user.paletteLists.push(req.body); //adding palette list name
+      user.save();
+      res.send(user);
+    })
+    .catch(function(error) {
+      console.log("error trying to create a palette list");
       next(error);
     });
 }
