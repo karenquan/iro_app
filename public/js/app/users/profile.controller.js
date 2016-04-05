@@ -11,13 +11,14 @@
     var vm = this;
 
     // BINDINGS
-    vm.authService = authService;
-    vm.createColorList = createColorList;
+    vm.authService       = authService;
+    vm.createColorList   = createColorList;
     vm.createPaletteList = createPaletteList;
     vm.currentUser;
-    vm.removeColor = removeColor;
-    vm.removePalette = removePalette;
-    vm.userService = userService;
+    vm.removeColor       = removeColor;
+    vm.removeColorList   = removeColorList;
+    vm.removePalette     = removePalette;
+    vm.userService       = userService;
 
     getCurrentUser();
 

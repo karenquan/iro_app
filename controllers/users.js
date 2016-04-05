@@ -2,15 +2,15 @@
 var User = require("../models/user");
 
 module.exports = {
-  addColorToList: addColorToList,
-  addPaletteToList: addPaletteToList,
-  create: create,
-  createColorList: createColorList,
+  addColorToList:    addColorToList,
+  addPaletteToList:  addPaletteToList,
+  create:            create,
+  createColorList:   createColorList,
   createPaletteList: createPaletteList,
-  me:  me,
-  removeColor: removeColor,
-  removeColorList: removeColorList,
-  removePalette: removePalette
+  me:                me,
+  removeColor:       removeColor,
+  removeColorList:   removeColorList,
+  removePalette:     removePalette
 };
 
 function addColorToList(req, res, next) {
@@ -61,8 +61,12 @@ function addPaletteToList(req, res, next) {
         colors: data.palette.colors
       };
       selectedList[0].palettes.push(palette);
-      user.save();
-      res.send(user);
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
     });
 }
 
@@ -81,7 +85,6 @@ function create(req, res, next) {
           id:        user._id
         }
       });
-
     }).catch(function(error) {
       console.log("error :(");
         if (error.message.match(/E11000/)) {
@@ -89,7 +92,6 @@ function create(req, res, next) {
         } else {
           error.status = 422;
         }
-
         next(error);
       });;
 };
@@ -100,8 +102,12 @@ function createColorList(req, res, next) {
     .then(function(user) {
       console.log("found user for creating color list");
       user.colorLists.push(req.body); //adding color list name
-      user.save();
-      res.send(user);
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
     })
     .catch(function(error) {
       console.log("error trying to create a color list");
@@ -116,8 +122,12 @@ function createPaletteList(req, res, next) {
     .then(function(user) {
       console.log("found user for creating a palette list");
       user.paletteLists.push(req.body); //adding palette list name
-      user.save();
-      res.send(user);
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
     })
     .catch(function(error) {
       console.log("error trying to create a palette list");
@@ -199,7 +209,6 @@ function removePalette(req, res, next) {
         }
         res.send(user);
       });
-
     })
     .catch(function(error) {
       console.log("error trying to remove a palette");
