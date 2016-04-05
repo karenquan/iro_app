@@ -5,13 +5,34 @@
     .module("app")
     .factory("palettesService", palettesService);
 
-  palettesService.$inject = ["$log", "$http", "$stateParams"];
+  palettesService.$inject = ["$log", "$http", "$stateParams", "tokenService"];
 
-  function palettesService($log, $http, $stateParams) {
+  function palettesService($log, $http, $stateParams, token) {
     var service = {
+      addPaletteToList: addPaletteToList,
       getTopPalettes: getTopPalettes,
       getPalette: getPalette
     };
+
+    function addPaletteToList(listId, palette) {
+      var data = {
+        listId: listId,
+        palette: palette
+      };
+      var promise = $http({
+        method: "POST",
+        url: "/api/users/me/addPaletteToList",
+        data: data,
+        headers: {
+          "authorization": "bearer " + token.retrieve()
+        }
+      })
+      .then(function(response) {
+        $log.info("successfully added palette to list");
+      });
+
+      return promise;
+    }
 
     function getTopPalettes() {
       var topPalettes = $http({

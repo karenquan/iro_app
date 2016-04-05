@@ -12,8 +12,8 @@
 
     var service = {
       addColorToList: addColorToList,
-      getColor: getColor,
-      getTopColors: getTopColors,
+      getColor:       getColor,
+      getTopColors:   getTopColors,
     };
 
     function addColorToList(listId, color) {
@@ -45,21 +45,18 @@
         url: "/colors/" + hex
       })
       .then(function(res){
-        // $log.info(res.data[0]);
         return res.data[0]; //color object
       });
 
       return color;
     }
 
-    // NEED TO WRITE THIS FUNCTION
     function getTopColors() {
       var topColors = $http({
         method: "GET",
         url: "/colors/top"
       })
       .then(function(res) {
-        // $log.info(res.data);
         return res.data; //top colors object
       });
 

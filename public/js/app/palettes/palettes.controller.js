@@ -5,44 +5,35 @@
     .module("app")
     .controller("PalettesController", PalettesController);
 
-  PalettesController.$inject = ["$log", "$http", "palettesService", "tokenService", "authService"];
+  PalettesController.$inject = ["$log", "palettesService", "authService"];
 
-  function PalettesController($log, $http, palettesService, token, authService) {
+  function PalettesController($log, palettesService, authService) {
     var vm = this;
 
     // BINDINGS
     vm.addPaletteToList = addPaletteToList;
+    vm.authService = authService;
     vm.currentUserPaletteLists;
-    // vm.getCurrentUserPaletteLists;
     vm.palette;
+    vm.palettesService = palettesService;
 
     getPalette();
     getCurrentUserPaletteLists();
 
     // FUNCTIONS
     function addPaletteToList() {
-      var data = {
-        listId: vm.selectedListId,
-        palette: vm.palette
-      };
-      $log.info(data);
-      $http({
-        method: "POST",
-        url: "/api/users/me/addPaletteToList",
-        data: data,
-        headers: {
-          "authorization": "bearer " + token.retrieve()
-        }
-      })
-      .then(function(res) {
-        $log.info('added palette to list:', res);
-      }, function(error) {
-        $log.error(error);
-      });
+      vm.palettesService
+        .addPaletteToList(vm.selectedListId, vm.palette)
+        .then(function(response) {
+          $log.info("successfully added palette to list");
+        }, function(error) {
+          $log.error(error);
+        });
     }
 
     function getCurrentUserPaletteLists() {
-      authService.currentUser()
+      vm.authService
+      .currentUser()
       .then(function(response) {
         $log.info(response);
         var user = response;
@@ -53,7 +44,7 @@
     }
 
     function getPalette() {
-      palettesService
+      vm.palettesService
         .getPalette()
         .then(function(response) {
           $log.info(response);

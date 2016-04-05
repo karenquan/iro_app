@@ -5,9 +5,9 @@
     .module("app")
     .controller("ColorsController", ColorsController);
 
-  ColorsController.$inject = ["$log", "colorService", "$http", "tokenService", "authService"];
+  ColorsController.$inject = ["$log", "colorService", "tokenService", "authService"];
 
-  function ColorsController($log, colorService, $http, token, authService) {
+  function ColorsController($log, colorService, token, authService) {
     var vm = this;
 
     // BINDINGS
@@ -21,13 +21,12 @@
     getColor();
     getCurrentUserColorLists();
 
-
     // FUNCTIONS
     function addColorToList() {
       vm.colorService
         .addColorToList(vm.selectedListId, vm.color)
         .then(function(res) {
-          $log.info("colors controller // successful add color to list");
+          $log.info("colors controller // successfully add color to list");
         }, function(error) {
           $log.error(error);
         });
