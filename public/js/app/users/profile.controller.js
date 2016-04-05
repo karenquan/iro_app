@@ -37,6 +37,7 @@
         .then(function(res) {
           $log.info("profile controller // create palette list creation ");
           getCurrentUser();
+          vm.customPaletteListName = '';
         }, function(error) {
 
         });

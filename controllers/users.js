@@ -3,6 +3,7 @@ var User = require("../models/user");
 
 module.exports = {
   addColorToList: addColorToList,
+  addPaletteToList: addPaletteToList,
   create: create,
   createColorList: createColorList,
   createPaletteList: createPaletteList,
@@ -33,6 +34,26 @@ function addColorToList(req, res, next) {
     .catch(function(error) {
       console.log("error trying to add a color to a list");
       next(error);
+    });
+}
+
+function addPaletteToList(req, res, next) {
+  var data = req.body;
+  console.log("list to add palette to:", data.listId);
+  console.log("palette colors to add:", data.palette.colors);
+  User
+    .findOne({email: req.decoded.email}).exec()
+    .then(function(user) {
+      console.log("found user to add palette to list");
+      var selectedList = user.paletteLists.filter(function(list) {
+        return list._id == data.listId;
+      });
+      var palette = {
+        colors: data.palette.colors
+      };
+      selectedList[0].palettes.push(palette);
+      user.save();
+      res.send(user);
     });
 }
 

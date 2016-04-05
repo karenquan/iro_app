@@ -11,14 +11,36 @@
     var vm = this;
 
     // BINDINGS
+    vm.addPaletteToList = addPaletteToList;
     vm.currentUserPaletteLists;
-    vm.getCurrentUserPaletteLists;
+    // vm.getCurrentUserPaletteLists;
     vm.palette;
 
     getPalette();
     getCurrentUserPaletteLists();
 
     // FUNCTIONS
+    function addPaletteToList() {
+      var data = {
+        listId: vm.selectedListId,
+        palette: vm.palette
+      };
+      $log.info(data);
+      $http({
+        method: "POST",
+        url: "/api/users/me/addPaletteToList",
+        data: data,
+        headers: {
+          "authorization": "bearer " + token.retrieve()
+        }
+      })
+      .then(function(res) {
+        $log.info('added palette to list:', res);
+      }, function(error) {
+        $log.error(error);
+      });
+    }
+
     function getCurrentUserPaletteLists() {
       authService.currentUser()
       .then(function(response) {

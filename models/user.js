@@ -16,7 +16,7 @@ var colorListSchema = mongoose.Schema({
 });
 
 var paletteSchema = new mongoose.Schema({
-  colors: [colorSchema]
+  colors: Array
 });
 
 var paletteListSchema = mongoose.Schema({

@@ -7,6 +7,7 @@
     </div>
   </div>
   <select ng-model="vm.selectedListId">
-    <option value="{{}}" ng-repeat="paletteList in vm.currentUserPaletteLists track by $index">{{paletteList.name}}</option>
+    <option value="{{paletteList._id}}" ng-repeat="paletteList in vm.currentUserPaletteLists track by $index">{{paletteList.name}}</option>
   </select>
+  <button ng-click="vm.addPaletteToList();">Add Palette to List</button>
 </section>

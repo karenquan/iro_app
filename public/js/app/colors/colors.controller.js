@@ -36,7 +36,7 @@
           "authorization": "bearer " + token.retrieve()
         }
       }, function(res) {
-        $log.info('successfully added color?', res);
+        $log.info('successfully added color', res);
       }, function(error) {
         $log.error(error);
       });
