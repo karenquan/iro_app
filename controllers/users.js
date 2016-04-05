@@ -8,7 +8,7 @@ module.exports = {
   createColorList: createColorList,
   createPaletteList: createPaletteList,
   me:  me,
-  removeColorFromList: removeColorFromList,
+  removeColor: removeColor,
   removeColorList: removeColorList,
   removePalette: removePalette
 };
@@ -130,7 +130,6 @@ function me(req, res, next) {
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
-      // console.log("found user:", user);
       res.send(user);
       // res.json({
       //   success: true,
@@ -144,16 +143,21 @@ function me(req, res, next) {
     });
 };
 
-function removeColorFromList(req, res, next) {
+function removeColor(req, res, next) {
   console.log('remove color from list');
   var data = req.body;
   console.log(data);
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
-        // NEED TO FINISH
-
-      res.send(user);
+      var colorList = user.colorLists.id(data.colorListId);
+      colorList.colors.id(data.colorId).remove();
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
     })
     .catch(function(error) {
       console.log("error trying to remove a color");
@@ -167,7 +171,6 @@ function removeColorList(req, res, next) {
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
-      console.log(user);
       user.colorLists.id(req.body.listId).remove();
       user.save(function(error, user) {
         if (error) {
@@ -175,7 +178,6 @@ function removeColorList(req, res, next) {
         }
         res.send(user);
       });
-      res.send(user);
     })
     .catch(function(error) {
       console.log("error trying to remove a color list");
@@ -189,7 +191,6 @@ function removePalette(req, res, next) {
   User
     .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
-      console.log("data", data);
       var paletteList = user.paletteLists.id(data.paletteListId);
       paletteList.palettes.id(data.paletteId).remove();
       user.save(function(error, user) {

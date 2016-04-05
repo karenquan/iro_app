@@ -13,7 +13,7 @@
         create: create,
         createColorList: createColorList,
         createPaletteList: createPaletteList,
-        removeColorFromList: removeColorFromList,
+        removeColor: removeColor,
         removeColorList: removeColorList,
         removePalette: removePalette
       };
@@ -76,7 +76,7 @@
         return promise;
       }
 
-      function removeColorFromList(colorListId, colorId) {
+      function removeColor(colorListId, colorId) {
         var data = {
           colorListId: colorListId,
           colorId: colorId
@@ -84,7 +84,7 @@
         $log.info(data);
         var promise = $http({
           method: "DELETE",
-          url: "/api/users/me/removeColorFromList",
+          url: "/api/users/me/removeColor",
           data: data,
           headers: {
             "Content-Type": "application/json",
