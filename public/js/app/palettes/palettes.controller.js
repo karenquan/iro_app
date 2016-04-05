@@ -5,9 +5,9 @@
     .module("app")
     .controller("PalettesController", PalettesController);
 
-  PalettesController.$inject = ["$log", "palettesService", "authService"];
+  PalettesController.$inject = ["$log", "palettesService", "authService", "userService"];
 
-  function PalettesController($log, palettesService, authService) {
+  function PalettesController($log, palettesService, authService, userService) {
     var vm = this;
 
     // BINDINGS
@@ -16,13 +16,15 @@
     vm.currentUserPaletteLists;
     vm.palette;
     vm.palettesService = palettesService;
+    vm.userService = userService;
 
     getPalette();
     getCurrentUserPaletteLists();
 
     // FUNCTIONS
     function addPaletteToList() {
-      vm.palettesService
+      $log.info('hmmm');
+      vm.userService
         .addPaletteToList(vm.selectedListId, vm.palette)
         .then(function(response) {
           $log.info("successfully added palette to list");
@@ -38,6 +40,7 @@
         $log.info(response);
         var user = response;
         vm.currentUserPaletteLists = user.paletteLists;
+        $log.info("current user palettes:", user.paletteLists);
       }, function(error) {
         $log.error(error);
       });

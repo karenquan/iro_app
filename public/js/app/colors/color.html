@@ -6,9 +6,12 @@
    <p>Number of Votes: {{vm.color.numVotes}}</p>
    <p>Rank: {{vm.color.rank}}</p>
    <div class="user-options" ng-show="vm.currentUserColorLists.length > 0">
-    <select ng-model="vm.selectedListId">
-      <option value="{{colorList._id}}" ng-repeat="colorList in vm.currentUserColorLists track by $index">{{colorList.name}}</option>
-    </select>
-    <button ng-click="vm.addColorToList();">Add color</button>
+    <form name="colorListForm">
+      <select ng-model="vm.selectedListId" required>
+        <option value="">Select a Color List</option>
+        <option value="{{colorList._id}}" ng-repeat="colorList in vm.currentUserColorLists track by $index">{{colorList.name}}</option>
+      </select>
+      <button ng-invalid="colorListForm.$invalid" ng-click="vm.addColorToList();">Add color</button>
+    </form>
    </div>
 </section>

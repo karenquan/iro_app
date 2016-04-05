@@ -11,15 +11,16 @@
     var vm = this;
 
     // BINDINGS
-    vm.authService       = authService;
-    vm.createColorList   = createColorList;
-    vm.createPaletteList = createPaletteList;
+    vm.authService         = authService;
+    vm.createColorList     = createColorList;
+    vm.createCustomPalette = createCustomPalette;
+    vm.createPaletteList   = createPaletteList;
     vm.currentUser;
-    vm.removeColor       = removeColor;
-    vm.removeColorList   = removeColorList;
-    vm.removePalette     = removePalette;
-    vm.removePaletteList = removePaletteList;
-    vm.userService       = userService;
+    vm.removeColor         = removeColor;
+    vm.removeColorList     = removeColorList;
+    vm.removePalette       = removePalette;
+    vm.removePaletteList   = removePaletteList;
+    vm.userService         = userService;
 
     getCurrentUser();
 
@@ -36,11 +37,25 @@
         });
     }
 
+    function createCustomPalette(colors) {
+      $log.info('make custom palette');
+      var palette = [];
+
+      vm.userService
+        .createCustomPalette(palette)
+        .then(function(res) {
+          $log.info("profile controller // create custom palette");
+          getCurrentUser();
+        }, function(error) {
+          $log.error(error);
+        });
+    }
+
     function createPaletteList() {
       vm.userService
         .createPaletteList(vm.customPaletteListName)
         .then(function(res) {
-          $log.info("profile controller // create palette list creation ");
+          $log.info("profile controller // create palette list creation");
           getCurrentUser();
           vm.customPaletteListName = '';
         }, function(error) {

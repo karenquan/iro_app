@@ -10,8 +10,10 @@
     function userService($log, $http, authService, token) {
       $log.info("user service loaded");
       var service = {
+        addPaletteToList: addPaletteToList,
         create:            create,
         createColorList:   createColorList,
+        createCustomPalette: createCustomPalette,
         createPaletteList: createPaletteList,
         removeColor:       removeColor,
         removeColorList:   removeColorList,
@@ -20,6 +22,26 @@
       };
 
       return service;
+
+      function addPaletteToList(listId, palette) {
+        var data = {
+          listId: listId,
+          palette: palette
+        };
+        var promise = $http({
+          method: "POST",
+          url: "/api/users/me/addPaletteToList",
+          data: data,
+          headers: {
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(response) {
+          $log.info("successfully added palette to list");
+        });
+
+        return promise;
+      }
 
       function create(data) {
         var promise = $http({
@@ -55,6 +77,10 @@
         });
 
         return promise;
+      }
+
+      function createCustomPalette() {
+
       }
 
       function createPaletteList(listName) {
