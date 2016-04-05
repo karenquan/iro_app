@@ -877,7 +877,7 @@ footer {
   .profile .profile-color-lists h2, .profile .profile-color-lists h3, .profile .profile-palette-lists h2, .profile .profile-palette-lists h3 {
     text-transform: uppercase;
     font-weight: normal; }
-  .profile .profile-color-lists h2 span, .profile .profile-palette-lists h2 span {
+  .profile .profile-color-lists h2 span, .profile .profile-color-lists h3 span, .profile .profile-palette-lists h2 span, .profile .profile-palette-lists h3 span {
     font-family: 'Playfair Display', serif;
     float: right;
     font-size: 12px;
@@ -938,7 +938,10 @@ footer {
     color: #9793A1;
     border-bottom: 1px solid #9793A1; }
   .profile .profile-palette-lists h3 {
-    margin: 0 0 5px 0; }
+    margin: 0 0 5px 0;
+    text-align: left; }
+    .profile .profile-palette-lists h3 span {
+      text-align: right; }
   .profile .profile-palette-lists button {
     background-color: #9793A1;
     border: 1px solid #9793A1; }

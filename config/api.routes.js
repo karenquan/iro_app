@@ -15,6 +15,7 @@ router.post("/users/me/addColorToList", token.authenticate, usersController.addC
 router.delete("/users/me/removeColorFromList", token.authenticate, usersController.removeColorFromList);
 router.delete("/users/me/removeColorList", token.authenticate, usersController.removeColorList);
 router.post("/users/me/addPaletteToList", token.authenticate, usersController.addPaletteToList);
+router.delete("/users/me/removePalette", token.authenticate, usersController.removePalette);
 router.post("/users/me/token", token.authenticate, token.refresh);
 
 router.post("/token", token.create);

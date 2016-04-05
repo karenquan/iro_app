@@ -9,7 +9,8 @@ module.exports = {
   createPaletteList: createPaletteList,
   me:  me,
   removeColorFromList: removeColorFromList,
-  removeColorList: removeColorList
+  removeColorList: removeColorList,
+  removePalette: removePalette
 };
 
 function addColorToList(req, res, next) {
@@ -30,8 +31,12 @@ function addColorToList(req, res, next) {
       console.log(color);
       selectedList[0].colors.push(color);
       console.log(selectedList);
-      user.save();
-      res.send(user);
+      user.save(function(error, user) {
+        if (err) {
+          res.send(err);
+        }
+        res.send(user);
+      });
     })
     .catch(function(error) {
       console.log("error trying to add a color to a list");
@@ -146,7 +151,7 @@ function removeColorFromList(req, res, next) {
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
-
+        // NEED TO FINISH
 
       res.send(user);
     })
@@ -164,11 +169,39 @@ function removeColorList(req, res, next) {
     .then(function(user) {
       console.log(user);
       user.colorLists.id(req.body.listId).remove();
-      user.save();
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
       res.send(user);
     })
     .catch(function(error) {
       console.log("error trying to remove a color list");
+      next(error);
+    });
+}
+
+function removePalette(req, res, next) {
+  console.log("MADE IT INTO PALETTE REMOVAL");
+  var data = req.body;
+  User
+    .findOne({ email: req.decoded.email }).exec()
+    .then(function(user) {
+      console.log("data", data);
+      var paletteList = user.paletteLists.id(data.paletteListId);
+      paletteList.palettes.id(data.paletteId).remove();
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
+
+    })
+    .catch(function(error) {
+      console.log("error trying to remove a palette");
       next(error);
     });
 }

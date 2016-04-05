@@ -782,7 +782,7 @@ footer {
       font-weight: normal;
     }
 
-    h2 {
+    h2, h3 {
       span {
         font-family: 'Playfair Display', serif;
         float: right;
@@ -884,6 +884,11 @@ footer {
 
     h3 {
       margin: 0 0 5px 0;
+      text-align: left;
+
+      span {
+        text-align: right;
+      }
     }
 
     button {

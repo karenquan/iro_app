@@ -14,7 +14,8 @@
         createColorList: createColorList,
         createPaletteList: createPaletteList,
         removeColorFromList: removeColorFromList,
-        removeColorList: removeColorList
+        removeColorList: removeColorList,
+        removePalette: removePalette
       };
 
       return service;
@@ -115,6 +116,30 @@
         })
         .then(function(res) {
           $log.info("successful color list removal");
+        });
+
+        return promise;
+      }
+
+      function removePalette(paletteListId, paletteId) {
+        var data = {
+          paletteListId: paletteListId,
+          paletteId: paletteId
+        };
+
+        $log.info("remove palette list data", data);
+
+        var promise = $http({
+          method: "DELETE",
+          url: "/api/users/me/removePalette",
+          data: data,
+          headers: {
+            "Content-Type": "application/json",
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(res) {
+          $log.info("successful palette list removal");
         });
 
         return promise;
