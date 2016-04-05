@@ -5,15 +5,37 @@
     .module("app")
     .factory("colorService", colorService);
 
-  colorService.$inject = ["$log", "$http", "$stateParams"];
+  colorService.$inject = ["$log", "$http", "$stateParams", "tokenService"];
 
-  function colorService($log, $http, $stateParams) {
+  function colorService($log, $http, $stateParams, token) {
     $log.info('color service loaded');
 
     var service = {
+      addColorToList: addColorToList,
       getColor: getColor,
-      getTopColors: getTopColors
+      getTopColors: getTopColors,
     };
+
+    function addColorToList(listId, color) {
+      var data = {
+        listId: listId,
+        color: color
+      };
+
+      var promise = $http({
+        method: "POST",
+        url: "/api/users/me/addColorToList",
+        data: data,
+        headers: {
+          "authorization": "bearer " + token.retrieve()
+        }
+      })
+      .then(function(res) {
+        $log.info("successfully added color to list");
+      });
+
+      return promise;
+    }
 
     function getColor() {
       var hex = $stateParams.hex;

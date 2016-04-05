@@ -11,8 +11,10 @@
     var vm = this;
 
     // BINDINGS
+    vm.authService    = authService;
     vm.addColorToList = addColorToList; //pass id of selected list item
     vm.color;
+    vm.colorService   = colorService;
     vm.currentUserColorLists;
     vm.selectedListId;
 
@@ -22,28 +24,17 @@
 
     // FUNCTIONS
     function addColorToList() {
-      var data = {
-        listId: vm.selectedListId,
-        color: vm.color
-      };
-      $log.info(data);
-
-      $http({
-        method: "POST",
-        url: "/api/users/me/addColorToList",
-        data: data,
-        headers: {
-          "authorization": "bearer " + token.retrieve()
-        }
-      }, function(res) {
-        $log.info('successfully added color', res);
-      }, function(error) {
-        $log.error(error);
-      });
+      vm.colorService
+        .addColorToList(vm.selectedListId, vm.color)
+        .then(function(res) {
+          $log.info("colors controller // successful add color to list");
+        }, function(error) {
+          $log.error(error);
+        });
     }
 
     function getCurrentUserColorLists() {
-      authService.currentUser()
+      vm.authService.currentUser()
       .then(function(response) {
         var user = response;
         vm.currentUserColorLists = user.colorLists;
@@ -53,10 +44,9 @@
     }
 
     function getColor() {
-      colorService
+      vm.colorService
         .getColor()
         .then(function(response){
-        // $log.info(response);
         vm.color = response; //color object
         }, function(error) {
           $log.error(error);
