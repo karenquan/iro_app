@@ -754,11 +754,11 @@ footer {
     font-size: 16px;
     display: block;
     margin: 40px auto 20px;
-    background-color: #d590ae;
-    border: 1px solid #d590ae; }
+    background-color: #83af9c;
+    border: 1px solid #83af9c; }
     .create-palette button:hover {
-      background-color: #c76b93;
-      border: 1px solid #c76b93; }
+      background-color: #639c84;
+      border: 1px solid #639c84; }
   .create-palette .create-palette-colors span {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -859,10 +859,17 @@ footer {
 .profile {
   /* END .profile-color-lists & .profile-palette-lists */
   /* END .profile-color-lists */
-  /* END .profile-palette-lists */ }
+  /* END .profile-palette-lists */
+  /* END .profile-custom-palette-lists */ }
+  .profile section {
+    margin: 0 0 50px 0; }
   .profile .name {
     text-align: center;
     text-transform: uppercase; }
+  .profile .profile-color-lists h1, .profile .profile-palette-lists h1, .profile .profile-custom-palette-lists h1 {
+    padding: 10px;
+    color: #FFF;
+    font-weight: normal; }
   .profile .profile-color-lists a, .profile .profile-palette-lists a {
     display: inline-block;
     height: 100%;
@@ -870,10 +877,6 @@ footer {
     font-size: 0; }
     .profile .profile-color-lists a:hover, .profile .profile-palette-lists a:hover {
       box-shadow: 0 0 5px #000; }
-  .profile .profile-color-lists h1, .profile .profile-palette-lists h1 {
-    padding: 10px;
-    color: #FFF;
-    font-weight: normal; }
   .profile .profile-color-lists h2, .profile .profile-color-lists h3, .profile .profile-palette-lists h2, .profile .profile-palette-lists h3 {
     text-transform: uppercase;
     font-weight: normal; }
@@ -938,7 +941,7 @@ footer {
     color: #9793A1;
     border-bottom: 1px solid #9793A1; }
   .profile .profile-palette-lists h3 {
-    margin: 0 0 5px 0;
+    margin: 0;
     text-align: left; }
     .profile .profile-palette-lists h3 span {
       text-align: right; }
@@ -958,6 +961,8 @@ footer {
       display: inline-block;
       height: 30px;
       width: 20%; }
+  .profile .profile-custom-palette-lists h1 {
+    background-color: #83af9c; }
 
 /* END .profile */
 .white-bg {

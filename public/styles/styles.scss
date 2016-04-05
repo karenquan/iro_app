@@ -603,12 +603,12 @@ footer {
     font-size: 16px;
     display: block;
     margin: 40px auto 20px;
-    background-color: $pink;
-    border: 1px solid $pink;
+    background-color: $green;
+    border: 1px solid $green;
 
     &:hover {
-      background-color: $pinkhover;
-      border: 1px solid $pinkhover;
+      background-color: $greenhover;
+      border: 1px solid $greenhover;
     }
   }
 
@@ -753,10 +753,21 @@ footer {
 } /* END .individual-color */
 
 .profile {
+  section {
+    margin: 0 0 50px 0;
+  }
 
   .name {
     text-align: center;
     text-transform: uppercase;
+  }
+
+  .profile-color-lists, .profile-palette-lists, .profile-custom-palette-lists {
+    h1 {
+      padding: 10px;
+      color: $white;
+      font-weight: normal;
+    }
   }
 
   .profile-color-lists, .profile-palette-lists {
@@ -769,12 +780,6 @@ footer {
       &:hover {
         box-shadow: 0 0 5px $black;
       }
-    }
-
-    h1 {
-      padding: 10px;
-      color: $white;
-      font-weight: normal;
     }
 
     h2, h3 {
@@ -883,7 +888,7 @@ footer {
     }
 
     h3 {
-      margin: 0 0 5px 0;
+      margin: 0;
       text-align: left;
 
       span {
@@ -917,6 +922,12 @@ footer {
       }
     }
   } /* END .profile-palette-lists */
+
+  .profile-custom-palette-lists {
+    h1 {
+      background-color: $green;
+    }
+  } /* END .profile-custom-palette-lists */
 } /* END .profile */
 
 .white-bg {
