@@ -7,11 +7,11 @@
         <div class="profile-color-list" ng-repeat="colorList in vm.currentUser.colorLists track by $index">
           <h2>{{colorList.name}}</h2>
           <div class="list-container">
-            <div class="individual-color" ng-repeat="color in colorList.colors">
+            <div class="individual-color" ng-repeat="color in colorList.colors track by $index">
               <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color-block" style="background-color: #{{color.hex}}"></span></a>
               <span>#{{color.hex}}</span> |
               <span>rgb({{color.rgb.red}}, {{color.rgb.green}}, {{color.rgb.blue}})</span> |
-              <span class="delete">[ x ]</span>
+              <span class="delete" ng-click="vm.removeColor(colorList._id, color._id);">[ x ]</span>
             </div>
           </div> <!-- end list-container -->
         </div> <!-- end profile-color-list -->

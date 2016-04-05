@@ -7,7 +7,8 @@ module.exports = {
   create: create,
   createColorList: createColorList,
   createPaletteList: createPaletteList,
-  me:  me
+  me:  me,
+  removeColorFromList: removeColorFromList
 };
 
 function addColorToList(req, res, next) {
@@ -103,6 +104,7 @@ function createColorList(req, res, next) {
 }
 
 function createPaletteList(req, res, next) {
+  console.log(req.body);
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
@@ -118,11 +120,11 @@ function createPaletteList(req, res, next) {
 }
 
 function me(req, res, next) {
-  console.log("attempting to find user in database");
+  // console.log("attempting to find user in database");
   User
     .findOne({email: req.decoded.email}).exec()
     .then(function(user) {
-      console.log("found user:", user);
+      // console.log("found user:", user);
       res.send(user);
       // res.json({
       //   success: true,
@@ -135,3 +137,22 @@ function me(req, res, next) {
       next(error);
     });
 };
+
+function removeColorFromList(req, res, next) {
+  console.log('remove color from list');
+  var data = req.body;
+  console.log(data);
+  User
+    .findOne({email: req.decoded.email}).exec()
+    .then(function(user) {
+      // console.log("found user to remove a color from a list", user);
+      // var listWithColorToRemove = user.colorLists.filter(function(list) {
+      //   list._id ==
+      // });
+      res.send(user);
+    })
+    .catch(function(error) {
+      console.log("error trying to remove a color");
+      next(error);
+    });
+}

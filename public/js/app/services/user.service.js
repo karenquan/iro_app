@@ -12,7 +12,8 @@
       var service = {
         create: create,
         createColorList: createColorList,
-        createPaletteList: createPaletteList
+        createPaletteList: createPaletteList,
+        removeColorFromList: removeColorFromList
       };
 
       return service;
@@ -48,7 +49,6 @@
         })
         .then(function(res) {
           $log.info("successful color list creation", res);
-
         });
 
         return promise;
@@ -69,8 +69,27 @@
         })
         .then(function(res){
           $log.info("successful palette list creation:", res);
-        }, function(error) {
-          $log.error(error);
+        });
+
+        return promise;
+      }
+
+      function removeColorFromList(colorListId, colorId) {
+        var data = {
+          colorListId: colorListId,
+          colorId: colorId
+        };
+        $log.info(data);
+        var promise = $http({
+          method: "DELETE",
+          url: "/api/users/me/removeColorFromList",
+          data: data,
+          headers: {
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(res) {
+          $log.info("successful color removal");
         });
 
         return promise;

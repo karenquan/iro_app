@@ -13,8 +13,9 @@
     // BINDINGS
     vm.authService = authService;
     vm.createColorList = createColorList;
-    vm.currentUser;
     vm.createPaletteList = createPaletteList;
+    vm.currentUser;
+    vm.removeColor = removeColor;
     vm.userService = userService;
 
     getCurrentUser();
@@ -40,7 +41,7 @@
           getCurrentUser();
           vm.customPaletteListName = '';
         }, function(error) {
-
+          $log.error(error);
         });
     }
 
@@ -59,6 +60,17 @@
       }, function(error) {
         $log.info("error in user retrieval");
       });
+    }
+
+    function removeColor(colorListId, colorId) {
+      vm.userService
+        .removeColorFromList(colorListId, colorId)
+        .then(function(res) {
+          $log.info("profile controller // removed color");
+          getCurrentUser();
+        }, function(error) {
+          $log.error(error);
+        });
     }
   }
 })();

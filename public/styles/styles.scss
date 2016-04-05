@@ -670,11 +670,37 @@ footer {
   }
 } /* END .create-palette */
 
-.individual-palette {
+.individual-palette, .individual-color {
+  text-align: center;
 
   h1 {
+    font-family: 'Didot', serif;
     text-align: center;
+    text-transform: uppercase;
   }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+  .user-options {
+    text-align: center;
+    margin: 20px 0;
+
+    button {
+      width: 30%;
+    }
+  }
+}
+
+.individual-palette {
 
   .individual-palette-colors {
     text-align: center;

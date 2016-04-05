@@ -135,7 +135,6 @@ function findTokenInAuthHeader(req) {
 
   // If Authorization header found.
   if (header) {
-    console.log("AUTHORIZATION FOUND IN HEADER");
     // Check the Authorization header for the given pattern, and
     // set the token to the 2nd match group if it exists.
     var match = header.match(/(bearer|token) (.*)/i);

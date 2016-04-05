@@ -12,6 +12,7 @@ router.get("/users/me", token.authenticate, usersController.me);
 router.post("/users/me/createColorList", token.authenticate, usersController.createColorList);
 router.post("/users/me/createPaletteList", token.authenticate, usersController.createPaletteList);
 router.post("/users/me/addColorToList", token.authenticate, usersController.addColorToList);
+router.delete("/users/me/removeColorFromList", token.authenticate, usersController.removeColorFromList);
 router.post("/users/me/addPaletteToList", token.authenticate, usersController.addPaletteToList);
 router.post("/users/me/token", token.authenticate, token.refresh);
 

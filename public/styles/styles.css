@@ -800,8 +800,24 @@ footer {
     justify-content: space-between; }
 
 /* END .create-palette */
-.individual-palette h1 {
+.individual-palette, .individual-color {
   text-align: center; }
+  .individual-palette h1, .individual-color h1 {
+    font-family: 'Didot', serif;
+    text-align: center;
+    text-transform: uppercase; }
+  .individual-palette h2, .individual-color h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: normal;
+    text-align: center;
+    font-size: 30px; }
+  .individual-palette p, .individual-color p {
+    font-size: 15px; }
+  .individual-palette .user-options, .individual-color .user-options {
+    text-align: center;
+    margin: 20px 0; }
+    .individual-palette .user-options button, .individual-color .user-options button {
+      width: 30%; }
 
 .individual-palette .individual-palette-colors {
   text-align: center; }
