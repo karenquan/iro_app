@@ -11,31 +11,9 @@
     $log.info('color service loaded');
 
     var service = {
-      addColorToList: addColorToList,
       getColor:       getColor,
       getTopColors:   getTopColors,
     };
-
-    function addColorToList(listId, color) {
-      var data = {
-        listId: listId,
-        color: color
-      };
-
-      var promise = $http({
-        method: "POST",
-        url: "/api/users/me/addColorToList",
-        data: data,
-        headers: {
-          "authorization": "bearer " + token.retrieve()
-        }
-      })
-      .then(function(res) {
-        $log.info("successfully added color to list");
-      });
-
-      return promise;
-    }
 
     function getColor() {
       var hex = $stateParams.hex;

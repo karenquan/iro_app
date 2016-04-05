@@ -10,6 +10,7 @@
     function userService($log, $http, authService, token) {
       $log.info("user service loaded");
       var service = {
+        addColorToList: addColorToList,
         addPaletteToList: addPaletteToList,
         create:            create,
         createColorList:   createColorList,
@@ -22,6 +23,27 @@
       };
 
       return service;
+
+      function addColorToList(listId, color) {
+        var data = {
+          listId: listId,
+          color: color
+        };
+
+        var promise = $http({
+          method: "POST",
+          url: "/api/users/me/addColorToList",
+          data: data,
+          headers: {
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(res) {
+          $log.info("successfully added color to list");
+        });
+
+        return promise;
+      }
 
       function addPaletteToList(listId, palette) {
         var data = {
