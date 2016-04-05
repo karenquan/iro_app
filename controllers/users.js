@@ -10,7 +10,8 @@ module.exports = {
   me:                me,
   removeColor:       removeColor,
   removeColorList:   removeColorList,
-  removePalette:     removePalette
+  removePalette:     removePalette,
+  removePaletteList: removePaletteList
 };
 
 function addColorToList(req, res, next) {
@@ -18,7 +19,7 @@ function addColorToList(req, res, next) {
   console.log("list to add color to:", data.listId);
   console.log("color to add:", data.color);
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
       console.log("found user to add color to list");
       var selectedList = user.colorLists.filter(function(list) {
@@ -49,7 +50,7 @@ function addPaletteToList(req, res, next) {
   console.log("list to add palette to:", data.listId);
   console.log("palette colors to add:", data.palette.colors);
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
       console.log("found user to add palette to list");
       var selectedList = user.paletteLists.filter(function(list) {
@@ -98,7 +99,7 @@ function create(req, res, next) {
 
 function createColorList(req, res, next) {
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
       console.log("found user for creating color list");
       user.colorLists.push(req.body); //adding color list name
@@ -118,7 +119,7 @@ function createColorList(req, res, next) {
 function createPaletteList(req, res, next) {
   console.log(req.body);
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
       console.log("found user for creating a palette list");
       user.paletteLists.push(req.body); //adding palette list name
@@ -138,7 +139,7 @@ function createPaletteList(req, res, next) {
 function me(req, res, next) {
   // console.log("attempting to find user in database");
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
       res.send(user);
       // res.json({
@@ -158,7 +159,7 @@ function removeColor(req, res, next) {
   var data = req.body;
   console.log(data);
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
       var colorList = user.colorLists.id(data.colorListId);
       colorList.colors.id(data.colorId).remove();
@@ -179,7 +180,7 @@ function removeColorList(req, res, next) {
   console.log("MADE IT INTO COLOR LIST REMOVAL");
   console.log(req.body);
   User
-    .findOne({email: req.decoded.email}).exec()
+    .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
       user.colorLists.id(req.body.listId).remove();
       user.save(function(error, user) {
@@ -213,5 +214,21 @@ function removePalette(req, res, next) {
     .catch(function(error) {
       console.log("error trying to remove a palette");
       next(error);
+    });
+}
+
+function removePaletteList(req, res, next) {
+  console.log("MADE IT INTO PALETTE LIST REMOVAL");
+  var data = req.body;
+  User
+    .findOne({ email: req.decoded.email }).exec()
+    .then(function(user) {
+      user.paletteLists.id(data.listId).remove();
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
     });
 }

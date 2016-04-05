@@ -27,7 +27,7 @@
       <h1>Palette Lists</h1>
       <div class="profile-palette-lists">
         <div class="profile-palette-list" ng-repeat="paletteList in vm.currentUser.paletteLists track by $index">
-          <h2>{{paletteList.name}}</h2>
+          <h2>{{paletteList.name}} <span class="delete" ng-click="vm.removePaletteList(paletteList._id);">delete list</span></h2>
           <div class="list-container">
             <div class="individual-palette" ng-repeat="palette in paletteList.palettes track by $index">
               <h3>{{palette.name}} <span class="delete" ng-click="vm.removePalette(paletteList._id, palette._id);">[ x ]</span></h3>

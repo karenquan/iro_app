@@ -10,12 +10,13 @@
     function userService($log, $http, authService, token) {
       $log.info("user service loaded");
       var service = {
-        create: create,
-        createColorList: createColorList,
+        create:            create,
+        createColorList:   createColorList,
         createPaletteList: createPaletteList,
-        removeColor: removeColor,
-        removeColorList: removeColorList,
-        removePalette: removePalette
+        removeColor:       removeColor,
+        removeColorList:   removeColorList,
+        removePalette:     removePalette,
+        removePaletteList: removePaletteList
       };
 
       return service;
@@ -140,6 +141,27 @@
         })
         .then(function(res) {
           $log.info("successful palette list removal");
+        });
+
+        return promise;
+      }
+
+      function removePaletteList(listId) {
+        var data = {
+          listId: listId
+        };
+
+        var promise = $http({
+          method: "DELETE",
+          url: "/api/users/me/removePaletteList",
+          data: data,
+          headers: {
+            "Content-Type": "application/json",
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(res) {
+          $log.info("success palette list removal");
         });
 
         return promise;
