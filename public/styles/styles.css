@@ -591,21 +591,31 @@ footer {
         transition: 0.5s;
         font-size: 13px;
         display: inline-block;
-        width: 100%; }
+        width: 100%;
+        -webkit-box-shadow: 0 0 5px #CCC;
+        -moz-box-shadow: 0 0 5px #CCC;
+        box-shadow: 0 0 5px #CCC; }
         .home .top-colors .top-color span.hex {
           margin: 0 0 15px 0; }
         .home .top-colors .top-color span.color {
           height: 100%; }
           .home .top-colors .top-color span.color:hover {
+            -webkit-box-shadow: 0 0 5px #000;
+            -moz-box-shadow: 0 0 5px #000;
             box-shadow: 0 0 5px #000; }
   .home .top-palettes .top-palette {
-    margin: 20px 0 0 0; }
+    margin: 20px 0 0 0;
+    -webkit-box-shadow: 0 0 5px #CCC;
+    -moz-box-shadow: 0 0 5px #CCC;
+    box-shadow: 0 0 5px #CCC; }
     .home .top-palettes .top-palette a {
       color: #000; }
       .home .top-palettes .top-palette a.palette-link {
         display: block;
         height: 30px; }
         .home .top-palettes .top-palette a.palette-link:hover {
+          -webkit-box-shadow: 0 0 5px #000;
+          -moz-box-shadow: 0 0 5px #000;
           box-shadow: 0 0 5px #000; }
       .home .top-palettes .top-palette a:hover {
         color: #9793A1; }
@@ -807,20 +817,20 @@ footer {
     justify-content: space-between; }
 
 /* END .create-palette */
-.individual-palette, .individual-color {
+.individual-palette, .individual-color-show {
   text-align: center; }
-  .individual-palette h1, .individual-color h1 {
+  .individual-palette h1, .individual-color-show h1 {
     font-family: 'Didot', serif;
     text-align: center;
     text-transform: uppercase; }
-  .individual-palette h2, .individual-color h2 {
+  .individual-palette h2, .individual-color-show h2 {
     font-family: 'Playfair Display', serif;
     font-weight: normal;
     text-align: center;
     font-size: 30px; }
-  .individual-palette p, .individual-color p {
+  .individual-palette p, .individual-color-show p {
     font-size: 15px; }
-  .individual-palette .user-options, .individual-color .user-options {
+  .individual-palette .user-options, .individual-color-show .user-options {
     text-align: center;
     margin: 20px 0; }
 
@@ -865,35 +875,38 @@ footer {
     margin: 15px 0 0 0; }
 
 /* END .individual-palette */
-.individual-color {
+.individual-color-show {
   font-size: 0; }
-  .individual-color a {
+  .individual-color-show a {
     display: inline-block;
     height: 100%;
-    width: 100%; }
-    .individual-color a:hover {
+    width: 100%;
+    -webkit-box-shadow: 0 0 5px #CCC;
+    -moz-box-shadow: 0 0 5px #CCC;
+    box-shadow: 0 0 5px #CCC; }
+    .individual-color-show a:hover {
       -webkit-box-shadow: 0 0 5px #000;
       -moz-box-shadow: 0 0 5px #000;
       box-shadow: 0 0 5px #000; }
-  .individual-color h2 {
+  .individual-color-show h2 {
     font-size: 30px;
     padding: 10px 0; }
-    .individual-color h2 span {
+    .individual-color-show h2 span {
       font-size: 30px;
       color: #000;
       display: inline-block;
       width: 48%;
       text-align: center; }
-  .individual-color button, .individual-color select {
+  .individual-color-show button, .individual-color-show select {
     font-size: 14px; }
-  .individual-color span {
+  .individual-color-show span {
     font-size: 14px; }
-  .individual-color .individual-color-block {
+  .individual-color-show .individual-color-block {
     height: 250px;
     width: 100%;
-    -webkit-box-shadow: 0 0 5px #000;
-    -moz-box-shadow: 0 0 5px #000;
-    box-shadow: 0 0 5px #000; }
+    -webkit-box-shadow: 0 0 5px #CCC;
+    -moz-box-shadow: 0 0 5px #CCC;
+    box-shadow: 0 0 5px #CCC; }
 
 /* END .individual-color */
 .profile {
@@ -962,15 +975,6 @@ footer {
         background-color: #CCC;
         border: 1px solid #CCC;
         cursor: not-allowed; }
-  .profile .profile-color-lists .profile-color-list .individual-color {
-    display: inline-block;
-    width: 24%;
-    text-align: center;
-    margin: 0 0 10px 0; }
-    .profile .profile-color-lists .profile-color-list .individual-color .color-block {
-      display: inline-block;
-      width: 100%;
-      height: 30px; }
   .profile .profile-palette-lists h1 {
     background-color: #9793A1; }
   .profile .profile-palette-lists h2 {
@@ -1005,12 +1009,6 @@ footer {
 .white-bg {
   background-color: white; }
 
-.gray-border {
-  border: 1px solid #CCC; }
-
-.black-border {
-  border: 1px solid #000; }
-
 .col-1 {
   width: 100% !important; }
 
@@ -1029,7 +1027,10 @@ footer {
 .individual-palette {
   width: 100%; }
   .individual-palette a {
-    color: #000; }
+    color: #000;
+    -webkit-box-shadow: 0 0 5px #CCC;
+    -moz-box-shadow: 0 0 5px #CCC;
+    box-shadow: 0 0 5px #CCC; }
     .individual-palette a.palette-link {
       height: 100%;
       width: 100%;
@@ -1037,6 +1038,8 @@ footer {
       font-size: 0;
       margin: 0 0 20px 0; }
       .individual-palette a.palette-link:hover {
+        -webkit-box-shadow: 0 0 5px #000;
+        -moz-box-shadow: 0 0 5px #000;
         box-shadow: 0 0 5px #000; }
     .individual-palette a:hover {
       color: #9793A1; }
@@ -1070,6 +1073,28 @@ footer {
   font-size: 14px; }
 
 /* END .palette-search-results */
+.individual-color {
+  display: inline-block;
+  width: 24%;
+  text-align: center;
+  margin: 0 0 10px 0; }
+  .individual-color a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    -webkit-box-shadow: 0 0 5px #CCC;
+    -moz-box-shadow: 0 0 5px #CCC;
+    box-shadow: 0 0 5px #CCC;
+    font-size: 0; }
+    .individual-color a:hover {
+      -webkit-box-shadow: 0 0 5px #000;
+      -moz-box-shadow: 0 0 5px #000;
+      box-shadow: 0 0 5px #000; }
+  .individual-color .color {
+    display: inline-block;
+    width: 100%;
+    height: 30px; }
+
 /* ANIMATION */
 [ui-view].ng-enter {
   transition: all 1s ease;

@@ -10,9 +10,15 @@
   <article>
     <div class="container">
       <h1>Top Colors</h1>
-      <div class="top-colors">
+      <!-- <div class="top-colors">
         <div class="top-color" ng-repeat="color in vm.topColors track by $index">
-          <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" ng-style="{ 'background-color': '#{{color.hex}}', 'border': '{{color.hex}}' === 'FFFFFF' && '1px solid #CCC' }"></span></a>
+          <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" style="background-color: #{{color.hex}}"></span></a>
+          <span class="hex">#{{color.hex}}</span>
+        </div>
+      </div> -->
+      <div class="top-colors">
+        <div class="individual-color" ng-repeat="color in vm.topColors track by $index">
+          <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" style="background-color: #{{color.hex}}"></span></a>
           <span class="hex">#{{color.hex}}</span>
         </div>
       </div>
