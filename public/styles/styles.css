@@ -834,7 +834,9 @@ footer {
     display: inline-block;
     width: 20%;
     height: 250px; }
-    .individual-palette .individual-palette-colors > div span {
+    .individual-palette .individual-palette-colors > div span.hex {
+      font-size: 16px; }
+    .individual-palette .individual-palette-colors > div span.color-block {
       -webkit-transition: 0.5s;
       -moz-transition: 0.5s;
       transition: 0.5s;
@@ -842,7 +844,7 @@ footer {
       height: 90%;
       width: 100%;
       z-index: 1; }
-      .individual-palette .individual-palette-colors > div span:hover {
+      .individual-palette .individual-palette-colors > div span.color-block:hover {
         box-shadow: 0 0 5px #000;
         z-index: 2; }
     .individual-palette .individual-palette-colors > div a {
@@ -974,6 +976,9 @@ footer {
 .white-bg {
   background-color: white; }
 
+.gray-border {
+  border: 1px solid #CCC; }
+
 .col-1 {
   width: 100% !important; }
 
@@ -1004,6 +1009,7 @@ footer {
     .individual-palette a:hover {
       color: #9793A1; }
   .individual-palette h3 {
+    font-family: 'Playfair Display', serif;
     text-transform: uppercase;
     text-align: left;
     font-weight: normal;

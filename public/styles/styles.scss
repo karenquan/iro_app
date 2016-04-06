@@ -723,7 +723,11 @@ footer {
       width: 20%;
       height: 250px;
 
-      span {
+      span.hex {
+        font-size: 16px;
+      }
+
+      span.color-block {
         @include transition(0.5s);
         display: inline-block;
         height: 90%;
@@ -952,6 +956,10 @@ footer {
   background-color: white;
 }
 
+.gray-border {
+  border: 1px solid #CCC;
+}
+
 .col-1 {
   width: 100% !important;
 }
@@ -996,6 +1004,7 @@ footer {
   }
 
   h3 {
+    font-family: 'Playfair Display', serif;
     text-transform: uppercase;
     text-align: left;
     font-weight: normal;
