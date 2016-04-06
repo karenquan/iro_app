@@ -31,11 +31,13 @@
     }
 
     function searchPalettes() {
+      var defaultPage = 1,
+          defaultNumResults = 100;
+
       palettesService
-        .getPalettesByHex("vm.paletteSearchInput", "2")
+        .getPalettesByHex(vm.paletteSearchInput, defaultPage, defaultNumResults)
         .then(function(res) {
-          $log.info(":(");
-          $state.go("paletteSearch", { hex: vm.paletteSearchInput, page: "4" });
+          $state.go("paletteSearch", { hex: vm.paletteSearchInput, page: defaultPage, numResults: defaultNumResults });
         }, function(error) {
           $log.error(error);
         });
