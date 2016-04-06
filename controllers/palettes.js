@@ -52,13 +52,14 @@ function show(req, res, next) {
 
 function search(req, res, next) {
   var hex = req.params.hex;
-  var uri = process.env.COLOR_URL_ENDPOINT + "palettes?hex=" + hex + '&numResults=10&' + process.env.DATA_FORMAT;
+  var uri = process.env.COLOR_URL_ENDPOINT + "palettes?hex=" + hex + '&numResults=100&' + process.env.DATA_FORMAT;
   request({
     method: "GET",
     uri: uri
   }, function(error, response, body) {
     if (!error && response.statusCode == 200) {
       res.send(JSON.parse(response.body));
+      console.log(JSON.parse(response.body));
     } else if (error) {
       next(error);
     } else {

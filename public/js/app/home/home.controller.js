@@ -16,7 +16,7 @@
     // BINDINGS
     vm.colorSearchInput;
     vm.paletteSearchInput;
-    vm.getPalettesByHex = getPalettesByHex;
+    vm.searchPalettes = searchPalettes;
     vm.topColors;
     vm.topPalettes;
 
@@ -41,15 +41,8 @@
         });
     }
 
-    function getPalettesByHex() {
+    function searchPalettes() {
       $state.go("paletteSearch", { hex: vm.paletteSearchInput });
-      // palettesService
-      //   .getPalettesByHex(vm.paletteSearchInput)
-      //   .then(function(res) {
-      //     $log.info('response to get palettes by hex:', res);
-      //   }, function(error) {
-      //     $log.error(error);
-      //   });
     }
   }
 })();

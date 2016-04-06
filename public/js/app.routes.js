@@ -30,7 +30,7 @@
       .state("paletteSearch", {
         url:          "/search/palettes/{hex}",
         templateUrl:  "/js/app/palettes/palettesearch.html",
-        controller:   "PalettesController",
+        controller:   "PaletteSearchController",
         controllerAs: "vm"
       })
       .state("profile", {

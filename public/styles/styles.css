@@ -887,13 +887,6 @@ footer {
     color: #FFF;
     font-weight: normal;
     margin: 30px 0; }
-  .profile .profile-color-lists a, .profile .profile-palette-lists a {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    font-size: 0; }
-    .profile .profile-color-lists a:hover, .profile .profile-palette-lists a:hover {
-      box-shadow: 0 0 5px #000; }
   .profile .profile-color-lists h2, .profile .profile-color-lists h3, .profile .profile-palette-lists h2, .profile .profile-palette-lists h3 {
     text-transform: uppercase;
     font-weight: normal; }
@@ -974,13 +967,6 @@ footer {
   .profile .profile-palette-lists .profile-palette-list {
     margin: 0 0 10px 0;
     width: 100%; }
-  .profile .profile-palette-lists .individual-palette {
-    margin: 0 0 10px 0;
-    width: 100%; }
-    .profile .profile-palette-lists .individual-palette span {
-      display: inline-block;
-      height: 30px;
-      width: 20%; }
   .profile .profile-custom-palette-lists h1 {
     background-color: #83af9c; }
 
@@ -1002,3 +988,27 @@ footer {
 
 .col-5 {
   width: 20% !important; }
+
+.individual-palette {
+  width: 100%; }
+  .individual-palette a {
+    color: #000; }
+    .individual-palette a.palette-link {
+      height: 100%;
+      width: 100%;
+      display: inline-block;
+      font-size: 0;
+      margin: 0 0 20px 0; }
+      .individual-palette a.palette-link:hover {
+        box-shadow: 0 0 5px #000; }
+    .individual-palette a:hover {
+      color: #9793A1; }
+  .individual-palette h3 {
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: normal;
+    margin: 0 0 5px 0; }
+  .individual-palette span {
+    display: inline-block;
+    height: 30px;
+    box-sizing: border-box; }
