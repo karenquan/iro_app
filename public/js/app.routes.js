@@ -28,8 +28,8 @@
         controllerAs: "vm"
       })
       .state("paletteSearch", {
-        url:          "/search/palettes",
-        templateUrl:  "/js/app/palettes/search.html",
+        url:          "/search/palettes/{hex}",
+        templateUrl:  "/js/app/palettes/palettesearch.html",
         controller:   "PalettesController",
         controllerAs: "vm"
       })

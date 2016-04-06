@@ -11,20 +11,19 @@
     var vm = this;
 
     // BINDINGS
-    vm.authService    = authService;
     vm.addColorToList = addColorToList;
     vm.color;
-    vm.colorService   = colorService;
     vm.currentUserColorLists;
     vm.selectedListId;
-    vm.userService    = userService;
 
     getColor();
-    getCurrentUserColorLists();
+    if(authService.isLoggedIn()) {
+      getCurrentUserColorLists();
+    }
 
     // FUNCTIONS
     function addColorToList() {
-      vm.userService
+      userService
         .addColorToList(vm.selectedListId, vm.color)
         .then(function(res) {
           $log.info("colors controller // successfully add color to list");
@@ -34,7 +33,7 @@
     }
 
     function getCurrentUserColorLists() {
-      vm.authService.currentUser()
+      authService.currentUser()
       .then(function(response) {
         var user = response;
         vm.currentUserColorLists = user.colorLists;
@@ -44,7 +43,7 @@
     }
 
     function getColor() {
-      vm.colorService
+      colorService
         .getColor()
         .then(function(response){
         vm.color = response; //color object

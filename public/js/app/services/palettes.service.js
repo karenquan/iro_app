@@ -45,7 +45,6 @@
         url: "/search/palettes/" + hex
       })
       .then(function(response) {
-        $log.info(response);
         return response.data; // array of palettes
       });
 

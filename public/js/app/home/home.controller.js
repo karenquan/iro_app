@@ -5,9 +5,9 @@
     .module("app")
     .controller("HomeController", HomeController);
 
-  HomeController.$inject = ["$log", "$http", "colorService", "palettesService"];
+  HomeController.$inject = ["$log", "$http", "colorService", "palettesService", "$state"];
 
-  function HomeController($log, $http, colorService, palettesService) {
+  function HomeController($log, $http, colorService, palettesService, $state) {
     var vm = this;
 
     getTopColors();
@@ -42,13 +42,14 @@
     }
 
     function getPalettesByHex() {
-      palettesService
-        .getPalettesByHex(vm.paletteSearchInput)
-        .then(function(res) {
-          $log.info('response to get palettes by hex:', res);
-        }, function(error) {
-          $log.error(error);
-        });
+      $state.go("paletteSearch", { hex: vm.paletteSearchInput });
+      // palettesService
+      //   .getPalettesByHex(vm.paletteSearchInput)
+      //   .then(function(res) {
+      //     $log.info('response to get palettes by hex:', res);
+      //   }, function(error) {
+      //     $log.error(error);
+      //   });
     }
   }
 })();
