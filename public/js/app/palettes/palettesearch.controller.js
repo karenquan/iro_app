@@ -13,6 +13,7 @@
     // BINDINGS
     vm.palettes;
     vm.searchPalettes = searchPalettes;
+    vm.hexSearch = $state.params.hex;
 
     getPalettesByHex();
 
@@ -25,6 +26,7 @@
         .getPalettesByHex(hex, pageNum, numResults)
         .then(function(res) {
           vm.palettes = res;
+          $log.info(vm.palettes);
         }, function(error) {
           $log.error(error);
         });
