@@ -6,7 +6,7 @@
     <button ng-disabled="paletteSearchForm.$invalid">Search</button>
   </form>
   <div class="individual-palette" ng-repeat="palette in vm.palettes track by $index">
-    <h3><a ui-sref="palette({ id:{{palette.id}} })">{{palette.title}}</a></h3>
+    <h3>{{palette.title}}</h3>
     <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span class="col-{{palette.colors.length}}" ng-class="{'gray-border': '{{color}}' === 'FFFFFF'}" ng-repeat="color in palette.colors track by $index" style="background-color: #{{color}}"></span></a>
   </div>
 </section>

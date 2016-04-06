@@ -10,12 +10,6 @@
   <article>
     <div class="container">
       <h1>Top Colors</h1>
-      <!-- <div class="top-colors">
-        <div class="top-color" ng-repeat="color in vm.topColors track by $index">
-          <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" style="background-color: #{{color.hex}}"></span></a>
-          <span class="hex">#{{color.hex}}</span>
-        </div>
-      </div> -->
       <div class="top-colors">
         <div class="individual-color" ng-repeat="color in vm.topColors track by $index">
           <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" style="background-color: #{{color.hex}}"></span></a>
@@ -42,7 +36,7 @@
       <h1>Top Palettes</h1>
       <div class="top-palettes">
         <div class="individual-palette" ng-repeat="palette in vm.topPalettes">
-          <h3><a ui-sref="palette({ id:{{palette.id}} })">{{palette.title}}</a></h3>
+          <h3>{{palette.title}}</h3>
           <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index" ng-style="{ 'background-color': '#{{color}}', 'border': ('{{color}}' === 'FFFFFF') ? '1px solid #CCC' : '1px solid #{{color}}' }"></span></a>
         </div>
       </div>

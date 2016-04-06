@@ -817,46 +817,46 @@ footer {
     justify-content: space-between; }
 
 /* END .create-palette */
-.individual-palette, .individual-color-show {
+.individual-palette-show, .individual-color-show {
   text-align: center; }
-  .individual-palette h1, .individual-color-show h1 {
+  .individual-palette-show h1, .individual-color-show h1 {
     font-family: 'Didot', serif;
     text-align: center;
     text-transform: uppercase; }
-  .individual-palette h2, .individual-color-show h2 {
+  .individual-palette-show h2, .individual-color-show h2 {
     font-family: 'Playfair Display', serif;
     font-weight: normal;
     text-align: center;
     font-size: 30px; }
-  .individual-palette p, .individual-color-show p {
+  .individual-palette-show p, .individual-color-show p {
     font-size: 15px; }
-  .individual-palette .user-options, .individual-color-show .user-options {
+  .individual-palette-show .user-options, .individual-color-show .user-options {
     text-align: center;
     margin: 20px 0; }
 
-.individual-palette .custom-palette-block {
+.individual-palette-show .custom-palette-block {
   display: inline-block;
   width: 100%;
   font-size: 0; }
 
-.individual-palette .palette-container {
+.individual-palette-show .palette-container {
   text-align: center;
   font-size: 0; }
-  .individual-palette .palette-container a {
+  .individual-palette-show .palette-container a {
     display: inline-block;
     height: 100%;
     width: 100%; }
-    .individual-palette .palette-container a:hover {
+    .individual-palette-show .palette-container a:hover {
       cursor: pointer; }
-  .individual-palette .palette-container > div {
+  .individual-palette-show .palette-container > div {
     display: inline-block; }
-  .individual-palette .palette-container.color-block {
+  .individual-palette-show .palette-container.color-block {
     -webkit-box-shadow: 0 0 5px #000;
     -moz-box-shadow: 0 0 5px #000;
     box-shadow: 0 0 5px #000; }
-    .individual-palette .palette-container.color-block > div {
+    .individual-palette-show .palette-container.color-block > div {
       height: 250px; }
-    .individual-palette .palette-container.color-block span {
+    .individual-palette-show .palette-container.color-block span {
       -webkit-transition: 0.5s;
       -moz-transition: 0.5s;
       transition: 0.5s;
@@ -864,17 +864,17 @@ footer {
       height: 100%;
       width: 100%;
       z-index: 1; }
-      .individual-palette .palette-container.color-block span:hover {
+      .individual-palette-show .palette-container.color-block span:hover {
         -webkit-box-shadow: 0 0 5px #000;
         -moz-box-shadow: 0 0 5px #000;
         box-shadow: 0 0 5px #000;
         z-index: 2; }
-  .individual-palette .palette-container.hex span {
+  .individual-palette-show .palette-container.hex span {
     font-size: 16px;
     display: inline-block;
     margin: 15px 0 0 0; }
 
-/* END .individual-palette */
+/* END .individual-palette-show */
 .individual-color-show {
   font-size: 0; }
   .individual-color-show a {
@@ -908,7 +908,7 @@ footer {
     -moz-box-shadow: 0 0 5px #CCC;
     box-shadow: 0 0 5px #CCC; }
 
-/* END .individual-color */
+/* END .individual-color-show */
 .profile {
   /* END .profile-color-lists & .profile-palette-lists */
   /* END .profile-color-lists */
@@ -1041,8 +1041,6 @@ footer {
         -webkit-box-shadow: 0 0 5px #000;
         -moz-box-shadow: 0 0 5px #000;
         box-shadow: 0 0 5px #000; }
-    .individual-palette a:hover {
-      color: #9793A1; }
   .individual-palette h3 {
     font-family: 'Playfair Display', serif;
     text-transform: uppercase;

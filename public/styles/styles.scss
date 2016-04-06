@@ -692,7 +692,7 @@ footer {
   }
 } /* END .create-palette */
 
-.individual-palette, .individual-color-show {
+.individual-palette-show, .individual-color-show {
   text-align: center;
 
   h1 {
@@ -718,7 +718,7 @@ footer {
   }
 }
 
-.individual-palette {
+.individual-palette-show {
 
   .custom-palette-block {
     display: inline-block;
@@ -773,7 +773,7 @@ footer {
       }
     }
   }
-} /* END .individual-palette */
+} /* END .individual-palette-show */
 
 .individual-color-show {
   font-size: 0;
@@ -816,7 +816,7 @@ footer {
     @include box-shadow(0, 0, 5px, $gray);
   }
 
-} /* END .individual-color */
+} /* END .individual-color-show */
 
 .profile {
   section {
@@ -1016,10 +1016,6 @@ footer {
       &:hover {
         @include box-shadow(0, 0, 5px, $black);
       }
-    }
-
-    &:hover {
-      color: $purple;
     }
   }
 
