@@ -9,8 +9,8 @@
           <div class="list-container">
             <div class="individual-color" ng-repeat="color in colorList.colors track by $index">
               <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color-block" ng-class="{'gray-border': '{{color.hex}}' === 'FFFFFF'}" style="background-color: #{{color.hex}}"></span></a>
-              <span>#{{color.hex}}</span> |
-              <span>rgb({{color.rgb.red}}, {{color.rgb.green}}, {{color.rgb.blue}})</span> |
+              <span>#{{color.hex}} | </span>
+              <span>rgb({{color.rgb.red}}, {{color.rgb.green}}, {{color.rgb.blue}})&nbsp;</span>
               <span class="delete" ng-click="vm.removeColor(colorList._id, color._id);">[ x ]</span>
             </div>
           </div> <!-- end list-container -->

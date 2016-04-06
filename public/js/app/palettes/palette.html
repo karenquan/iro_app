@@ -1,9 +1,13 @@
 <section class="container individual-palette">
   <h1>{{vm.palette.title}}</h1>
-  <div class="individual-palette-colors">
+  <div class="palette-container color-block">
     <div class="col-{{vm.palette.colors.length}}" ng-repeat="color in vm.palette.colors track by $index">
-      <span class="color-block" ng-style="{ 'background-color': '#{{color}}' }" ng-class="{'gray-border': '{{color}}' === 'FFFFFF'}"><a ui-sref="color({ hex: '{{color}}' })"></a></span>
-      <span class="hex">#{{color}}</span>
+      <span ng-style="{ 'background-color': '#{{color}}' }" ng-class="{'gray-border': '{{color}}' === 'FFFFFF'}"><a ui-sref="color({ hex: '{{color}}' })"></a></span>
+    </div>
+  </div>
+  <div class="palette-container hex">
+    <div class="col-{{vm.palette.colors.length}}" ng-repeat="color in vm.palette.colors track by $index">
+      <span>#{{color}}</span>
     </div>
   </div>
   <p>Number of Views: {{vm.palette.numViews}}</p>

@@ -422,6 +422,7 @@ footer {
   form {
     button {
       margin: 40px auto 0;
+      width: 100%;
     }
   }
 }
@@ -716,57 +717,80 @@ footer {
     font-size: 0;
   }
 
-  .individual-palette-colors {
+  .palette-container {
     text-align: center;
+    font-size: 0;
+
+    a {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
 
     > div {
       display: inline-block;
-      width: 20%;
-      height: 250px;
+    }
 
-      span.hex {
-        font-size: 16px;
+    &.color-block {
+      -webkit-box-shadow: 0 0 5px $black;
+      -moz-box-shadow: 0 0 5px $black;
+      box-shadow: 0 0 5px $black;
+
+      > div {
+        height: 250px;
       }
 
-      span.color-block {
+      span {
         @include transition(0.5s);
         display: inline-block;
-        height: 90%;
+        height: 100%;
         width: 100%;
         z-index: 1;
 
         &:hover {
+          -webkit-box-shadow: 0 0 5px $black;
+          -moz-box-shadow: 0 0 5px $black;
           box-shadow: 0 0 5px $black;
           z-index: 2;
         }
       }
+    }
 
-      a {
-        @include box-sizing(border-box);
-        display: inline-block;
-        width: 100%;
-        height: 100%;
+    &.hex {
+      span {
         font-size: 16px;
-
-        &.hex {
-          color: $black;
-          height: 10%;
-
-          &:hover {
-            color: $purple;
-          }
-        }
+        display: inline-block;
+        margin: 15px 0 0 0;
       }
     }
   }
 } /* END .individual-palette */
 
 .individual-color {
+  font-size: 0;
+
+  a {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+
+    &:hover {
+      -webkit-box-shadow: 0 0 5px $black;
+      -moz-box-shadow: 0 0 5px $black;
+      box-shadow: 0 0 5px $black;
+    }
+  }
 
   h2 {
+    font-size: 30px;
     padding: 10px 0;
 
     span {
+      font-size: 30px;
       color: $black;
       display: inline-block;
       width: 48%;
@@ -774,9 +798,20 @@ footer {
     }
   }
 
+  button, select {
+    font-size: 14px;
+  }
+
+  span {
+    font-size: 14px;
+  }
+
   .individual-color-block {
     height: 250px;
     width: 100%;
+    -webkit-box-shadow: 0 0 5px $black;
+    -moz-box-shadow: 0 0 5px $black;
+    box-shadow: 0 0 5px $black;
   }
 
 } /* END .individual-color */
@@ -970,6 +1005,10 @@ footer {
 
 .gray-border {
   border: 1px solid #CCC;
+}
+
+.black-border {
+  border: 1px solid $black;
 }
 
 .col-1 {

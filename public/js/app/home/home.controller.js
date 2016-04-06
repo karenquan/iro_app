@@ -43,7 +43,7 @@
     }
 
     function searchPalettes() {
-      $state.go("paletteSearch", { hex: vm.paletteSearchInput });
+      $state.go("paletteSearch", { hex: vm.paletteSearchInput, page: 1 });
     }
 
     function searchColor() {
