@@ -52,14 +52,14 @@ function show(req, res, next) {
 
 function search(req, res, next) {
   var hex = req.params.hex;
-  var page = req.query.page;
-  var numResults = parseInt(page) * 100;
-  // var numResults = req.body.numResults;
-  // var offset = parseInt(req.query.page) * numResults;
-  var uri = process.env.COLOR_URL_ENDPOINT + "palettes?hex=" + hex + "&numResults=" + numResults + "&" + process.env.DATA_FORMAT;
-
-  console.log("page query:", req.url.query);
-  console.log("url request:", req);
+  var page = parseInt(req.query.page);
+  var numResults = parseInt(req.query.numResults);
+  console.log("num results:", numResults);
+  var offset = page == 1 ? 1 : page * numResults;
+  var uri = process.env.COLOR_URL_ENDPOINT + "palettes?hex=" + hex + "&numResults=" + numResults + "&resultOffset=" + offset + "&" + process.env.DATA_FORMAT;
+  console.log(uri);
+  console.log("page query:", req.query.page);
+  // console.log("url request:", req);
 
   request({
     method: "GET",

@@ -28,7 +28,7 @@
         controllerAs: "vm"
       })
       .state("paletteSearch", {
-        url:          "/search/palettes/{hex}?page",
+        url:          "/search/palettes/{hex}?page?numResults",
         templateUrl:  "/js/app/palettes/palettesearch.html",
         controller:   "PaletteSearchController",
         controllerAs: "vm"

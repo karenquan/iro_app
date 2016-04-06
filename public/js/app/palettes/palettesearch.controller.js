@@ -19,9 +19,10 @@
     // FUNCTIONS
     function getPalettesByHex() {
       var hex = $state.params.hex;
-
+      var pageNum = $state.params.page;
+      var numResults = $state.params.numResults;
       palettesService
-        .getPalettesByHex(hex)
+        .getPalettesByHex(hex, pageNum, numResults)
         .then(function(res) {
           vm.palettes = res;
         }, function(error) {
@@ -31,9 +32,10 @@
 
     function searchPalettes() {
       palettesService
-        .getPalettesByHex(vm.paletteSearchInput)
+        .getPalettesByHex("vm.paletteSearchInput", "2")
         .then(function(res) {
-          $state.go("paletteSearch", { hex: vm.paletteSearchInput });
+          $log.info(":(");
+          $state.go("paletteSearch", { hex: vm.paletteSearchInput, page: "4" });
         }, function(error) {
           $log.error(error);
         });
