@@ -21,11 +21,11 @@
 
   <article>
     <div class="container search color-search">
-      <form name="colorSearch" novalidate>
-        <span class="color-box white-bg" style="background-color: #{{colorSearchInput}}"></span>
+      <form name="colorSearchForm" ng-submit="vm.searchColor();" novalidate>
+        <span class="color-box white-bg" style="background-color: #{{vm.colorSearchInput}}"></span>
         <span>#</span>
-        <input ng-model="colorSearchInput" type="text" placeholder="FFFFFF" maxlength="6" required>
-        <button ng-disabled="colorSearch.$invalid">search</button>
+        <input ng-model="vm.colorSearchInput" type="text" placeholder="FFFFFF" maxlength="6" required>
+        <button ng-disabled="colorSearchForm.$invalid">search</button>
       </form>
       <h1>Search Colors</h1>
     </div>

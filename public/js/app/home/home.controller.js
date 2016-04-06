@@ -19,6 +19,7 @@
     vm.searchPalettes = searchPalettes;
     vm.topColors;
     vm.topPalettes;
+    vm.searchColor    = searchColor;
 
     // HELPERS
     function getTopColors() {
@@ -43,6 +44,10 @@
 
     function searchPalettes() {
       $state.go("paletteSearch", { hex: vm.paletteSearchInput });
+    }
+
+    function searchColor() {
+      $state.go("color", { hex: vm.colorSearchInput });
     }
   }
 })();
