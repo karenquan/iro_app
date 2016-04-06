@@ -1016,4 +1016,27 @@ footer {
     height: 30px;
     box-sizing: border-box;
   }
-}
+} /* END .individual-palette */
+
+.palette-search-results {
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  form {
+    font-size: 16px;
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  input {
+    vertical-align: bottom;
+    padding: 20px 20px 20px 0;
+    width: 20%;
+  }
+
+  button {
+    font-size: 14px;
+  }
+} /* END .palette-search-results */

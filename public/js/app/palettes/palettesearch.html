@@ -1,5 +1,10 @@
-<section class="container palette-search">
+<section class="container palette-search-results">
   <h1>Search Palettes By Hex</h1>
+  <form name="paletteSearchForm" ng-submit="vm.searchPalettes();" novalidate>
+    <span>#</span>
+    <input type="text" ng-model="vm.paletteSearchInput" placeholder="FFFFFF" maxlength="6" required>
+    <button ng-disabled="paletteSearchForm.$invalid">Search</button>
+  </form>
   <div class="individual-palette" ng-repeat="palette in vm.palettes track by $index">
     <h3><a ui-sref="palette({ id:{{palette.id}} })">{{palette.title}}</a></h3>
     <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span class="col-{{palette.colors.length}}" ng-class="{'gray-border': '{{color}}' === 'FFFFFF'}" ng-repeat="color in palette.colors track by $index" style="background-color: #{{color}}"></span></a>

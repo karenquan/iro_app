@@ -1018,3 +1018,23 @@ footer {
     display: inline-block;
     height: 30px;
     box-sizing: border-box; }
+
+/* END .individual-palette */
+.palette-search-results h1 {
+  text-align: center;
+  text-transform: uppercase; }
+
+.palette-search-results form {
+  font-size: 16px;
+  text-align: center;
+  margin: 40px 0; }
+
+.palette-search-results input {
+  vertical-align: bottom;
+  padding: 20px 20px 20px 0;
+  width: 20%; }
+
+.palette-search-results button {
+  font-size: 14px; }
+
+/* END .palette-search-results */

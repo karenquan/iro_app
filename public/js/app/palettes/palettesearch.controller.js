@@ -12,6 +12,7 @@
 
     // BINDINGS
     vm.palettes;
+    vm.searchPalettes = searchPalettes;
 
     getPalettesByHex();
 
@@ -24,6 +25,18 @@
         .then(function(res) {
           vm.palettes = res;
           $log.info(vm.palettes);
+          // $log.info('response to get palettes by hex:', res);
+        }, function(error) {
+          $log.error(error);
+        });
+    }
+
+    function searchPalettes() {
+      palettesService
+        .getPalettesByHex(vm.paletteSearchInput)
+        .then(function(res) {
+          $log.info(vm.palettes);
+          $state.go("paletteSearch", { hex: vm.paletteSearchInput });
           // $log.info('response to get palettes by hex:', res);
         }, function(error) {
           $log.error(error);
