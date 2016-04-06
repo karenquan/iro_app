@@ -21,6 +21,12 @@
         controller:   "ColorsController",
         controllerAs: "vm"
       })
+      .state("colorSearch", {
+        url:          "/search/colors/{hex}",
+        templateUrl:  "/js/app/colors/colorsearch.html",
+        controller:   "ColorSearchController",
+        controllerAs: "vm"
+      })
       .state("palette", {
         url:          "/palettes/{id}",
         templateUrl:  "/js/app/palettes/palette.html",
@@ -28,7 +34,7 @@
         controllerAs: "vm"
       })
       .state("paletteSearch", {
-        url:          "/search/palettes/{hex}?page?numResults",
+        url:          "/search/palettes/{hex}?num?page",
         templateUrl:  "/js/app/palettes/palettesearch.html",
         controller:   "PaletteSearchController",
         controllerAs: "vm"

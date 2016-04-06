@@ -941,6 +941,7 @@ footer {
     vertical-align: middle; }
   .profile .profile-color-lists .list-container, .profile .profile-palette-lists .list-container {
     max-height: 300px;
+    padding: 2px;
     overflow: scroll;
     display: -webkit-flex;
     display: flex;
@@ -1065,7 +1066,8 @@ footer {
     font-family: 'Playfair Display';
     font-size: 30px;
     font-weight: normal;
-    padding: 0 0 10px 0; }
+    padding: 0 0 10px 0;
+    border-bottom: 1px solid; }
 
 .palette-search-results form {
   font-size: 16px;

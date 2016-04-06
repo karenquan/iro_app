@@ -866,6 +866,7 @@ footer {
 
     .list-container {
       max-height: 300px;
+      padding: 2px;
       overflow: scroll;
       display: -webkit-flex;
       display: flex;
@@ -1051,6 +1052,7 @@ footer {
       font-size: 30px;
       font-weight: normal;
       padding: 0 0 10px 0;
+      border-bottom: 1px solid;
     }
   }
 

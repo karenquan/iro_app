@@ -26,7 +26,6 @@
         .getPalettesByHex(hex, pageNum, numResults)
         .then(function(res) {
           vm.palettes = res;
-          $log.info(vm.palettes);
         }, function(error) {
           $log.error(error);
         });
@@ -39,7 +38,7 @@
       palettesService
         .getPalettesByHex(vm.paletteSearchInput, defaultPage, defaultNumResults)
         .then(function(res) {
-          $state.go("paletteSearch", { hex: vm.paletteSearchInput, page: defaultPage, numResults: defaultNumResults });
+          $state.go("paletteSearch", { hex: vm.paletteSearchInput, page: defaultPage, num: defaultNumResults });
         }, function(error) {
           $log.error(error);
         });

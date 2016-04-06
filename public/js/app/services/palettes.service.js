@@ -39,14 +39,10 @@
       return palette;
     }
 
-    function getPalettesByHex(hex, page, numResults) {
-      $log.warn("hex", hex);
-      $log.warn("page", page);
-      var url = "/search/palettes/" + hex + "?page=" + page;
-      console.log("color search URL:", url);
+    function getPalettesByHex(hex, page, num) {
       var palettes = $http({
         method: "GET",
-        url: "/search/palettes/" + hex + "?page=" + page + "&numResults=" + numResults
+        url: "/search/palettes/" + hex + "?num=" + num + "&page=" + page
       })
       .then(function(response) {
         return response.data; // array of palettes

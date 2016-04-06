@@ -16,6 +16,8 @@
   <nav ng-controller="NavBarController as vm">
     <ul>
     <li><a ui-sref="home">iro</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
+      --><li><a ui-sref="colorSearch">colors</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
+      --><li><a ui-sref="paletteSearch">palettes</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
       --><li ng-show="vm.authService.isLoggedIn();"><a ui-sref="profile">profile</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
       --><li class="right" ng-hide="vm.authService.isLoggedIn();"><a ui-sref="login">login</a></li><!-- COMMENT TO REMOVE EXTRA SPACE
       --><li class="right" ng-show="vm.authService.isLoggedIn();"><a ng-click="vm.authService.logout();">logout</a></li>
@@ -30,6 +32,7 @@
   <script src="/js/app/services/token.service.js"></script>
   <script src="/js/app/services/user.service.js"></script>
   <script src="/js/app/colors/colors.controller.js"></script>
+  <script src="/js/app/colors/colorsearch.controller.js"></script>
   <script src="/js/app/home/home.controller.js"></script>
   <script src="/js/app/login/login.controller.js"></script>
   <script src="/js/app/shared/navbar.controller.js"></script>

@@ -8,7 +8,7 @@
     userService.$inject = ["$log", "$http", "authService", "tokenService"];
 
     function userService($log, $http, authService, token) {
-      $log.info("user service loaded");
+
       var service = {
         addColorToList:      addColorToList,
         addPaletteToList:    addPaletteToList,
