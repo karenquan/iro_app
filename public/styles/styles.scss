@@ -709,6 +709,7 @@ footer {
 }
 
 .individual-palette {
+
   .custom-palette-block {
     display: inline-block;
     width: 100%;
@@ -761,6 +762,17 @@ footer {
 } /* END .individual-palette */
 
 .individual-color {
+
+  h2 {
+    padding: 10px 0;
+
+    span {
+      color: $black;
+      display: inline-block;
+      width: 48%;
+      text-align: center;
+    }
+  }
 
   .individual-color-block {
     height: 250px;

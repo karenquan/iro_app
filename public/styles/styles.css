@@ -862,6 +862,14 @@ footer {
           color: #9793A1; }
 
 /* END .individual-palette */
+.individual-color h2 {
+  padding: 10px 0; }
+  .individual-color h2 span {
+    color: #000;
+    display: inline-block;
+    width: 48%;
+    text-align: center; }
+
 .individual-color .individual-color-block {
   height: 250px;
   width: 100%; }
