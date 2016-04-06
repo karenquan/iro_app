@@ -5,13 +5,12 @@
     .module("app")
     .controller("ProfileController", ProfileController);
 
-  ProfileController.$inject = ["$log", "authService", "$http", "tokenService", "userService"];
+  ProfileController.$inject = ["$log", "$http", "tokenService", "userService"];
 
-  function ProfileController($log, authService, $http, token, userService) {
+  function ProfileController($log, $http, token, userService) {
     var vm = this;
 
     // BINDINGS
-    vm.authService         = authService;
     vm.createColorList     = createColorList;
     vm.createCustomPalette = createCustomPalette;
     vm.createPaletteList   = createPaletteList;
@@ -22,13 +21,12 @@
     vm.removeCustomPalette = removeCustomPalette;
     vm.removePalette       = removePalette;
     vm.removePaletteList   = removePaletteList;
-    vm.userService         = userService;
 
     getCurrentUser();
 
     // FUNCTIONS
     function createColorList() {
-      vm.userService
+      userService
         .createColorList(vm.currentUser, vm.customColorListName)
         .then(function(res) {
           $log.info("profile controller // create color list creation");
@@ -70,18 +68,24 @@
       palette.name = vm.customPaletteName;
       $log.info(palette);
 
-      vm.userService
+      userService
         .createCustomPalette(palette)
         .then(function(res) {
           $log.info("profile controller // create custom palette");
           getCurrentUser();
+          vm.customHexOne = "";
+          vm.customHexTwo = "";
+          vm.customHexThree = "";
+          vm.customHexFour = "";
+          vm.customHexFive = "";
+          vm.customPaletteName = "";
         }, function(error) {
           $log.error(error);
         });
     }
 
     function createPaletteList() {
-      vm.userService
+      userService
         .createPaletteList(vm.customPaletteListName)
         .then(function(res) {
           $log.info("profile controller // create palette list creation");
@@ -110,7 +114,7 @@
     }
 
     function removeColor(colorListId, colorId) {
-      vm.userService
+      userService
         .removeColor(colorListId, colorId)
         .then(function(res) {
           $log.info("profile controller // removed color");
@@ -122,7 +126,7 @@
 
     function removeColorList(listId) {
       $log.info(listId);
-      vm.userService
+      userService
         .removeColorList(listId)
         .then(function(res) {
           $log.info("profile controller // removed color list");
@@ -134,7 +138,7 @@
 
     function removeCustomPalette(paletteId) {
       $log.info("cusom palette id to remove:", paletteId);
-      vm.userService
+      userService
         .removeCustomPalette(paletteId)
         .then(function(res) {
           $log.info("profile controller // removed custom palette");
@@ -147,7 +151,7 @@
     function removePalette(paletteListId, paletteId) {
       $log.info("palette list id: ", paletteListId);
       $log.info("palette id: ", paletteId);
-      vm.userService
+      userService
         .removePalette(paletteListId, paletteId)
         .then(function(res) {
           $log.info("profile controller // removed palette");
@@ -159,7 +163,7 @@
 
     function removePaletteList(listId) {
       $log.info("palette list id:", listId);
-      vm.userService
+      userService
         .removePaletteList(listId)
         .then(function(res) {
           $log.info("profile controller // removed palette list");

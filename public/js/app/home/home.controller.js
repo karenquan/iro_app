@@ -15,6 +15,8 @@
 
     // BINDINGS
     vm.colorSearchInput;
+    vm.paletteSearchInput;
+    vm.getPalettesByHex = getPalettesByHex;
     vm.topColors;
     vm.topPalettes;
 
@@ -34,6 +36,16 @@
         .getTopPalettes()
         .then(function(res) {
           vm.topPalettes = res; // top palettes object
+        }, function(error) {
+          $log.error(error);
+        });
+    }
+
+    function getPalettesByHex() {
+      palettesService
+        .getPalettesByHex(vm.paletteSearchInput)
+        .then(function(res) {
+          $log.info('response to get palettes by hex:', res);
         }, function(error) {
           $log.error(error);
         });

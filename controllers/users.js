@@ -143,8 +143,6 @@ function createCustomPalette(req, res, next) {
         if (error) {
           res.send(error);
         }
-
-        console.log(user);
         res.send(user);
       });
     })

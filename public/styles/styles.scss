@@ -709,6 +709,11 @@ footer {
 }
 
 .individual-palette {
+  .custom-palette-block {
+    display: inline-block;
+    width: 100%;
+    font-size: 0;
+  }
 
   .individual-palette-colors {
     text-align: center;
@@ -817,7 +822,7 @@ footer {
     }
 
     .list-container {
-      max-height: 150px;
+      max-height: 300px;
       overflow: scroll;
       display: -webkit-flex;
       display: flex;
@@ -955,4 +960,24 @@ footer {
 
 .white-bg {
   background-color: white;
+}
+
+.col-1 {
+  width: 100% !important;
+}
+
+.col-2 {
+  width: 50% !important;
+}
+
+.col-3 {
+  width: 33.333333% !important;
+}
+
+.col-4 {
+  width: 25% !important;
+}
+
+.col-5 {
+  width: 20% !important;
 }

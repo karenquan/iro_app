@@ -37,7 +37,7 @@
       <div class="top-palettes">
         <div class="top-palette" ng-repeat="palette in vm.topPalettes">
           <h3><a ui-sref="palette({ id:{{palette.id}} })">{{palette.title}}</a></h3>
-          <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span class="palette-color" ng-repeat="color in palette.colors track by $index" ng-style="{ 'background-color': '#{{color}}', 'border': ('{{color}}' === 'FFFFFF') ? '1px solid #CCC' : '1px solid #{{color}}' }"></span></a>
+          <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span ng-class="{'col-1' : (palette.colors.length == 1), 'col-2' : (palette.colors.length == 2), 'col-3' : (palette.colors.length == 3), 'col-4' : (palette.colors.length == 4), 'col-5' : (palette.colors.length == 5)}" ng-repeat="color in palette.colors track by $index" ng-style="{ 'background-color': '#{{color}}', 'border': ('{{color}}' === 'FFFFFF') ? '1px solid #CCC' : '1px solid #{{color}}' }"></span></a>
         </div>
       </div>
     </div>
@@ -45,10 +45,10 @@
 
   <article>
     <div class="container search palette-search">
-      <form name="paletteSearch" novalidate>
-        <span class="color-box white-bg" style="background-color: #{{paletteSearchInput}}"></span>
+      <form name="paletteSearch" ng-submit="vm.getPalettesByHex();" novalidate>
+        <span class="color-box white-bg" style="background-color: #{{vm.paletteSearchInput}}"></span>
         <span>#</span>
-        <input type="text" ng-model="paletteSearchInput" placeholder="FFFFFF" maxlength="6" required>
+        <input type="text" ng-model="vm.paletteSearchInput" placeholder="FFFFFF" maxlength="6" required>
         <button ng-disabled="paletteSearch.$invalid">search</button>
       </form>
       <h1>Search Palettes</h1>

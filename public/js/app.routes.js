@@ -27,6 +27,12 @@
         controller:   "PalettesController",
         controllerAs: "vm"
       })
+      .state("paletteSearch", {
+        url:          "/search/palettes",
+        templateUrl:  "/js/app/palettes/search.html",
+        controller:   "PalettesController",
+        controllerAs: "vm"
+      })
       .state("profile", {
         url:          "/profile",
         templateUrl:  "js/app/users/profile.html",

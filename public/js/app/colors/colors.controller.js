@@ -17,7 +17,7 @@
     vm.colorService   = colorService;
     vm.currentUserColorLists;
     vm.selectedListId;
-    vm.userService = userService;
+    vm.userService    = userService;
 
     getColor();
     getCurrentUserColorLists();

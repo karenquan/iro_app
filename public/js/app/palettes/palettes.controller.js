@@ -12,18 +12,17 @@
 
     // BINDINGS
     vm.addPaletteToList = addPaletteToList;
-    vm.authService = authService;
+    vm.authService      = authService;
     vm.currentUserPaletteLists;
     vm.palette;
-    vm.palettesService = palettesService;
-    vm.userService = userService;
+    vm.palettesService  = palettesService;
+    vm.userService      = userService;
 
     getPalette();
     getCurrentUserPaletteLists();
 
     // FUNCTIONS
     function addPaletteToList() {
-      $log.info('hmmm');
       vm.userService
         .addPaletteToList(vm.selectedListId, vm.palette)
         .then(function(response) {

@@ -47,7 +47,8 @@
         <div class="list-container">
           <div class="individual-palette" ng-repeat="palette in vm.currentUser.customPalettes track by $index">
             <h3>{{palette.name}} <span class="delete" ng-click="vm.removeCustomPalette(palette._id);">[ x ]</span></h3>
-            <a><span ng-repeat="color in palette.colors track by $index" style="background-color: #{{color}}"></span></a>
+            <div class="custom-palette-block"><span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index" style="background-color: #{{color}}"></span></div>
+            <span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index">#{{color}}</span>
           </div>
         </div>
       </div>

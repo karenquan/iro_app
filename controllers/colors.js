@@ -6,7 +6,7 @@ module.exports = {
 };
 
 function index(req, res, next) {
-  var uri = process.env.COLOR_URL_ENDPOINT + "colors/top" + process.env.DATA_FORMAT;
+  var uri = process.env.COLOR_URL_ENDPOINT + "colors/top?" + process.env.DATA_FORMAT;
   request({
     method: "GET",
     uri: uri
@@ -28,7 +28,7 @@ function index(req, res, next) {
 
 function show(req, res, next) {
   var hex = req.params.hex;
-  var uri = process.env.COLOR_URL_ENDPOINT + "color/" + hex + process.env.DATA_FORMAT;
+  var uri = process.env.COLOR_URL_ENDPOINT + "color/" + hex + '&' + process.env.DATA_FORMAT;
 
   request({
     method: "GET",

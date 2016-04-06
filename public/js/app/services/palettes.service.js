@@ -9,8 +9,9 @@
 
   function palettesService($log, $http, $stateParams, token) {
     var service = {
-      getTopPalettes:      getTopPalettes,
-      getPalette:          getPalette
+      getTopPalettes:        getTopPalettes,
+      getPalette:            getPalette,
+      getPalettesByHex:      getPalettesByHex
     };
 
     function getTopPalettes() {
@@ -36,6 +37,19 @@
       });
 
       return palette;
+    }
+
+    function getPalettesByHex(hex) {
+      var palettes = $http({
+        method: "GET",
+        url: "/search/palettes/" + hex
+      })
+      .then(function(response) {
+        $log.info(response);
+        return response.data; // array of palettes
+      });
+
+      return palettes;
     }
 
     return service;
