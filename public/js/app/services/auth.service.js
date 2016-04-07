@@ -38,9 +38,6 @@
 
     function currentUserTokenData() {
       var tokenData = token.decode();
-
-      $log.info("current user retrieved:", tokenData);
-
       return tokenData;
     }
 
@@ -58,7 +55,6 @@
           "Content-Type": "application/json"
         }
       }).then(function(res) {
-        $log.info("auth service // login // token:", res.data.token);
         token.store(res.data.token);
         return token.decode();
       });

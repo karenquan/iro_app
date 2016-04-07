@@ -5,7 +5,13 @@
       <h1>Color Lists</h1>
       <div class="profile-color-lists">
         <div class="profile-color-list" ng-repeat="colorList in vm.currentUser.colorLists track by $index">
-          <h2>{{colorList.name}} <span class="delete" ng-click="vm.removeColorList(colorList._id);">delete list</span></h2>
+          <h2>{{colorList.name}} <span class="user-action edit" ng-hide="vm.showColorListForm" ng-click="vm.showColorListForm = !vm.showColorListForm">EDIT TITLE</span> <span class="user-action edit" ng-show="vm.showColorListForm" ng-click="vm.showColorListForm = !vm.showColorListForm">CANCEL EDIT TITLE</span> <span class="user-action delete" ng-click="vm.removeColorList(colorList._id);">delete list</span></h2>
+          <div>
+            <form ng-show="vm.showColorListForm" class="color-list-title-update" name="colorListNameForm" ng-submit="vm.updateColorListName(colorList._id);" novalidate>
+              <input type="text" ng-model="vm.updatedColorListName" required>
+              <button ng-disabled="colorListNameForm.$invalid" ng-click="vm.showColorListForm = !vm.showColorListForm">Update Title</button>
+            </form>
+          </div>
           <div class="list-container">
             <div class="individual-color" ng-repeat="color in colorList.colors track by $index">
               <a ng-click="vm.colorClick(color.hex)"><span class="color" style="background-color: #{{color.hex}}"></span></a>
@@ -25,10 +31,10 @@
       <h1>Palette Lists</h1>
       <div class="profile-palette-lists">
         <div class="profile-palette-list" ng-repeat="paletteList in vm.currentUser.paletteLists track by $index">
-          <h2>{{paletteList.name}} <span class="delete" ng-click="vm.removePaletteList(paletteList._id);">delete list</span></h2>
+          <h2>{{paletteList.name}} <span class="user-action delete" ng-click="vm.removePaletteList(paletteList._id);">delete list</span></h2>
           <div class="list-container">
             <div class="individual-palette" ng-repeat="palette in paletteList.palettes track by $index">
-              <h3>{{palette.name}} <span class="delete" ng-click="vm.removePalette(paletteList._id, palette._id);">[ x ]</span></h3>
+              <h3>{{palette.name}} <span class="user-action delete" ng-click="vm.removePalette(paletteList._id, palette._id);">[ x ]</span></h3>
               <a class="palette-link" ng-click="vm.paletteClick(palette.id)"><span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index" style="background-color: #{{color}}"></span></a>
               <span class="col-{{palette.colors.length}} color" ng-repeat="color in palette.colors track by $index">#{{color}}</span>
             </div>
@@ -46,7 +52,7 @@
       <div class="profile-palette-lists">
         <div class="list-container">
           <div class="individual-palette" ng-repeat="palette in vm.currentUser.customPalettes track by $index">
-            <h3>{{palette.name}} <span class="delete" ng-click="vm.removeCustomPalette(palette._id);">[ x ]</span></h3>
+            <h3>{{palette.name}} <span class="user-action delete" ng-click="vm.removeCustomPalette(palette._id);">[ x ]</span></h3>
             <div class="custom-palette"><span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index" ng-style="{ 'background-color': '#{{color}}'}"></span></div>
             <span class="col-{{palette.colors.length}} color" ng-class="{'gray-border': '{{color}}' === 'FFFFFF'}" ng-repeat="color in palette.colors track by $index">#{{color}}</span>
           </div>

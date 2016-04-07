@@ -2,18 +2,19 @@
 var User = require("../models/user");
 
 module.exports = {
-  addColorToList:      addColorToList,
-  addPaletteToList:    addPaletteToList,
-  create:              create,
-  createColorList:     createColorList,
-  createCustomPalette: createCustomPalette,
-  createPaletteList:   createPaletteList,
-  me:                  me,
-  removeColor:         removeColor,
-  removeColorList:     removeColorList,
-  removeCustomPalette: removeCustomPalette,
-  removePalette:       removePalette,
-  removePaletteList:   removePaletteList
+  addColorToList:       addColorToList,
+  addPaletteToList:     addPaletteToList,
+  create:               create,
+  createColorList:      createColorList,
+  createCustomPalette:  createCustomPalette,
+  createPaletteList:    createPaletteList,
+  me:                   me,
+  removeColor:          removeColor,
+  removeColorList:      removeColorList,
+  removeCustomPalette:  removeCustomPalette,
+  removePalette:        removePalette,
+  removePaletteList:    removePaletteList,
+  updateColorListName:  updateColorListName
 };
 
 function addColorToList(req, res, next) {
@@ -226,7 +227,8 @@ function removeCustomPalette(req, res, next) {
       });
     })
     .catch(function(error) {
-      res.send(error);
+      console.log("error trying to remove a custom palette");
+      next(error);
     });
 }
 
@@ -264,5 +266,30 @@ function removePaletteList(req, res, next) {
         }
         res.send(user);
       });
+    })
+    .catch(function(error) {
+      console.log("error trying to remove a palette list");
+      next(error);
+    });
+}
+
+function updateColorListName(req, res, next) {
+  console.log("MADE IT INTO UPDATE COLOR LIST TITLE");
+  var data = req.body;
+  console.log(data);
+  User
+    .findOne({ email: req.decoded.email }).exec()
+    .then(function(user) {
+      user.colorLists.id(data.listId).name = data.listName;
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
+    })
+    .catch(function(error) {
+      console.log("error trying to update color list name");
+      next(error);
     });
 }

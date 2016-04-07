@@ -10,17 +10,18 @@
     function userService($log, $http, authService, token) {
 
       var service = {
-        addColorToList:      addColorToList,
-        addPaletteToList:    addPaletteToList,
-        create:              create,
-        createColorList:     createColorList,
-        createCustomPalette: createCustomPalette,
-        createPaletteList:   createPaletteList,
-        removeColor:         removeColor,
-        removeColorList:     removeColorList,
-        removeCustomPalette: removeCustomPalette,
-        removePalette:       removePalette,
-        removePaletteList:   removePaletteList
+        addColorToList:       addColorToList,
+        addPaletteToList:     addPaletteToList,
+        create:               create,
+        createColorList:      createColorList,
+        createCustomPalette:  createCustomPalette,
+        createPaletteList:    createPaletteList,
+        removeColor:          removeColor,
+        removeColorList:      removeColorList,
+        removeCustomPalette:  removeCustomPalette,
+        removePalette:        removePalette,
+        removePaletteList:    removePaletteList,
+        updateColorListName:  updateColorListName
       };
 
       return service;
@@ -244,7 +245,29 @@
           }
         })
         .then(function(res) {
-          $log.info("success palette list removal");
+          $log.info("successful palette list removal");
+        });
+
+        return promise;
+      }
+
+      function updateColorListName(listId, listName) {
+        var data = {
+          listId: listId,
+          listName: listName
+        };
+
+        var promise = $http({
+          method: "PUT",
+          url: "/api/users/me/updateColorListName",
+          data: data,
+          headers: {
+            "Content-Type": "application/json",
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(res) {
+          $log.info("successful list name update");
         });
 
         return promise;
