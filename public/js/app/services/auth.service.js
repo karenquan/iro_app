@@ -21,7 +21,6 @@
     return service;
 
     function currentUser() {
-
       var user = $http({
         method: "GET",
         url: "/api/users/me",

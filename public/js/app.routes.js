@@ -46,6 +46,13 @@
         controllerAs: "vm",
         authorized:   true
       })
+      .state("colorLists", {
+        url:          "/profile/colorlists/{id}",
+        templateUrl:  "js/app/users/colorlist.html",
+        controller:   "ColorListController",
+        controllerAs: "vm",
+        authorized:   true
+      })
       .state("login", {
         url:          "/login",
         templateUrl:  "/js/app/login/login.html",

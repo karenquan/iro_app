@@ -21,6 +21,7 @@
         removeCustomPalette:   removeCustomPalette,
         removePalette:         removePalette,
         removePaletteList:     removePaletteList,
+        showColorList:         showColorList,
         updateColorListName:   updateColorListName,
         updatePaletteListName: updatePaletteListName
       };
@@ -247,6 +248,27 @@
         })
         .then(function(res) {
           $log.info("successful palette list removal");
+        });
+
+        return promise;
+      }
+
+      function showColorList(listId) {
+        var data = {
+          listId: listId
+        };
+        var promise = $http({
+          method: "GET",
+          url: "/api/users/me/showColorList",
+          data: data,
+          headers: {
+            "Content-Type": "application/json",
+            "authorization": "bearer " + token.retrieve()
+          }
+        })
+        .then(function(res) {
+          $log.info("successfully got color list");
+          return res;
         });
 
         return promise;
