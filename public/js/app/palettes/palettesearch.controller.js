@@ -14,14 +14,19 @@
     vm.palettes;
     vm.searchPalettes = searchPalettes;
     vm.hexSearch = $state.params.hex;
+    vm.searched = false;
 
-    getPalettesByHex();
+    if (vm.hexSearch) {
+      getPalettesByHex();
+    } else {
+      getTopPalettes(100); // load top palettes
+    }
 
     // FUNCTIONS
     function getPalettesByHex() {
       var hex = $state.params.hex;
       var pageNum = $state.params.page;
-      var numResults = $state.params.numResults;
+      var numResults = $state.params.num;
       palettesService
         .getPalettesByHex(hex, pageNum, numResults)
         .then(function(res) {
@@ -31,10 +36,19 @@
         });
     }
 
+    function getTopPalettes(num) {
+      palettesService
+        .getTopPalettes(num)
+        .then(function(res) {
+          vm.palettes = res;
+        }, function(error) {
+
+        });
+    }
+
     function searchPalettes() {
       var defaultPage = 1,
           defaultNumResults = 100;
-
       palettesService
         .getPalettesByHex(vm.paletteSearchInput, defaultPage, defaultNumResults)
         .then(function(res) {

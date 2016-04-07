@@ -14,10 +14,10 @@
       getPalettesByHex:      getPalettesByHex
     };
 
-    function getTopPalettes() {
+    function getTopPalettes(num) {
       var topPalettes = $http({
         method: "GET",
-        url: "/palettes/top"
+        url: "/palettes/top?num=" + num
       }).then(function(response) {
         return response.data;
       });

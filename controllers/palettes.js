@@ -7,7 +7,9 @@ module.exports = {
 };
 
 function index(req, res, next) {
-  var uri = process.env.COLOR_URL_ENDPOINT + "palettes/top?" + process.env.DATA_FORMAT;
+  var numResults = parseInt(req.query.num);
+  var uri = process.env.COLOR_URL_ENDPOINT + "palettes/top?numResults=" + numResults + "&" + process.env.DATA_FORMAT;
+  console.log("URI:", uri);
   request({
     method: "GET",
     uri: uri

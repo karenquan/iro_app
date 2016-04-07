@@ -11,7 +11,7 @@
     var vm = this;
 
     getTopColors();
-    getTopPalettes();
+    getTopPalettes(10);
 
     // BINDINGS
     vm.colorSearchInput;
@@ -32,9 +32,10 @@
         });
     }
 
-    function getTopPalettes() {
+    function getTopPalettes(num) {
+      $log.warn(num);
       palettesService
-        .getTopPalettes()
+        .getTopPalettes(num)
         .then(function(res) {
           vm.topPalettes = res; // top palettes object
         }, function(error) {
