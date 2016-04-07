@@ -29,8 +29,8 @@
           <div class="list-container">
             <div class="individual-palette" ng-repeat="palette in paletteList.palettes track by $index">
               <h3>{{palette.name}} <span class="delete" ng-click="vm.removePalette(paletteList._id, palette._id);">[ x ]</span></h3>
-              <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index" ng-style="{ 'background-color': '#{{color}}'}"></span></a>
-              <span class="col-{{palette.colors.length}} color" ng-class="{'gray-border': '{{color}}' === 'FFFFFF'}" ng-repeat="color in palette.colors track by $index">#{{color}}</span>
+              <a class="palette-link" ng-click="vm.paletteClick(palette.id)"><span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index" style="background-color: #{{color}}"></span></a>
+              <span class="col-{{palette.colors.length}} color" ng-repeat="color in palette.colors track by $index">#{{color}}</span>
             </div>
           </div>
         </div>

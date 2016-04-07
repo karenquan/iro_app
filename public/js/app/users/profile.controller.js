@@ -17,6 +17,7 @@
     vm.createPaletteList   = createPaletteList;
     vm.customPaletteName;
     vm.currentUser;
+    vm.paletteClick        = paletteClick;
     vm.removeColor         = removeColor;
     vm.removeColorList     = removeColorList;
     vm.removeCustomPalette = removeCustomPalette;
@@ -116,6 +117,10 @@
       }, function(error) {
         $log.info("error in user retrieval");
       });
+    }
+
+    function paletteClick(id) {
+      $state.go("palette", { id: id });
     }
 
     function removeColor(colorListId, colorId) {
