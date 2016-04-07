@@ -322,6 +322,7 @@ footer {
       color: $black;
       display: inline-block;
       margin: 0 0 0 20px;
+      font-weight: normal;
 
       &:hover {
         color: $purple;
@@ -802,6 +803,11 @@ footer {
     }
   }
 
+  h1, h2, h3, h4 {
+    font-weight: normal;
+    text-transform: uppercase;
+  }
+
   h2 {
     font-size: 30px;
     padding: 10px 0;
@@ -813,6 +819,25 @@ footer {
       width: 48%;
       text-align: center;
     }
+  }
+
+  h3 {
+    font-size: 25px;
+    text-align: left;
+    border-bottom: 1px solid;
+    padding: 0 0 10px 0;
+    margin: 60px 0 20px 0;
+
+    span {
+      font-family: 'Playfair Display', serif;
+      font-size: 25px;
+    }
+  }
+
+  h4 {
+    font-size: 15px;
+    margin: 0;
+    text-align: left;
   }
 
   button, select {
@@ -832,6 +857,10 @@ footer {
 } /* END .individual-color-show */
 
 .profile {
+  h1 {
+    text-transform: uppercase;
+  }
+
   section {
     margin: 0 0 50px 0;
   }

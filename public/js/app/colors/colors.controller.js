@@ -5,21 +5,23 @@
     .module("app")
     .controller("ColorsController", ColorsController);
 
-  ColorsController.$inject = ["$log", "colorService", "tokenService", "authService", "userService"];
+  ColorsController.$inject = ["$log", "colorService", "tokenService", "authService", "userService", "palettesService", "$stateParams"];
 
-  function ColorsController($log, colorService, token, authService, userService) {
+  function ColorsController($log, colorService, token, authService, userService, palettesService, $stateParams) {
     var vm = this;
 
     // BINDINGS
     vm.addColorToList = addColorToList;
     vm.color;
     vm.currentUserColorLists;
+    vm.palettes;
     vm.selectedListId;
 
-    getColor();
     if(authService.isLoggedIn()) {
       getCurrentUserColorLists();
     }
+    getColor();
+    getPalettes();
 
     // FUNCTIONS
     function addColorToList() {
@@ -51,6 +53,16 @@
           $log.error(error);
         }
       );
+    }
+
+    function getPalettes() {
+      palettesService
+        .getPalettesByHex($stateParams.hex, 1, 10)
+        .then(function(res) {
+          vm.palettes = res; // palettes with current colors
+        }, function(error) {
+
+        });
     }
   }
 })();

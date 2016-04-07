@@ -2,9 +2,9 @@
   <h1>{{vm.color.title}}</h1>
   <div class="individual-color-block" style="background-color: #{{vm.color.hex}}"></div>
    <h2 style="border: 1px solid #{{vm.color.hex}}; color: #{{vm.color.hex}}"><span>#{{vm.color.hex}}</span> | <span>rgb({{vm.color.rgb.red}}, {{vm.color.rgb.green}}, {{vm.color.rgb.blue}})</span></h2>
-   <p>Number of Views: {{vm.color.numViews}}</p>
+   <!-- <p>Number of Views: {{vm.color.numViews}}</p>
    <p>Number of Votes: {{vm.color.numVotes}}</p>
-   <p>Rank: {{vm.color.rank}}</p>
+   <p>Rank: {{vm.color.rank}}</p> -->
    <div class="user-options" ng-show="vm.currentUserColorLists.length > 0">
     <form name="colorListForm">
       <select ng-model="vm.selectedListId" required>
@@ -14,4 +14,10 @@
       <button ng-invalid="colorListForm.$invalid" ng-click="vm.addColorToList();">Add color</button>
     </form>
    </div>
+   <h3 class="title">Palettes with <span>#{{vm.color.hex}}</span></h3>
+   <div class="individual-palette" ng-repeat="palette in vm.palettes track by $index">
+      <h4>{{palette.title}}</h4>
+      <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index" ng-style="{ 'background-color': '#{{color}}'}"></span></a>
+      <span class="col-{{palette.colors.length}} color" ng-class="{'gray-border': '{{color}}' === 'FFFFFF'}" ng-repeat="color in palette.colors track by $index">#{{color}}</span>
+    </div>
 </section>
