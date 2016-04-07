@@ -1005,8 +1005,6 @@ footer {
     font-size: 12px;
     vertical-align: middle;
     display: inline-block; }
-    .profile .profile-color-lists h2 span.delete, .profile .profile-color-lists h3 span.delete, .profile .profile-palette-lists h2 span.delete, .profile .profile-palette-lists h3 span.delete {
-      float: right; }
   .profile .profile-color-lists .list-container, .profile .profile-palette-lists .list-container {
     max-height: 300px;
     padding: 2px;
@@ -1063,6 +1061,8 @@ footer {
   .profile .profile-palette-lists .profile-palette-list {
     margin: 0 0 10px 0;
     width: 100%; }
+    .profile .profile-palette-lists .profile-palette-list span.delete {
+      float: right; }
   .profile .profile-custom-palette-lists h1 {
     background-color: #83af9c; }
 
@@ -1108,6 +1108,8 @@ footer {
     height: 30px;
     box-sizing: border-box;
     text-align: center; }
+    .individual-palette span.delete {
+      float: right; }
   .individual-palette .custom-palette {
     display: inline-block;
     width: 100%;
@@ -1212,6 +1214,9 @@ footer {
     .color-list-show form button, .palette-list-show form button {
       padding: 10px;
       width: 20%; }
+
+.palette-list-show span.delete {
+  font-size: 14px; }
 
 .white-bg {
   background-color: white; }

@@ -12,6 +12,7 @@
     var listId = $state.params.id;
 
     vm.paletteList;
+    vm.removePalette         = removePalette;
     vm.updatedPaletteListName;
     vm.updatePaletteListName = updatePaletteListName;
 
@@ -29,6 +30,19 @@
       }, function(error) {
         $log.info("error in user retrieval");
       });
+    }
+
+    function removePalette(paletteListId, paletteId) {
+      $log.info("palette list id: ", paletteListId);
+      $log.info("palette id: ", paletteId);
+      userService
+        .removePalette(paletteListId, paletteId)
+        .then(function(res) {
+          $log.info("profile controller // removed palette");
+          getPaletteList();
+        }, function(error) {
+          $log.info(error);
+        });
     }
 
     function updatePaletteListName(listId) {
