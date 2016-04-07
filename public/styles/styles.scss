@@ -629,6 +629,11 @@ footer {
 .create-palette {
   margin: 30px 0 0 0;
 
+  p {
+    text-align: left;
+    font-style: italic;
+  }
+
   button {
     background-color: $green;
     border: 1px solid $green;

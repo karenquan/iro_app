@@ -76,12 +76,13 @@
           <span style="background-color: #{{vm.customHexFive}}"></span>
         </div>
         <div class="create-palette-hex">
-          <div><span>#</span> <input type="text" ng-model="vm.customHexOne" placeholder="FFFFFF" maxlength="6"></div>
-          <div><span>#</span> <input type="text" ng-model="vm.customHexTwo" placeholder="FFFFFF" maxlength="6"></div>
-          <div><span>#</span> <input type="text" ng-model="vm.customHexThree" placeholder="FFFFFF" maxlength="6"></div>
-          <div><span>#</span> <input type="text" ng-model="vm.customHexFour" placeholder="FFFFFF" maxlength="6"></div>
-          <div><span>#</span> <input type="text" ng-model="vm.customHexFive" placeholder="FFFFFF" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexOne" placeholder="FFFFFF*" ng-pattern="/^[0-9A-Fa-f]+$/" minlength="6" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexTwo" placeholder="FFFFFF*" ng-pattern="/^[0-9A-Fa-f]+$/" minlength="6" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexThree" placeholder="FFFFFF*" ng-pattern="/^[0-9A-Fa-f]+$/" minlength="6" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexFour" placeholder="FFFFFF*" ng-pattern="/^[0-9A-Fa-f]+$/" minlength="6" maxlength="6"></div>
+          <div><span>#</span> <input type="text" ng-model="vm.customHexFive" placeholder="FFFFFF*" ng-pattern="/^[0-9A-Fa-f]+$/" minlength="6" maxlength="6"></div>
         </div>
+        <p>*6-digit hex required.</p>
         <input type="text" ng-model="vm.customPaletteName" class="custom-palette-name" required>
         <button ng-disabled="customPaletteForm.$invalid">Create Custom Palette</button>
       </form>
