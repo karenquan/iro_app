@@ -1,1 +1,1 @@
-web: node app/bin/www
+web: node iro_app/bin/www
