@@ -5,12 +5,13 @@
     .module("app")
     .controller("ProfileController", ProfileController);
 
-  ProfileController.$inject = ["$log", "$http", "tokenService", "userService"];
+  ProfileController.$inject = ["$log", "$http", "tokenService", "userService", "$state"];
 
-  function ProfileController($log, $http, token, userService) {
+  function ProfileController($log, $http, token, userService, $state) {
     var vm = this;
 
     // BINDINGS
+    vm.colorClick          = colorClick;
     vm.createColorList     = createColorList;
     vm.createCustomPalette = createCustomPalette;
     vm.createPaletteList   = createPaletteList;
@@ -25,6 +26,10 @@
     getCurrentUser();
 
     // FUNCTIONS
+    function colorClick(hex) {
+      $state.go("color", { hex: hex });
+    }
+
     function createColorList() {
       userService
         .createColorList(vm.currentUser, vm.customColorListName)
