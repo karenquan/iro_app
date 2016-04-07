@@ -854,6 +854,9 @@ footer {
     margin: 40px 0; }
     .individual-palette-show p.success, .individual-color-show p.success {
       margin: 10px 0; }
+  .individual-palette-show button, .individual-color-show button {
+    padding: 10px;
+    width: 20%; }
   .individual-palette-show .user-options, .individual-color-show .user-options {
     text-align: center;
     margin: 20px 0; }
@@ -985,8 +988,11 @@ footer {
     margin: 40px 0 0 0; }
   .profile input {
     vertical-align: bottom;
-    padding: 20px 20px 20px 0;
-    width: 30%; }
+    padding: 10px 10px 10px 0;
+    width: 20%; }
+  .profile button {
+    padding: 10px;
+    width: 20%; }
   .profile .name {
     text-align: center;
     text-transform: uppercase; }
