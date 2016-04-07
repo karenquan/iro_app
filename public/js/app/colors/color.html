@@ -14,7 +14,7 @@
       <button ng-invalid="colorListForm.$invalid" ng-click="vm.addColorToList();">Add color</button>
     </form>
    </div>
-   <h3 class="title">Palettes with <span>#{{vm.color.hex}}</span></h3>
+   <h3 class="title">Palettes with <span>#{{vm.color.hex}}</span> <a ui-sref="paletteSearch({ hex:vm.color.hex, page: 1, num: 100 })">Browse more &#10095;</a></h3>
    <div class="individual-palette" ng-repeat="palette in vm.palettes track by $index">
       <h4>{{palette.title}}</h4>
       <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index" ng-style="{ 'background-color': '#{{color}}'}"></span></a>

@@ -832,6 +832,25 @@ footer {
       font-family: 'Playfair Display', serif;
       font-size: 25px;
     }
+
+    a {
+      color: $black;
+      display: inline-block;
+      margin: 0 0 0 20px;
+      font-size: 18px;
+      height: auto;
+      width: auto;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      box-shadow: none;
+
+      &:hover {
+        color: $purple;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+      }
+    }
   }
 
   h4 {
@@ -1092,7 +1111,6 @@ footer {
     text-transform: uppercase;
 
     &.title {
-      color: $green;
       padding: 0 0 10px 0;
       border-bottom: 1px solid;
 
