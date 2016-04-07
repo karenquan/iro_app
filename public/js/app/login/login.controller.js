@@ -9,25 +9,23 @@
 
   function LoginController($log, authService, $state) {
     var vm = this;
+    var emailInput = angular.element(document.getElementById("email"));
+    var passwordInput = angular.element(document.getElementById("password"));
 
     // BINDINGS
     vm.conflict            = false;
+    vm.emailEmpty          = false;
     vm.emailFormatConflict = false;
+    vm.passwordEmpty       = false;
     vm.submitLogin         = submitLogin;
     vm.user = {
       email: "",
       password: ""
     };
-
-    formValidations();
+    vm.validateEmail            = validateEmail;
+    vm.validatePassword       = validatePassword;
 
     // FUNCTIONS
-    function formValidations() {
-      var emailInput = angular.element(document.getElementById("email"));
-      $log.info(emailInput);
-      $log.info(vm.user.email);
-    }
-
     function submitLogin() {
       authService
         .login(vm.user)
@@ -38,6 +36,15 @@
             vm.conflict = true;
             $log.error("login error:", error)
         });
+    }
+
+    function validateEmail() {
+      vm.emailFormatConflict = emailInput.hasClass("ng-invalid-email") ? true : false;
+      vm.emailEmpty = emailInput.hasClass("ng-not-empty") ? false : true;
+    }
+
+    function validatePassword() {
+      vm.passwordEmpty = passwordInput.hasClass("ng-not-empty") ? false : true;
     }
   }
 })();

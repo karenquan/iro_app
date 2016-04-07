@@ -3,10 +3,12 @@
   <form name="loginForm" ng-submit="vm.submitLogin();" novalidate>
     <span class="error" ng-hide="!vm.conflict">Invalid credentials.</span>
     <label for="email">Email</label>
-    <input ng-model="vm.user.email" type="email" id="email" class="email" required email autofocus>
-    <span class="error" ng-hide="!vm.emailFormatConflict">Invalid email format.</span>
+    <input ng-model="vm.user.email" ng-blur="vm.validateEmail();" type="email" id="email" class="email" required email autofocus>
+    <span class="error" ng-show="vm.emailEmpty">This field is required.*</span>
+    <span class="error" ng-show="vm.emailFormatConflict">Invalid email format.</span>
     <label for="password">Password</label>
-    <input ng-model="vm.user.password" type="password" id="password" class="password" required>
+    <input ng-model="vm.user.password" ng-blur="vm.validatePassword();" type="password" id="password" class="password" required>
+    <span class="error" ng-show="vm.passwordEmpty">This field is required.*</span>
     <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
   </form>
   <p>Don't have an account? <a ui-sref="signup">Sign up</a>.</p>
