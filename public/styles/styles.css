@@ -374,7 +374,8 @@ textarea {
 /* ----- TAGS ------------------------------------------------------- */
 html, body {
   height: 100%;
-  width: 100%; }
+  width: 100%;
+  position: relative; }
 
 body {
   font-family: 'Playfair Display', sans-serif;
@@ -1165,6 +1166,16 @@ footer {
 
 .success {
   color: #83af9c; }
+
+.loading:after {
+  content: '';
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8) url("../images/pug.gif") no-repeat center center;
+  z-index: 100000; }
 
 /* ANIMATION */
 [ui-view].ng-enter {

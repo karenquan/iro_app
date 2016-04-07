@@ -145,7 +145,6 @@
           colorListId: colorListId,
           colorId: colorId
         };
-        $log.info(data);
         var promise = $http({
           method: "DELETE",
           url: "/api/users/me/removeColor",

@@ -48,7 +48,6 @@
         $log.info(response);
         var user = response;
         vm.currentUserPaletteLists = user.paletteLists;
-        $log.info("current user palettes:", user.paletteLists);
       }, function(error) {
         $log.error(error);
       });

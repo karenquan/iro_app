@@ -50,7 +50,7 @@
         .then(function(res) {
           vm.palettes = res;
         }, function(error) {
-
+          $log.error(error);
         });
     }
 

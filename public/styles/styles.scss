@@ -60,6 +60,7 @@ $success: #008B45;
 html, body {
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
 body {
@@ -1185,6 +1186,19 @@ footer {
 
 .success {
   color: $green;
+}
+
+.loading {
+  &:after {
+    content: '';
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.8) url('../images/pug.gif') no-repeat center center;
+    z-index: 100000;
+  }
 }
 
 /* ANIMATION */
