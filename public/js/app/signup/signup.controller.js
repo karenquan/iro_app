@@ -11,7 +11,8 @@
     var vm = this;
 
     // BINDINGS
-    vm.submitSignUp = submitSignUp;
+    vm.emailConflict = false;
+    vm.submitSignUp  = submitSignUp;
     vm.user = {
       firstName: "",
       lastName: "",
@@ -31,6 +32,7 @@
         },
         function(error) {
           $log.error("Login Error:", error);
+          vm.emailConflict = true;
         });;
     }
   }
