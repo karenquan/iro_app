@@ -28,7 +28,6 @@
     }
 
     function removeCustomPalette(paletteId) {
-      $log.info("cusom palette id to remove:", paletteId);
       userService
         .removeCustomPalette(paletteId)
         .then(function(res) {

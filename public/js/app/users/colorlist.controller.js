@@ -27,7 +27,6 @@
           return list._id == listId;
         });
         vm.colorList = filteredList[0];
-        $log.info(vm.colorList);
       }, function(error) {
         $log.info("error in user retrieval");
       });

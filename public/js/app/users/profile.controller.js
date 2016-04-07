@@ -71,7 +71,6 @@
 
       palette.colors = colors;
       palette.name = vm.customPaletteName;
-      $log.info(palette);
 
       userService
         .createCustomPalette(palette)
@@ -140,7 +139,6 @@
     }
 
     function removeCustomPalette(paletteId) {
-      $log.info("cusom palette id to remove:", paletteId);
       userService
         .removeCustomPalette(paletteId)
         .then(function(res) {
@@ -151,8 +149,6 @@
     }
 
     function removePalette(paletteListId, paletteId) {
-      $log.info("palette list id: ", paletteListId);
-      $log.info("palette id: ", paletteId);
       userService
         .removePalette(paletteListId, paletteId)
         .then(function(res) {
@@ -163,7 +159,6 @@
     }
 
     function removePaletteList(listId) {
-      $log.info("palette list id:", listId);
       userService
         .removePaletteList(listId)
         .then(function(res) {

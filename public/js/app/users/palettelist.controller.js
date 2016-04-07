@@ -27,7 +27,6 @@
         var filteredList = currentUser.paletteLists.filter(function(list) {
           return list._id == listId;
         });
-        $log.info(filteredList);
         vm.paletteList = filteredList[0];
       }, function(error) {
         $log.info("error in user retrieval");
@@ -35,8 +34,6 @@
     }
 
     function removePalette(paletteListId, paletteId) {
-      $log.info("palette list id: ", paletteListId);
-      $log.info("palette id: ", paletteId);
       userService
         .removePalette(paletteListId, paletteId)
         .then(function(res) {
@@ -47,7 +44,6 @@
     }
 
     function updatePaletteListName(listId) {
-      $log.info(listId);
       userService
         .updatePaletteListName(listId, vm.updatedPaletteListName)
         .then(function(res) {
