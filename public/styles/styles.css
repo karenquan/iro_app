@@ -1083,6 +1083,10 @@ footer {
   font-size: 14px; }
 
 /* END .palette-search-results, .color-search-results */
+.color-search-results h1.top-colors {
+  border-bottom: 1px solid;
+  padding: 0 0 10px 0; }
+
 .color-search-results .individual-color {
   width: 100%;
   margin: 0 0 15px 0;

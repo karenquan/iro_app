@@ -5,11 +5,12 @@
     .module("app")
     .controller("ColorSearchController", ColorSearchController);
 
-  ColorSearchController.$inject = ["$log", "colorService"];
+  ColorSearchController.$inject = ["$log", "colorService", "$state"];
 
-  function ColorSearchController($log, colorService) {
+  function ColorSearchController($log, colorService, $state) {
     var vm = this;
 
+    vm.searchColor = searchColor;
     vm.topColors;
 
     getTopColors(100);
@@ -22,6 +23,10 @@
         }, function(error) {
           $log.error(error);
         });
+    }
+
+    function searchColor() {
+      $state.go("color", { hex: vm.colorSearchInput });
     }
   }
 })();

@@ -1075,6 +1075,14 @@ footer {
 
 .color-search-results {
 
+  h1 {
+
+    &.top-colors {
+      border-bottom: 1px solid;
+      padding: 0 0 10px 0;
+    }
+  }
+
   .individual-color {
     width: 100%;
     margin: 0 0 15px 0;

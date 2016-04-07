@@ -30,7 +30,6 @@
         }
       })
       .then(function(response) {
-        $log.info(response.data);
         return response.data; // current user
       });
 
