@@ -985,7 +985,7 @@ footer {
     color: #FFF;
     font-weight: normal;
     margin: 30px 0; }
-  .profile .profile-color-lists form.color-list-title-update, .profile .profile-palette-lists form.color-list-title-update, .profile .profile-custom-palette-lists form.color-list-title-update {
+  .profile .profile-color-lists form.update, .profile .profile-palette-lists form.update, .profile .profile-custom-palette-lists form.update {
     margin: 20px 0; }
   .profile .profile-color-lists h2, .profile .profile-color-lists h3, .profile .profile-palette-lists h2, .profile .profile-palette-lists h3 {
     text-transform: uppercase;

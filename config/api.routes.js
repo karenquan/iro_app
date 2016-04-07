@@ -19,6 +19,7 @@ router.delete("/users/me/removeCustomPalette", token.authenticate, usersControll
 router.delete("/users/me/removePalette", token.authenticate, usersController.removePalette);
 router.delete("/users/me/removePaletteList", token.authenticate, usersController.removePaletteList);
 router.put("/users/me/updateColorListName", token.authenticate, usersController.updateColorListName);
+router.put("/users/me/updatePaletteListName", token.authenticate, usersController.updatePaletteListName);
 router.post("/users/me/token", token.authenticate, token.refresh);
 
 router.post("/token", token.create);

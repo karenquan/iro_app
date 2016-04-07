@@ -2,19 +2,20 @@
 var User = require("../models/user");
 
 module.exports = {
-  addColorToList:       addColorToList,
-  addPaletteToList:     addPaletteToList,
-  create:               create,
-  createColorList:      createColorList,
-  createCustomPalette:  createCustomPalette,
-  createPaletteList:    createPaletteList,
-  me:                   me,
-  removeColor:          removeColor,
-  removeColorList:      removeColorList,
-  removeCustomPalette:  removeCustomPalette,
-  removePalette:        removePalette,
-  removePaletteList:    removePaletteList,
-  updateColorListName:  updateColorListName
+  addColorToList:        addColorToList,
+  addPaletteToList:      addPaletteToList,
+  create:                create,
+  createColorList:       createColorList,
+  createCustomPalette:   createCustomPalette,
+  createPaletteList:     createPaletteList,
+  me:                    me,
+  removeColor:           removeColor,
+  removeColorList:       removeColorList,
+  removeCustomPalette:   removeCustomPalette,
+  removePalette:         removePalette,
+  removePaletteList:     removePaletteList,
+  updateColorListName:   updateColorListName,
+  updatePaletteListName: updatePaletteListName
 };
 
 function addColorToList(req, res, next) {
@@ -281,6 +282,27 @@ function updateColorListName(req, res, next) {
     .findOne({ email: req.decoded.email }).exec()
     .then(function(user) {
       user.colorLists.id(data.listId).name = data.listName;
+      user.save(function(error, user) {
+        if (error) {
+          res.send(error);
+        }
+        res.send(user);
+      });
+    })
+    .catch(function(error) {
+      console.log("error trying to update color list name");
+      next(error);
+    });
+}
+
+function updatePaletteListName(req, res, next) {
+  console.log("MADE IT INTO UPDATE PALETTE LIST TITLE");
+  var data = req.body;
+  console.log(data);
+  User
+    .findOne({ email: req.decoded.email }).exec()
+    .then(function(user) {
+      user.paletteLists.id(data.listId).name = data.listName;
       user.save(function(error, user) {
         if (error) {
           res.send(error);

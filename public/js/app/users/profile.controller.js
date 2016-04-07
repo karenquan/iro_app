@@ -26,6 +26,8 @@
     vm.showColorListForm   = false;
     vm.updatedColorListName;
     vm.updateColorListName = updateColorListName;
+    vm.updatedPaletteListName;
+    vm.updatePaletteListName = updatePaletteListName;
 
     getCurrentUser();
 
@@ -178,7 +180,7 @@
         .then(function(res) {
           $log.info("profile controller // removed palette list");
           getCurrentUser();
-          vm.showColorListForm = false;
+          vm.updatedColorListName = "";
         }, function(error) {
           $log.error(error);
         });
@@ -189,6 +191,18 @@
         .updateColorListName(listId, vm.updatedColorListName)
         .then(function(res) {
           $log.info("profile controller // updated color list title");
+          getCurrentUser();
+          vm.updatedPaletteListName = "";
+        }, function(error) {
+          $log.error(error);
+        });
+    }
+
+    function updatePaletteListName(listId) {
+      userService
+        .updatePaletteListName(listId, vm.updatedPaletteListName)
+        .then(function(res) {
+          $log.info("profile controller // updated palette list title");
           getCurrentUser();
         }, function(error) {
           $log.error(error);
