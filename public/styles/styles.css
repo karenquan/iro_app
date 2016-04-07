@@ -645,6 +645,11 @@ footer {
       display: inline-block; }
 
 /* END .home */
+.color-search p, .palette-search p {
+  color: #FFF;
+  margin: 5px 0 0 0;
+  font-style: italic; }
+
 .color-search input, .palette-search input {
   width: 30%;
   margin: 0 20px 0 0; }
@@ -1100,17 +1105,25 @@ footer {
     .palette-search-results h1.title.hex, .color-search-results h1.title.hex {
       font-family: 'Playfair Display'; }
 
+.palette-search-results p, .color-search-results p {
+  text-align: left;
+  font-size: 13px;
+  font-style: italic;
+  margin: 5px 0 0 0; }
+
 .palette-search-results form, .color-search-results form {
   font-size: 16px;
   text-align: center;
-  margin: 40px 0 50px; }
+  margin: 40px auto 50px;
+  max-width: 500px; }
 
 .palette-search-results input, .color-search-results input {
   vertical-align: bottom;
   padding: 20px 20px 20px 0;
-  width: 20%; }
+  width: 47%; }
 
 .palette-search-results button, .color-search-results button {
+  width: 47%;
   font-size: 14px; }
 
 /* END .palette-search-results, .color-search-results */

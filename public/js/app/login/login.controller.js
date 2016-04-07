@@ -11,14 +11,23 @@
     var vm = this;
 
     // BINDINGS
-    vm.conflict    = false;
-    vm.submitLogin = submitLogin;
+    vm.conflict            = false;
+    vm.emailFormatConflict = false;
+    vm.submitLogin         = submitLogin;
     vm.user = {
       email: "",
       password: ""
     };
 
+    formValidations();
+
     // FUNCTIONS
+    function formValidations() {
+      var emailInput = angular.element(document.getElementById("email"));
+      $log.info(emailInput);
+      $log.info(vm.user.email);
+    }
+
     function submitLogin() {
       authService
         .login(vm.user)

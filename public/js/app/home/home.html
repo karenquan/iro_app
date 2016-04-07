@@ -24,8 +24,9 @@
       <form name="colorSearchForm" ng-submit="vm.searchColor();" novalidate>
         <span class="color-box white-bg" style="background-color: #{{vm.colorSearchInput}}"></span>
         <span>#</span>
-        <input ng-model="vm.colorSearchInput" type="text" placeholder="FFFFFF" maxlength="6" required>
+        <input ng-model="vm.colorSearchInput" ng-pattern="/^[0-9A-Fa-f]+$/" type="text" placeholder="FFFFFF*" minlength="6" maxlength="6" required>
         <button ng-disabled="colorSearchForm.$invalid">search</button>
+        <p>*6-digit hex required.</p>
       </form>
       <h1>Search Colors</h1>
     </div>
@@ -49,8 +50,9 @@
       <form name="paletteSearch" ng-submit="vm.searchPalettes();" novalidate>
         <span class="color-box white-bg" style="background-color: #{{vm.paletteSearchInput}}"></span>
         <span>#</span>
-        <input type="text" ng-model="vm.paletteSearchInput" placeholder="FFFFFF" maxlength="6" required>
+        <input type="text" ng-model="vm.paletteSearchInput" ng-pattern="/^[0-9A-Fa-f]+$/" placeholder="FFFFFF*" minlength="6" maxlength="6" required>
         <button ng-disabled="paletteSearch.$invalid">search</button>
+        <p>*6-digit hex required.</p>
       </form>
       <h1>Search Palettes</h1>
     </div>

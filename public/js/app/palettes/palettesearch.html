@@ -2,8 +2,9 @@
   <h1>Search Palettes By Hex</h1>
   <form name="paletteSearchForm" ng-submit="vm.searchPalettes();" novalidate>
     <span>#</span>
-    <input type="text" ng-model="vm.paletteSearchInput" placeholder="FFFFFF" maxlength="6" required>
+    <input type="text" ng-model="vm.paletteSearchInput" placeholder="FFFFFF" ng-pattern="/^[0-9A-Fa-f]+$/" minlength="6" maxlength="6" required>
     <button ng-disabled="paletteSearchForm.$invalid">Search</button>
+    <p>*6-digit hex required.</p>
   </form>
   <h1 class="title hex" ng-show="vm.hexSearch.length">#{{vm.hexSearch}}</h1>
   <p ng-hide="!vm.noPalettesFound">No palettes found.</p>

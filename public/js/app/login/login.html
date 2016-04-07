@@ -4,6 +4,7 @@
     <span class="error" ng-hide="!vm.conflict">Invalid credentials.</span>
     <label for="email">Email</label>
     <input ng-model="vm.user.email" type="email" id="email" class="email" required email autofocus>
+    <span class="error" ng-hide="!vm.emailFormatConflict">Invalid email format.</span>
     <label for="password">Password</label>
     <input ng-model="vm.user.password" type="password" id="password" class="password" required>
     <button type="submit" ng-disabled="loginForm.$invalid">Login</button>
