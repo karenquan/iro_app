@@ -110,9 +110,6 @@ nav {
   position: fixed;
   top: 0;
   z-index: 1000;
-  // -webkit-box-shadow: 0 0 5px 0 rgba(255,255,255,0.8);
-  // -moz-box-shadow: 0 0 5px 0 rgba(255,255,255,0.8);
-  // box-shadow: 0 0 5px 0 rgba(255,255,255,0.8);
 
   ul {
     background-color: $green;
@@ -135,12 +132,10 @@ nav {
         text-transform: uppercase;
 
         &:hover {
-          // background: $greenhover;
           color: $black;
         }
 
         &.active {
-          // background-color: $greenhover;
         }
       }
     }
@@ -148,14 +143,12 @@ nav {
 } /* END NAV */
 
 main {
-  // margin: 57px 0 0 0;
   height: 100%;
   width: 100%;
 
   section {
 
     article {
-
       h1 {
         font-size: 40px;
         letter-spacing: 1px;
@@ -168,7 +161,6 @@ main {
       }
 
       &:nth-child(2n) {
-
         h1 {
           color: $white;
           text-align: right;
@@ -315,7 +307,6 @@ footer {
 }
 
 .home {
-
   h1 {
     a {
       font-size: 20px;
@@ -445,8 +436,6 @@ footer {
 
 } /* END .color-search */
 
-
-
 .login {
   form {
     button {
@@ -539,7 +528,6 @@ footer {
 } /* END .login/.sign-up */
 
 .search {
-
   span {
     font-size: 20px;
     color: $white;
@@ -894,7 +882,6 @@ footer {
     width: 100%;
     @include box-shadow(0, 0, 5px, $gray);
   }
-
 } /* END .individual-color-show */
 
 .profile {
@@ -956,7 +943,6 @@ footer {
   }
 
   .profile-color-lists, .profile-palette-lists {
-
     h2, h3 {
       text-transform: uppercase;
       font-weight: normal;
