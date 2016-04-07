@@ -1015,6 +1015,8 @@ footer {
     flex-wrap: wrap;
     -webkit-justify-content: space-between;
     justify-content: space-between; }
+  .profile .profile-color-lists span.delete, .profile .profile-palette-lists span.delete {
+    float: right; }
   .profile .profile-color-lists h1 {
     background-color: #8397af; }
   .profile .profile-color-lists h2 {
@@ -1061,8 +1063,6 @@ footer {
   .profile .profile-palette-lists .profile-palette-list {
     margin: 0 0 10px 0;
     width: 100%; }
-    .profile .profile-palette-lists .profile-palette-list span.delete {
-      float: right; }
   .profile .profile-custom-palette-lists h1 {
     background-color: #83af9c; }
 

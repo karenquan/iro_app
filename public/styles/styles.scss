@@ -972,6 +972,12 @@ footer {
       -webkit-justify-content: space-between;
       justify-content: space-between;
     }
+
+    span {
+        &.delete {
+          float: right;
+        }
+      }
   } /* END .profile-color-lists & .profile-palette-lists */
 
   .profile-color-lists {
@@ -1052,12 +1058,6 @@ footer {
     .profile-palette-list {
       margin: 0 0 10px 0;
       width: 100%;
-
-      span {
-        &.delete {
-          float: right;
-        }
-      }
     }
 
   } /* END .profile-palette-lists */

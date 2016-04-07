@@ -27,7 +27,6 @@
       userService
         .addPaletteToList(vm.selectedListId, vm.palette)
         .then(function(response) {
-          $log.info("successfully added palette to list");
           vm.addedPalette = true;
           $timeout(function() {
               vm.addedPalette = false;

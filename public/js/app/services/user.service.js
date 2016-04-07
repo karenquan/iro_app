@@ -43,7 +43,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successfully added color to list");
         });
 
         return promise;
@@ -63,7 +62,6 @@
           }
         })
         .then(function(response) {
-          $log.info("successfully added palette to list");
         });
 
         return promise;
@@ -99,7 +97,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successful color list creation", res);
         });
 
         return promise;
@@ -115,7 +112,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successful custom palette creation");
         }, function(error) {
           $log.error(error);
         });
@@ -137,7 +133,6 @@
           }
         })
         .then(function(res){
-          $log.info("successful palette list creation");
         });
 
         return promise;
@@ -158,7 +153,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successful color removal");
         });
 
         return promise;
@@ -181,7 +175,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successful color list removal");
         });
 
         return promise;
@@ -202,7 +195,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successful custom palette removal");
         });
 
         return promise;
@@ -214,8 +206,6 @@
           paletteId: paletteId
         };
 
-        $log.info("remove palette list data", data);
-
         var promise = $http({
           method: "DELETE",
           url: "/api/users/me/removePalette",
@@ -226,7 +216,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successful palette list removal");
         });
 
         return promise;
@@ -247,7 +236,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successful palette list removal");
         });
 
         return promise;
@@ -267,7 +255,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successfully got color list");
           return res;
         });
 
@@ -290,7 +277,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successful color list name update");
         });
 
         return promise;
@@ -312,7 +298,6 @@
           }
         })
         .then(function(res) {
-          $log.info("successful palette list name update");
         });
 
         return promise;

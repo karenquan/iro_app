@@ -9,7 +9,6 @@
 
   function NavBarController($log, authService) {
     var vm = this;
-
     vm.authService = authService;
   }
 })();

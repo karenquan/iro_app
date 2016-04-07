@@ -10,11 +10,13 @@
   function ColorSearchController($log, colorService, $state) {
     var vm = this;
 
+    // BINDINGS
     vm.searchColor = searchColor;
     vm.topColors;
 
     getTopColors(100);
 
+    // FUNCTIONS
     function getTopColors(num) {
       colorService
         .getTopColors(num)

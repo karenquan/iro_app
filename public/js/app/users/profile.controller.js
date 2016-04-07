@@ -36,7 +36,6 @@
       userService
         .createColorList(vm.currentUser, vm.customColorListName)
         .then(function(res) {
-          $log.info("profile controller // create color list creation");
           getCurrentUser();
           vm.customColorListName = '';
         }, function(error) {
@@ -77,7 +76,6 @@
       userService
         .createCustomPalette(palette)
         .then(function(res) {
-          $log.info("profile controller // create custom palette");
           getCurrentUser();
           vm.customHexOne = "";
           vm.customHexTwo = "";
@@ -94,7 +92,6 @@
       userService
         .createPaletteList(vm.customPaletteListName)
         .then(function(res) {
-          $log.info("profile controller // create palette list creation");
           getCurrentUser();
           vm.customPaletteListName = '';
         }, function(error) {
@@ -125,7 +122,6 @@
       userService
         .removeColor(colorListId, colorId)
         .then(function(res) {
-          $log.info("profile controller // removed color");
           getCurrentUser();
         }, function(error) {
           $log.error(error);
@@ -137,7 +133,6 @@
       userService
         .removeColorList(listId)
         .then(function(res) {
-          $log.info("profile controller // removed color list");
           getCurrentUser();
         }, function(error) {
           $log.error(error);
@@ -149,7 +144,6 @@
       userService
         .removeCustomPalette(paletteId)
         .then(function(res) {
-          $log.info("profile controller // removed custom palette");
           getCurrentUser();
         }, function(error) {
           $log.error(error);
@@ -162,7 +156,6 @@
       userService
         .removePalette(paletteListId, paletteId)
         .then(function(res) {
-          $log.info("profile controller // removed palette");
           getCurrentUser();
         }, function(error) {
           $log.info(error);
@@ -174,7 +167,6 @@
       userService
         .removePaletteList(listId)
         .then(function(res) {
-          $log.info("profile controller // removed palette list");
           getCurrentUser();
           vm.updatedColorListName = "";
         }, function(error) {

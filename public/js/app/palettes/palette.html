@@ -13,10 +13,10 @@
   <p>Number of Views: {{vm.palette.numViews}} | Number of Votes: {{vm.palette.numVotes}} | Rank: {{vm.palette.rank}}</p>
   <div class="user-options" ng-show="vm.currentUserPaletteLists.length > 0">
     <select ng-model="vm.selectedListId">
-    <option value="">Select a Palette List</option>
-    <option value="{{paletteList._id}}" ng-repeat="paletteList in vm.currentUserPaletteLists track by $index">{{paletteList.name}}</option>
-  </select>
-  <button ng-click="vm.addPaletteToList();">Add Palette to List</button>
-  <p ng-show="vm.addedPalette" ng-class="{ 'fade': fade }" class="success">Successfully added palette!</p>
+      <option value="">Select a Palette List</option>
+      <option value="{{paletteList._id}}" ng-repeat="paletteList in vm.currentUserPaletteLists track by $index">{{paletteList.name}}</option>
+    </select>
+    <button ng-click="vm.addPaletteToList();">Add Palette to List</button>
+    <p ng-show="vm.addedPalette" ng-class="{ 'fade': fade }" class="success">Successfully added palette!</p>
   </div>
 </section>

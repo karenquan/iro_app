@@ -30,11 +30,10 @@
       authService
         .login(vm.user)
         .then(function(decodedToken) {
-          $log.info("logged in", decodedToken);
           $state.go("profile");
         }, function(error) {
             vm.conflict = true;
-            $log.error("login error:", error)
+            $log.error("login error:", error);
         });
     }
 

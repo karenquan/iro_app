@@ -30,7 +30,6 @@
       userService
         .addColorToList(vm.selectedListId, vm.color)
         .then(function(res) {
-          $log.info("colors controller // successfully add color to list");
           vm.addedColor = true;
           $timeout(function() {
               vm.addedColor = false;
@@ -70,7 +69,7 @@
         .then(function(res) {
           vm.palettes = res; // palettes with current colors
         }, function(error) {
-
+          $log.error(error);
         });
     }
   }

@@ -11,6 +11,7 @@
     var vm = this;
     var listId = $state.params.id;
 
+    // BINDINGS
     vm.paletteList;
     vm.removePalette         = removePalette;
     vm.updatedPaletteListName;
@@ -18,6 +19,7 @@
 
     getPaletteList();
 
+    // FUNCTIONS
     function getPaletteList() {
       authService.currentUser()
       .then(function(res) {
@@ -38,7 +40,6 @@
       userService
         .removePalette(paletteListId, paletteId)
         .then(function(res) {
-          $log.info("profile controller // removed palette");
           getPaletteList();
         }, function(error) {
           $log.info(error);

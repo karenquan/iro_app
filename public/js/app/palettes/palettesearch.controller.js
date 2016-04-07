@@ -28,6 +28,7 @@
       var hex = $state.params.hex;
       var pageNum = $state.params.page;
       var numResults = $state.params.num;
+
       palettesService
         .getPalettesByHex(hex, pageNum, numResults)
         .then(function(res) {
@@ -54,6 +55,7 @@
     function searchPalettes() {
       var defaultPage = 1,
           defaultNumResults = 100;
+
       palettesService
         .getPalettesByHex(vm.paletteSearchInput, defaultPage, defaultNumResults)
         .then(function(res) {
