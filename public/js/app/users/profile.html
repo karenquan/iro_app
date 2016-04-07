@@ -5,13 +5,8 @@
       <h1>Color Lists</h1>
       <div class="profile-color-lists">
         <div class="profile-color-list" ng-repeat="colorList in vm.currentUser.colorLists track by $index">
-          <h2>{{colorList.name}} <span class="user-action edit" ng-hide="vm.showColorListForm" ng-click="vm.showColorListForm = !vm.showColorListForm">EDIT TITLE</span> <span class="user-action edit" ng-show="vm.showColorListForm" ng-click="vm.showColorListForm = !vm.showColorListForm">CANCEL EDIT TITLE</span> <span class="user-action delete" ng-click="vm.removeColorList(colorList._id);">delete list</span></h2>
-          <div>
-            <form ng-show="vm.showColorListForm" class="update" name="colorListNameForm" ng-submit="vm.updateColorListName(colorList._id);" novalidate>
-              <input type="text" ng-model="vm.updatedColorListName" required>
-              <button ng-disabled="colorListNameForm.$invalid" ng-click="vm.showColorListForm = !vm.showColorListForm">Update Title</button>
-            </form>
-          </div>
+          <h2>{{colorList.name}} <a ui-sref="colorList({ id: colorList._id })">browse colors &#10095;</a> <span class="user-action delete" ng-click="vm.removeColorList(colorList._id);">delete list</span></h2>
+
           <div class="list-container">
             <div class="individual-color" ng-repeat="color in colorList.colors track by $index">
               <a ng-click="vm.colorClick(color.hex)"><span class="color" style="background-color: #{{color.hex}}"></span></a>

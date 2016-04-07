@@ -5,13 +5,14 @@
     .module("app")
     .controller("ColorListController", ColorListController);
 
-  ColorListController.$inject = ["$log", "$state", "authService", "tokenService"];
+  ColorListController.$inject = ["$log", "$state", "authService", "tokenService", "userService"];
 
-  function ColorListController($log, $state, authService, token) {
+  function ColorListController($log, $state, authService, token, userService) {
     var vm = this;
 
     var listId = $state.params.id;
     vm.colorList;
+    vm.updateColorListName = updateColorListName;
 
     getColorList();
 
@@ -27,6 +28,18 @@
       }, function(error) {
         $log.info("error in user retrieval");
       });
+    }
+
+    function updateColorListName(listId) {
+      userService
+        .updateColorListName(listId, vm.updatedColorListName)
+        .then(function(res) {
+          $log.info("profile controller // updated color list title");
+          getColorList();
+          vm.updatedColorListName = "";
+        }, function(error) {
+          $log.error(error);
+        });
     }
   }
 })();

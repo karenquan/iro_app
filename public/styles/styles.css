@@ -971,6 +971,13 @@ footer {
   /* END .profile-custom-palette-lists */ }
   .profile h1 {
     text-transform: uppercase; }
+  .profile h2 a {
+    font-size: 14px;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    color: #000; }
+    .profile h2 a:hover {
+      opacity: 0.7; }
   .profile section {
     margin: 0 0 50px 0; }
   .profile form {
@@ -1182,6 +1189,28 @@ footer {
     display: inline-block;
     width: 100%;
     height: 30px; }
+
+.color-list-show, .palette-list-show {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  justify-content: space-between; }
+  .color-list-show h1, .palette-list-show h1 {
+    width: 100%;
+    text-align: center; }
+  .color-list-show form, .palette-list-show form {
+    text-align: center;
+    margin: 10px 0 50px 0; }
+    .color-list-show form input, .palette-list-show form input {
+      vertical-align: bottom;
+      padding: 10px 10px 10px 0; }
+    .color-list-show form button, .palette-list-show form button {
+      padding: 10px;
+      width: 20%; }
+  .color-list-show .form, .palette-list-show .form {
+    width: 100%; }
 
 .white-bg {
   background-color: white; }
