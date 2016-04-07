@@ -6,6 +6,7 @@
     <button ng-disabled="paletteSearchForm.$invalid">Search</button>
   </form>
   <h1 class="title hex" ng-show="vm.hexSearch.length">#{{vm.hexSearch}}</h1>
+  <p ng-hide="!vm.noPalettesFound">No palettes found.</p>
   <h1 class="title" ng-hide="vm.hexSearch.length">Top Palettes</h1>
   <div class="individual-palette" ng-repeat="palette in vm.palettes track by $index">
     <h3>{{palette.title}}</h3>

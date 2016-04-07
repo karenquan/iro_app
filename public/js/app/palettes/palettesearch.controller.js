@@ -12,9 +12,10 @@
 
     // BINDINGS
     vm.palettes;
-    vm.searchPalettes = searchPalettes;
-    vm.hexSearch = $state.params.hex;
-    vm.searched = false;
+    vm.searchPalettes  = searchPalettes;
+    vm.hexSearch       = $state.params.hex;
+    vm.noPalettesFound = false;
+    vm.searched        = false;
 
     if (vm.hexSearch) {
       getPalettesByHex();
@@ -30,7 +31,14 @@
       palettesService
         .getPalettesByHex(hex, pageNum, numResults)
         .then(function(res) {
-          vm.palettes = res;
+          vm.noPalettesFound = false;
+          if(res.length) {
+            vm.palettes = res;
+          } else {
+            $log.info("no results found...");
+            vm.noPalettesFound = true;
+          }
+
         }, function(error) {
           $log.error(error);
         });
