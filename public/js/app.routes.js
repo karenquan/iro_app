@@ -60,6 +60,13 @@
         controllerAs: "vm",
         authorized:   true
       })
+      .state("customPaletteList", {
+        url:          "/profile/custompalettes",
+        templateUrl:  "js/app/users/custompalettelist.html",
+        controller:   "CustomPaletteListController",
+        controllerAs: "vm",
+        authorized:   true
+      })
       .state("login", {
         url:          "/login",
         templateUrl:  "/js/app/login/login.html",
