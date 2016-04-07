@@ -29,7 +29,6 @@
         .then(function(response) {
           $log.info("successfully added palette to list");
           vm.addedPalette = true;
-
           $timeout(function() {
               vm.addedPalette = false;
           }, 3000)

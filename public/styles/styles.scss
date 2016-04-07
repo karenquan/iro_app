@@ -725,6 +725,10 @@ footer {
   p {
     font-size: 15px;
     margin: 40px 0;
+
+    &.success {
+      margin: 10px 0;
+    }
   }
 
   .user-options {

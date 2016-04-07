@@ -843,6 +843,8 @@ footer {
   .individual-palette-show p, .individual-color-show p {
     font-size: 15px;
     margin: 40px 0; }
+    .individual-palette-show p.success, .individual-color-show p.success {
+      margin: 10px 0; }
   .individual-palette-show .user-options, .individual-color-show .user-options {
     text-align: center;
     margin: 20px 0; }
