@@ -31,14 +31,11 @@
       palettesService
         .getPalettesByHex(hex, pageNum, numResults)
         .then(function(res) {
-          vm.noPalettesFound = false;
-          if(res.length) {
-            vm.palettes = res;
-          } else {
-            $log.info("no results found...");
+          if(res.length < 0) {
             vm.noPalettesFound = true;
           }
-
+          vm.palettes = res;
+          vm.noPalettesFound = false;
         }, function(error) {
           $log.error(error);
         });
