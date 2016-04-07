@@ -26,13 +26,7 @@
       <h1>Palette Lists</h1>
       <div class="profile-palette-lists">
         <div class="profile-palette-list" ng-repeat="paletteList in vm.currentUser.paletteLists track by $index">
-          <h2>{{paletteList.name}} <span class="user-action edit" ng-hide="vm.showPaletteListForm" ng-click="vm.showPaletteListForm = !vm.showPaletteListForm">EDIT TITLE</span> <span class="user-action edit" ng-show="vm.showPaletteListForm" ng-click="vm.showPaletteListForm = !vm.showPaletteListForm">CANCEL EDIT TITLE</span> <span class="user-action delete" ng-click="vm.removePaletteList(paletteList._id);">delete list</span></h2>
-          <div>
-            <form ng-show="vm.showPaletteListForm" class="update" name="paletteListNameForm" ng-submit="vm.updatePaletteListName(paletteList._id);" novalidate>
-              <input type="text" ng-model="vm.updatedPaletteListName" required>
-              <button ng-disabled="paletteListNameForm.$invalid" ng-click="vm.showPaletteListForm = !vm.showPaletteListForm">Update Title</button>
-            </form>
-          </div>
+          <h2>{{paletteList.name}} <a ui-sref="paletteList({ id: paletteList._id })">browse palettes &#10095;</a> <span class="user-action delete" ng-click="vm.removePaletteList(paletteList._id);">delete list</span></h2>
           <div class="list-container">
             <div class="individual-palette" ng-repeat="palette in paletteList.palettes track by $index">
               <h3>{{palette.name}} <span class="user-action delete" ng-click="vm.removePalette(paletteList._id, palette._id);">[ x ]</span></h3>

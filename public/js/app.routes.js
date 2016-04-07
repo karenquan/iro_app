@@ -53,6 +53,13 @@
         controllerAs: "vm",
         authorized:   true
       })
+      .state("paletteList", {
+        url:          "/profile/palettelists/{id}",
+        templateUrl:  "js/app/users/palettelist.html",
+        controller:   "PaletteListController",
+        controllerAs: "vm",
+        authorized:   true
+      })
       .state("login", {
         url:          "/login",
         templateUrl:  "/js/app/login/login.html",

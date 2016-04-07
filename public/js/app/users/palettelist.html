@@ -1,0 +1,12 @@
+<div class="container palette-list-show">
+  <h1>{{vm.paletteList.name}}</h1>
+  <form class="update" name="paletteListNameForm" ng-submit="vm.updatePaletteListName(vm.paletteList._id);" novalidate>
+    <input type="text" ng-model="vm.updatedPaletteListName" required>
+    <button ng-disabled="paletteListNameForm.$invalid">Update List Name</button>
+  </form>
+  <div class="individual-palette" ng-repeat="palette in vm.paletteList.palettes">
+    <h3>{{palette.name}}</h3>
+    <a class="palette-link" ui-sref="palette({ id:{{palette.id}} })"><span class="col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index" ng-style="{'background-color': '#{{color}}'}"></span></a>
+    <span class="hex col-{{palette.colors.length}}" ng-repeat="color in palette.colors track by $index">#{{color}}</span>
+  </div>
+</div>

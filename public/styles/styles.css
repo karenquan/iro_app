@@ -1199,8 +1199,10 @@ footer {
   justify-content: space-between; }
   .color-list-show h1, .palette-list-show h1 {
     width: 100%;
-    text-align: center; }
+    text-align: center;
+    text-transform: uppercase; }
   .color-list-show form, .palette-list-show form {
+    width: 100%;
     text-align: center;
     margin: 10px 0 50px 0; }
     .color-list-show form input, .palette-list-show form input {
@@ -1209,8 +1211,6 @@ footer {
     .color-list-show form button, .palette-list-show form button {
       padding: 10px;
       width: 20%; }
-  .color-list-show .form, .palette-list-show .form {
-    width: 100%; }
 
 .white-bg {
   background-color: white; }

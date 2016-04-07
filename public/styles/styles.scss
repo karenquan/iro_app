@@ -1243,9 +1243,11 @@ footer {
   h1 {
     width: 100%;
     text-align: center;
+    text-transform: uppercase;
   }
 
   form {
+    width: 100%;
     text-align: center;
     margin: 10px 0 50px 0;
 
@@ -1258,10 +1260,6 @@ footer {
       padding: 10px;
       width: 20%;
     }
-  }
-
-  .form {
-    width: 100%;
   }
 }
 

@@ -1,11 +1,9 @@
 <section class="container color-list-show">
   <h1>{{vm.colorList.name}}</h1>
-  <div class="form">
-    <form class="update" name="colorListNameForm" ng-submit="vm.updateColorListName(vm.colorList._id);" novalidate>
-      <input type="text" ng-model="vm.updatedColorListName" required>
-      <button ng-disabled="colorListNameForm.$invalid" ng-click="vm.showColorListForm = !vm.showColorListForm">Update Title</button>
-    </form>
-  </div>
+  <form class="update" name="colorListNameForm" ng-submit="vm.updateColorListName(vm.colorList._id);" novalidate>
+    <input type="text" ng-model="vm.updatedColorListName" required>
+    <button ng-disabled="colorListNameForm.$invalid">Update List Name</button>
+  </form>
   <div class="individual-color" ng-repeat="color in vm.colorList.colors track by $index">
     <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" ng-style="{'background-color': '#{{color.hex}}'}"></span></a>
     <span class="hex">#{{color.hex}}</span>

@@ -311,7 +311,7 @@ function updatePaletteListName(req, res, next) {
       });
     })
     .catch(function(error) {
-      console.log("error trying to update color list name");
+      console.log("error trying to update palette list name");
       next(error);
     });
 }
