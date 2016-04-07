@@ -56,7 +56,7 @@ function search(req, res, next) {
   var hex = req.params.hex;
   var page = parseInt(req.query.page);
   var numResults = parseInt(req.query.num);
-  var offset = page == 1 ? 1 : page * num;
+  var offset = page == 1 ? 1 : page * numResults;
   var uri = process.env.COLOR_URL_ENDPOINT + "palettes?hex=" + hex + "&numResults=" + numResults + "&resultOffset=" + offset + "&" + process.env.DATA_FORMAT;
 
   request({
