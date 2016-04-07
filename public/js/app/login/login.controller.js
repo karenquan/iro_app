@@ -15,7 +15,7 @@
     // BINDINGS
     vm.conflict            = false;
     vm.emailEmpty          = false;
-    vm.emailFormatConflict = false;
+    vm.invalidEmailFormat  = false;
     vm.passwordEmpty       = false;
     vm.submitLogin         = submitLogin;
     vm.user = {
@@ -39,7 +39,7 @@
     }
 
     function validateEmail() {
-      vm.emailFormatConflict = emailInput.hasClass("ng-invalid-email") ? true : false;
+      vm.invalidEmailFormat = emailInput.hasClass("ng-invalid-email") ? true : false;
       vm.emailEmpty = emailInput.hasClass("ng-not-empty") ? false : true;
     }
 

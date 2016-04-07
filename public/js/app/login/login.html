@@ -5,7 +5,7 @@
     <label for="email">Email</label>
     <input ng-model="vm.user.email" ng-blur="vm.validateEmail();" type="email" id="email" class="email" required email autofocus>
     <span class="error" ng-show="vm.emailEmpty">This field is required.*</span>
-    <span class="error" ng-show="vm.emailFormatConflict">Invalid email format.</span>
+    <span class="error" ng-show="vm.invalidEmailFormat">Invalid email format.</span>
     <label for="password">Password</label>
     <input ng-model="vm.user.password" ng-blur="vm.validatePassword();" type="password" id="password" class="password" required>
     <span class="error" ng-show="vm.passwordEmpty">This field is required.*</span>
