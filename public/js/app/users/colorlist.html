@@ -7,5 +7,6 @@
   <div class="individual-color" ng-repeat="color in vm.colorList.colors track by $index">
     <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" ng-style="{'background-color': '#{{color.hex}}'}"></span></a>
     <span class="hex">#{{color.hex}}</span>
+    <span class="user-action delete" ng-click="vm.removeColor(vm.colorList._id, color._id);">[ x ]</span>
   </div>
 </section>

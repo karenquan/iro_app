@@ -976,24 +976,6 @@ footer {
       -webkit-justify-content: space-between;
       justify-content: space-between;
     }
-
-    .user-action {
-      @include transition(0.5s);
-
-      &:hover {
-        opacity: 0.7;
-        cursor: pointer;
-      }
-
-      &.edit {
-        color: $green;
-        margin: 0 0 0 10px;
-      }
-
-      &.delete {
-        color: $error;
-      }
-    }
   } /* END .profile-color-lists & .profile-palette-lists */
 
   .profile-color-lists {
@@ -1084,6 +1066,24 @@ footer {
     }
   } /* END .profile-custom-palette-lists */
 } /* END .profile */
+
+.user-action {
+  @include transition(0.5s);
+
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  &.edit {
+    color: $green;
+    margin: 0 0 0 10px;
+  }
+
+  &.delete {
+    color: $error;
+  }
+}
 
 .individual-palette {
   width: 100%;

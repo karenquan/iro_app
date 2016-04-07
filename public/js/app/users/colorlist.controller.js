@@ -12,6 +12,7 @@
 
     var listId = $state.params.id;
     vm.colorList;
+    vm.removeColor         = removeColor;
     vm.updateColorListName = updateColorListName;
 
     getColorList();
@@ -37,6 +38,17 @@
           $log.info("profile controller // updated color list title");
           getColorList();
           vm.updatedColorListName = "";
+        }, function(error) {
+          $log.error(error);
+        });
+    }
+
+    function removeColor(colorListId, colorId) {
+      userService
+        .removeColor(colorListId, colorId)
+        .then(function(res) {
+          $log.info("profile controller // removed color");
+          getColorList();
         }, function(error) {
           $log.error(error);
         });

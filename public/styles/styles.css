@@ -1017,18 +1017,6 @@ footer {
     flex-wrap: wrap;
     -webkit-justify-content: space-between;
     justify-content: space-between; }
-  .profile .profile-color-lists .user-action, .profile .profile-palette-lists .user-action {
-    -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    transition: 0.5s; }
-    .profile .profile-color-lists .user-action:hover, .profile .profile-palette-lists .user-action:hover {
-      opacity: 0.7;
-      cursor: pointer; }
-    .profile .profile-color-lists .user-action.edit, .profile .profile-palette-lists .user-action.edit {
-      color: #83af9c;
-      margin: 0 0 0 10px; }
-    .profile .profile-color-lists .user-action.delete, .profile .profile-palette-lists .user-action.delete {
-      color: #B0171F; }
   .profile .profile-color-lists h1 {
     background-color: #8397af; }
   .profile .profile-color-lists h2 {
@@ -1079,6 +1067,19 @@ footer {
     background-color: #83af9c; }
 
 /* END .profile */
+.user-action {
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  transition: 0.5s; }
+  .user-action:hover {
+    opacity: 0.7;
+    cursor: pointer; }
+  .user-action.edit {
+    color: #83af9c;
+    margin: 0 0 0 10px; }
+  .user-action.delete {
+    color: #B0171F; }
+
 .individual-palette {
   width: 100%;
   padding: 0 0 10px 0; }
