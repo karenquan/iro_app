@@ -587,6 +587,7 @@ footer {
 
     &:-ms-input-placeholder {
       color: $white !important;
+      font-style: italic;
     }
   }
 
@@ -1125,6 +1126,22 @@ footer {
     vertical-align: bottom;
     padding: 20px 20px 20px 0;
     width: 47%;
+
+    &::-webkit-input-placeholder {
+      font-style: italic;
+    }
+
+    &:-moz-placeholder { /* Firefox 18- */
+      font-style: italic;
+    }
+
+    &::-moz-placeholder {  /* Firefox 19+ */
+      font-style: italic;
+    }
+
+    &:-ms-input-placeholder {
+      font-style: italic;
+    }
   }
 
   button {

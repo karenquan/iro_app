@@ -749,7 +749,8 @@ footer {
     color: #FFF !important;
     font-style: italic; }
   .search input:-ms-input-placeholder {
-    color: #FFF !important; }
+    color: #FFF !important;
+    font-style: italic; }
 
 .search.color-search input, .search.color-search button {
   background-color: #8397af; }
@@ -1121,6 +1122,16 @@ footer {
   vertical-align: bottom;
   padding: 20px 20px 20px 0;
   width: 47%; }
+  .palette-search-results input::-webkit-input-placeholder, .color-search-results input::-webkit-input-placeholder {
+    font-style: italic; }
+  .palette-search-results input:-moz-placeholder, .color-search-results input:-moz-placeholder {
+    /* Firefox 18- */
+    font-style: italic; }
+  .palette-search-results input::-moz-placeholder, .color-search-results input::-moz-placeholder {
+    /* Firefox 19+ */
+    font-style: italic; }
+  .palette-search-results input:-ms-input-placeholder, .color-search-results input:-ms-input-placeholder {
+    font-style: italic; }
 
 .palette-search-results button, .color-search-results button {
   width: 47%;
