@@ -10,6 +10,7 @@
         <option value="{{colorList._id}}" ng-repeat="colorList in vm.currentUserColorLists track by $index">{{colorList.name}}</option>
       </select>
       <button ng-invalid="colorListForm.$invalid" ng-click="vm.addColorToList();">Add color</button>
+      <p ng-class="{ 'fade': vm.fade }" ng-show="vm.addedColor" class="success">Successfully added color!</p>
     </form>
    </div>
    <h3 class="title">Palettes with <span>#{{vm.color.hex}}</span> <a ui-sref="paletteSearch({ hex:vm.color.hex, page: 1, num: 100 })">Browse more &#10095;</a></h3>

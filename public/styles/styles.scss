@@ -1037,30 +1037,6 @@ footer {
   } /* END .profile-custom-palette-lists */
 } /* END .profile */
 
-.white-bg {
-  background-color: white;
-}
-
-.col-1 {
-  width: 100% !important;
-}
-
-.col-2 {
-  width: 50% !important;
-}
-
-.col-3 {
-  width: 33.333333% !important;
-}
-
-.col-4 {
-  width: 25% !important;
-}
-
-.col-5 {
-  width: 20% !important;
-}
-
 .individual-palette {
   width: 100%;
   padding: 0 0 10px 0;
@@ -1183,6 +1159,34 @@ footer {
   }
 }
 
+.white-bg {
+  background-color: white;
+}
+
+.col-1 {
+  width: 100% !important;
+}
+
+.col-2 {
+  width: 50% !important;
+}
+
+.col-3 {
+  width: 33.333333% !important;
+}
+
+.col-4 {
+  width: 25% !important;
+}
+
+.col-5 {
+  width: 20% !important;
+}
+
+.success {
+  color: $green;
+}
+
 /* ANIMATION */
 [ui-view].ng-enter {
   transition: all 1s ease;
@@ -1190,4 +1194,10 @@ footer {
 }
 [ui-view].ng-enter-active {
   opacity: 1;
+}
+
+.fade{
+    -webkit-transition: opacity 1s; /* For Safari 3.1 to 6.0 */
+    transition: opacity 1s;
+    opacity: 0;
 }

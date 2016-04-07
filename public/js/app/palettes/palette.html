@@ -17,5 +17,6 @@
     <option value="{{paletteList._id}}" ng-repeat="paletteList in vm.currentUserPaletteLists track by $index">{{paletteList.name}}</option>
   </select>
   <button ng-click="vm.addPaletteToList();">Add Palette to List</button>
+  <p ng-show="vm.addedPalette" ng-class="{ 'fade': vm.fade }" class="success">Successfully added palette!</p>
   </div>
 </section>

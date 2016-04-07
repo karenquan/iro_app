@@ -5,15 +5,17 @@
     .module("app")
     .controller("ColorsController", ColorsController);
 
-  ColorsController.$inject = ["$log", "colorService", "tokenService", "authService", "userService", "palettesService", "$stateParams"];
+  ColorsController.$inject = ["$log", "colorService", "tokenService", "authService", "userService", "palettesService", "$stateParams", "$timeout"];
 
-  function ColorsController($log, colorService, token, authService, userService, palettesService, $stateParams) {
+  function ColorsController($log, colorService, token, authService, userService, palettesService, $stateParams, $timeout) {
     var vm = this;
 
     // BINDINGS
+    vm.addedColor     = false;
     vm.addColorToList = addColorToList;
     vm.color;
     vm.currentUserColorLists;
+    vm.fade           = false;
     vm.palettes;
     vm.selectedListId;
 
@@ -29,6 +31,13 @@
         .addColorToList(vm.selectedListId, vm.color)
         .then(function(res) {
           $log.info("colors controller // successfully add color to list");
+          vm.addedColor = true;
+          $timeout(function() {
+              vm.addedColor = false;
+          }, 3000)
+          .then(function() {
+            vm.fade = true;
+          });
         }, function(error) {
           $log.error(error);
         });
