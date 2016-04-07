@@ -10,9 +10,7 @@
       <span>#{{color}}</span>
     </div>
   </div>
-  <p>Number of Views: {{vm.palette.numViews}}</p>
-  <p>Number of Votes: {{vm.palette.numVotes}}</p>
-  <p>Rank: {{vm.palette.rank}}</p>
+  <p>Number of Views: {{vm.palette.numViews}} | Number of Votes: {{vm.palette.numVotes}} | Rank: {{vm.palette.rank}}</p>
   <div class="user-options" ng-show="vm.currentUserPaletteLists.length > 0">
     <select ng-model="vm.selectedListId">
     <option value="">Select a Palette List</option>

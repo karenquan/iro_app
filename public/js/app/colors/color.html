@@ -2,9 +2,7 @@
   <h1>{{vm.color.title}}</h1>
   <div class="individual-color-block" style="background-color: #{{vm.color.hex}}"></div>
    <h2 style="border: 1px solid #{{vm.color.hex}}; color: #{{vm.color.hex}}"><span>#{{vm.color.hex}}</span> | <span>rgb({{vm.color.rgb.red}}, {{vm.color.rgb.green}}, {{vm.color.rgb.blue}})</span></h2>
-   <!-- <p>Number of Views: {{vm.color.numViews}}</p>
-   <p>Number of Votes: {{vm.color.numVotes}}</p>
-   <p>Rank: {{vm.color.rank}}</p> -->
+   <p>Number of Views: {{vm.color.numViews}} | Number of Votes: {{vm.color.numVotes}} | Rank: {{vm.color.rank}}</p>
    <div class="user-options" ng-show="vm.currentUserColorLists.length > 0">
     <form name="colorListForm">
       <select ng-model="vm.selectedListId" required>
