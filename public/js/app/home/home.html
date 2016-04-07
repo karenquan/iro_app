@@ -9,7 +9,7 @@
 <section class="home">
   <article>
     <div class="container">
-      <h1>Top Colors</h1>
+      <h1>Top Colors <a ui-sref="colorSearch">Browse more colors&#10095;</a></h1>
       <div class="top-colors">
         <div class="individual-color" ng-repeat="color in vm.topColors track by $index">
           <a ui-sref="color({ hex: '{{color.hex}}' })"><span class="color" ng-style="{'background-color': '#{{color.hex}}'}"></span></a>
@@ -33,7 +33,7 @@
 
   <article>
     <div class="container">
-      <h1>Top Palettes</h1>
+      <h1>Top Palettes <a ui-sref="paletteSearch">Browse more palettes &#10095;</a></h1>
       <div class="top-palettes">
         <div class="individual-palette" ng-repeat="palette in vm.topPalettes">
           <h3>{{palette.title}}</h3>

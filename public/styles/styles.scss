@@ -316,6 +316,19 @@ footer {
 
 .home {
 
+  h1 {
+    a {
+      font-size: 20px;
+      color: $black;
+      display: inline-block;
+      margin: 0 0 0 20px;
+
+      &:hover {
+        color: $purple;
+      }
+    }
+  }
+
   .container {
     padding: 50px 0;
   }
