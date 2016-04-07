@@ -44,7 +44,6 @@
     }
 
     function createCustomPalette(colors) {
-      $log.info('make custom palette');
       var palette = {};
       var colors = [];
 
@@ -111,9 +110,7 @@
         }
       })
       .then(function(res) {
-        $log.info("successful user retrieval", res.data);
         vm.currentUser = res.data;
-        $log.info(vm.currentUser.colorLists);
       }, function(error) {
         $log.info("error in user retrieval");
       });

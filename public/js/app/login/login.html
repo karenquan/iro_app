@@ -1,7 +1,7 @@
 <div class="login container">
   <h1>Login</h1>
   <form name="loginForm" ng-submit="vm.submitLogin();" novalidate>
-    <span class="error" ng-hide="true">Invalid credentials.</span>
+    <span class="error" ng-hide="!vm.conflict">Invalid credentials.</span>
     <label for="email">Email</label>
     <input ng-model="vm.user.email" type="email" id="email" class="email" required email autofocus>
     <label for="password">Password</label>

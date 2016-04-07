@@ -11,6 +11,7 @@
     var vm = this;
 
     // BINDINGS
+    vm.conflict    = false;
     vm.submitLogin = submitLogin;
     vm.user = {
       email: "",
@@ -25,6 +26,7 @@
           $log.info("logged in", decodedToken);
           $state.go("profile");
         }, function(error) {
+            vm.conflict = true;
             $log.error("login error:", error)
         });
     }
