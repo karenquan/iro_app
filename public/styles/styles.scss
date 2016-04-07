@@ -1057,22 +1057,26 @@ footer {
 
 .palette-search-results, .color-search-results {
   h1 {
+    font-size: 30px;
+    font-weight: normal;
     text-align: center;
     text-transform: uppercase;
 
-    &.hex {
-      font-family: 'Playfair Display';
-      font-size: 30px;
-      font-weight: normal;
+    &.title {
+      color: $green;
       padding: 0 0 10px 0;
       border-bottom: 1px solid;
+
+      &.hex {
+        font-family: 'Playfair Display';
+      }
     }
   }
 
   form {
     font-size: 16px;
     text-align: center;
-    margin: 40px 0;
+    margin: 40px 0 50px;
   }
 
   input {
@@ -1087,14 +1091,6 @@ footer {
 } /* END .palette-search-results, .color-search-results */
 
 .color-search-results {
-
-  h1 {
-
-    &.top-colors {
-      border-bottom: 1px solid;
-      padding: 0 0 10px 0;
-    }
-  }
 
   .individual-color {
     width: 100%;

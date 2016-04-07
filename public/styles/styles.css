@@ -1067,19 +1067,21 @@ footer {
 
 /* END .individual-palette */
 .palette-search-results h1, .color-search-results h1 {
+  font-size: 30px;
+  font-weight: normal;
   text-align: center;
   text-transform: uppercase; }
-  .palette-search-results h1.hex, .color-search-results h1.hex {
-    font-family: 'Playfair Display';
-    font-size: 30px;
-    font-weight: normal;
+  .palette-search-results h1.title, .color-search-results h1.title {
+    color: #83af9c;
     padding: 0 0 10px 0;
     border-bottom: 1px solid; }
+    .palette-search-results h1.title.hex, .color-search-results h1.title.hex {
+      font-family: 'Playfair Display'; }
 
 .palette-search-results form, .color-search-results form {
   font-size: 16px;
   text-align: center;
-  margin: 40px 0; }
+  margin: 40px 0 50px; }
 
 .palette-search-results input, .color-search-results input {
   vertical-align: bottom;
@@ -1090,10 +1092,6 @@ footer {
   font-size: 14px; }
 
 /* END .palette-search-results, .color-search-results */
-.color-search-results h1.top-colors {
-  border-bottom: 1px solid;
-  padding: 0 0 10px 0; }
-
 .color-search-results .individual-color {
   width: 100%;
   margin: 0 0 15px 0;
