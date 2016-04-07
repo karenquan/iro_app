@@ -1059,30 +1059,42 @@ footer {
     height: 30px; }
 
 /* END .individual-palette */
-.palette-search-results h1 {
+.palette-search-results h1, .color-search-results h1 {
   text-align: center;
   text-transform: uppercase; }
-  .palette-search-results h1.hex {
+  .palette-search-results h1.hex, .color-search-results h1.hex {
     font-family: 'Playfair Display';
     font-size: 30px;
     font-weight: normal;
     padding: 0 0 10px 0;
     border-bottom: 1px solid; }
 
-.palette-search-results form {
+.palette-search-results form, .color-search-results form {
   font-size: 16px;
   text-align: center;
   margin: 40px 0; }
 
-.palette-search-results input {
+.palette-search-results input, .color-search-results input {
   vertical-align: bottom;
   padding: 20px 20px 20px 0;
   width: 20%; }
 
-.palette-search-results button {
+.palette-search-results button, .color-search-results button {
   font-size: 14px; }
 
-/* END .palette-search-results */
+/* END .palette-search-results, .color-search-results */
+.color-search-results .individual-color {
+  width: 100%;
+  margin: 0 0 15px 0;
+  font-size: 0;
+  text-align: left; }
+  .color-search-results .individual-color .color {
+    height: 40px; }
+  .color-search-results .individual-color .hex {
+    text-align: left;
+    display: inline-block;
+    font-size: 18px; }
+
 .individual-color {
   display: inline-block;
   width: 24%;

@@ -8,7 +8,6 @@
   colorService.$inject = ["$log", "$http", "$stateParams", "tokenService"];
 
   function colorService($log, $http, $stateParams, token) {
-    $log.info('color service loaded');
 
     var service = {
       getColor:       getColor,
@@ -29,10 +28,10 @@
       return color;
     }
 
-    function getTopColors() {
+    function getTopColors(num) {
       var topColors = $http({
         method: "GET",
-        url: "/colors/top"
+        url: "/colors/top?num=" + num
       })
       .then(function(res) {
         return res.data; //top colors object

@@ -10,7 +10,7 @@
   function HomeController($log, $http, colorService, palettesService, $state) {
     var vm = this;
 
-    getTopColors();
+    getTopColors(20);
     getTopPalettes(10);
 
     // BINDINGS
@@ -22,9 +22,9 @@
     vm.searchColor    = searchColor;
 
     // HELPERS
-    function getTopColors() {
+    function getTopColors(num) {
       colorService
-        .getTopColors()
+        .getTopColors(num)
         .then(function(res) {
           vm.topColors = res; // top colors object
         }, function(error) {
@@ -33,7 +33,6 @@
     }
 
     function getTopPalettes(num) {
-      $log.warn(num);
       palettesService
         .getTopPalettes(num)
         .then(function(res) {
