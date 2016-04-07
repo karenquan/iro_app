@@ -16,7 +16,7 @@
             <div class="individual-color" ng-repeat="color in colorList.colors track by $index">
               <a ng-click="vm.colorClick(color.hex)"><span class="color" style="background-color: #{{color.hex}}"></span></a>
               <span>#{{color.hex}}</span>
-              <span class="delete" ng-click="vm.removeColor(colorList._id, color._id);">[ x ]</span>
+              <span class="user-action delete" ng-click="vm.removeColor(colorList._id, color._id);">[ x ]</span>
             </div>
           </div> <!-- end list-container -->
         </div> <!-- end profile-color-list -->
