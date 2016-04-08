@@ -3,7 +3,7 @@
   <form name="signUpForm" ng-submit="vm.submitSignUp();" novalidate>
     <div>
       <label for="firstName">First Name*</label>
-      <input ng-model="vm.user.firstName" ng-blur="vm.validateFirstName();" type="text" id="firstName" class="first-name" required autofocus>
+      <input ng-model="vm.user.firstName" ng-blur="vm.validateFirstName();" type="text" id="firstName" class="first-name" required>
       <span class="error" ng-show="vm.firstNameEmpty">This field is required.*</span>
     </div>
     <div>
