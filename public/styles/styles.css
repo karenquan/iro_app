@@ -705,6 +705,8 @@ footer {
     .login form label, .sign-up form label {
       display: block;
       margin: 40px 0 0 0; }
+    .login form button, .sign-up form button {
+      width: 100%; }
     .login form input, .sign-up form input {
       width: 100%;
       padding: 15px 0; }
