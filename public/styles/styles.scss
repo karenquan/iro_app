@@ -1084,13 +1084,9 @@ footer {
     cursor: pointer;
   }
 
-  &.edit {
-    color: $green;
-    margin: 0 0 0 10px;
-  }
-
   &.delete {
     color: $error;
+    float: right;
   }
 }
 
@@ -1127,10 +1123,6 @@ footer {
     height: 30px;
     box-sizing: border-box;
     text-align: center;
-
-    &.delete {
-      float: right;
-    }
   }
 
   .custom-palette {

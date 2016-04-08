@@ -1087,11 +1087,9 @@ footer {
   .user-action:hover {
     opacity: 0.7;
     cursor: pointer; }
-  .user-action.edit {
-    color: #83af9c;
-    margin: 0 0 0 10px; }
   .user-action.delete {
-    color: #B0171F; }
+    color: #B0171F;
+    float: right; }
 
 .individual-palette {
   width: 100%;
@@ -1121,8 +1119,6 @@ footer {
     height: 30px;
     box-sizing: border-box;
     text-align: center; }
-    .individual-palette span.delete {
-      float: right; }
   .individual-palette .custom-palette {
     -webkit-box-shadow: 0 0 5px #CCC;
     -moz-box-shadow: 0 0 5px #CCC;
