@@ -18,6 +18,7 @@
 
     // FUNCTIONS
     function getTopColors(num) {
+
       colorService
         .getTopColors(num)
         .then(function(res) {
