@@ -35,7 +35,7 @@ I decided that I wanted to make a clean, simple app that would focus solely on c
 - **Trello** ][ User story management
 
 ##Links
-- [Iro](https://shrouded-wildwood-47469.herokuapp.com) ][ Deployed site
+- [Iro](https://iro.herokuapp.com) ][ Deployed site
 - [Trello](https://trello.com/b/xiHGx4jp/iro) ][ User stories
 
 ##Hurdles
