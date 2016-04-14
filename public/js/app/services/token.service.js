@@ -8,7 +8,7 @@
   tokenService.$inject = ["$log", "$window"];
 
   function tokenService($log, $window) {
-    const TOKEN_KEY = "token";
+    var TOKEN_KEY = "token";
 
     var service = {
       store: store,
